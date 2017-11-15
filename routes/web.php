@@ -1,7 +1,7 @@
 <?php
 
 Auth::routes();
-Route::get('/', 'HomeController@index');
+
 
 Route::get('products',  function ()
 {
@@ -29,6 +29,12 @@ Route::get('handoverList','HandoverController@getHandovers')
 Route::get('/home', 'HomeController@firstFunc')->name('home');
 
 Route::get('outOfStock', 'ProductsController@outOfStock');
+
+Route::post('/site/login',
+[  
+	'uses'=>'loginController@login',
+	'as'  =>'app.login'
+]);
 	
 
 
@@ -50,7 +56,11 @@ Route::get('productsList', 'ProductsController@index');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 //Admin Routes
-Route::get('/master' ,function()
+Route::group(['middleware'=>'auth'], function()
 {
-	return view('master');
+	Route::get('/dmin','AdminController@index');
+	Route::get('/', 'HomeController@index');
 });
+
+//Route::get('/admin/',['as' => 'regional.admin','uses' => 'AdminController@index']);
+//Route::view('/master' ,'master')->name('master');

@@ -12,13 +12,7 @@ use App\Handover;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    
     protected $fillable = [
         'name', 'email','surname', 'password','cellphone','staffId','userRoleId','departmentId','regionId','physicalAddress','dob',
     ];
@@ -45,5 +39,14 @@ class User extends Authenticatable
     public function handover()
     {
         return $this->hasMany(Handover::class);
+    }
+    public function isAdmin()
+    {
+
+        if($this->userRoleId == 1)
+        {
+            return true;
+        }
+        return false;
     }
 }
