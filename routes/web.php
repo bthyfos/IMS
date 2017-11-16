@@ -8,7 +8,6 @@ Route::get('products',  function ()
 	return view('products.index');
 });
 
-
 // Route::get('register', function()
 // {
 // 	return view('register');
@@ -27,17 +26,13 @@ Route::get('handoverList','HandoverController@getHandovers')
 		->name('handoverList');
 //Home Routes
 Route::get('/home', 'HomeController@firstFunc')->name('home');
-
 Route::get('outOfStock', 'ProductsController@outOfStock');
-
 Route::post('/site/login',
 [  
 	'uses'=>'loginController@login',
 	'as'  =>'app.login'
 ]);
 	
-
-
 Route::get('admin',  function ()
 {
 	return view('admin.index');
@@ -52,13 +47,14 @@ Route::get('settings', function()
 //Products
 Route::get('productList','ProductsController@getProducts')->name('productList');
 Route::get('productsList', 'ProductsController@index');
+Route::post('createProduct','ProductsController@create');
 
 
 //Route::get('/home', 'HomeController@index')->name('home');
 //Admin Routes
 Route::group(['middleware'=>'auth'], function()
 {
-	Route::get('/dmin','AdminController@index');
+	Route::get('/admin','AdminController@index');
 	Route::get('/', 'HomeController@index');
 });
 

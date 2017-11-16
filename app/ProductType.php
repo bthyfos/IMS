@@ -7,5 +7,9 @@ use App\Product;
 
 class ProductType extends Model
 {
-    return $this->hasMany(Produc::class);
+	public function product()
+	{
+		 return $this->hasMany(Product::class);
+	}
+   
 }

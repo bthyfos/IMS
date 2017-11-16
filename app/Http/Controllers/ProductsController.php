@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\TestData;
+use App\Product;
 use Yajra\DataTables\DataTables;
+use Auth;
 
 class ProductsController extends Controller
 {
@@ -27,6 +28,23 @@ class ProductsController extends Controller
 	public function outOfStock()
 	{
 		return view('products.outOfStock');
+	}
+
+	public function create(Request $request)
+	{
+			// dd($request->name);
+			// die();
+			$products   		      =new Product();
+			$products->name 		  =$request->name;
+			$products->productTypeId  =$request->productTypeId;
+			$products->specification  =$request->specification;
+			$products->userId         =Auth::user()->id;
+			$products->intinialQty     =$request->initialQty;
+			$products->availableQty   =$request->initialQty;
+			$products->price   		  =$request->price;
+			$products->save();
+			return "saved";
+
 	}
 	
 }

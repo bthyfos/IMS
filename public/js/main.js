@@ -19,17 +19,13 @@ if (document.querySelector('#addProductsForm')) {
     data: {
         name: '',
         nameFB: '',
-        type_id: '',
+        productTypeId: '',
         type_idFB: '',
         specification: '',
         specificationFB: '',
-        ordered_date: '',
-        ordered_dateFB: '',
-        received_date: '',
-        received_dateFB: '',
         price: '',
         priceFB: '',
-        unit: '',
+        initialQty: '',
         unitFB: '',
         submition: false,
     },
@@ -41,7 +37,7 @@ if (document.querySelector('#addProductsForm')) {
             }
             return false
         },
-        wrongTypeId() {  if(this.type_id === '') {
+        wrongTypeId() {  if(this.productTypeId === '') {
             this.type_idFB = ERRORS.typeIdField
             return true
         }
@@ -51,22 +47,12 @@ if (document.querySelector('#addProductsForm')) {
             return true
         }
             return false },
-        wrongOrderedDate() {  if(this.ordered_date === '') {
-            this.ordered_dateFB = ERRORS.orderedDateField
-            return true
-        }
-            return false },
-        wrongReceivedDate() { if(this.received_date === '') {
-            this.received_dateFB = ERRORS.receivedDateField
-            return true
-        }
-            return false },
         wrongPrice() { if(this.price === '') {
             this.priceFB = ERRORS.priceField
             return true
         }
             return false },
-        wrongUnit() {  if(this.unit === '') {
+        wrongUnit() {  if(this.initialQty === '') {
             this.unitFB = ERRORS.unitField
             return true
         }
@@ -75,9 +61,34 @@ if (document.querySelector('#addProductsForm')) {
     methods: {
         validateForm(event) {
             this.submition = true
-            if(this.wrongName || this.wrongTypeId || this.wrongSpecification || this.wrongOrderedDate || this.wrongReceivedDate || this.wrongPrice || this.wrongUnit)
+            if(this.wrongName || this.wrongTypeId || this.wrongSpecification ||  this.wrongPrice || this.wrongUnit)
                 event.preventDefault()
-        }
+            else {
+                    axios.post('/createProduct')
+                        .then(function (response) {
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+        },
+
+        updateDroneType: function (value) {
+                if (value !== '') {
+                    this.serviceTypeData = [];
+                    axios.get('/api/v1/droneSubType/' + value)
+                        .then(function (response) {
+                            $.each(response.data, function (key, value) {
+                                this.serviceTypeData.push(value);
+                            }.bind(this));
+                            return this.serviceTypeData;
+                        }.bind(this))
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            }
+
     }
 })
 }
@@ -114,7 +125,7 @@ if (document.querySelector('#recipientForm')) {
             return false },
     },
     methods: {
-        validateForm(event) {
+        recipientValidateForm(event) {
             this.submition = true
             if(this.wrongRname || this.wrongPname || this.wrongPquantity)
                 event.preventDefault()

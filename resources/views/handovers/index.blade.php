@@ -6,7 +6,7 @@
   <div class="panel-heading">Search Form</div>
   <div class="panel-body">
 
-  	 {!! Form::open(['url' => 'storeProducts', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"recipientForm",'v-on:submit'=>"validateForm"]) !!}
+  	 {!! Form::open(['url' => 'storeProducts', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"recipientForm",'v-on:submit'=>"recipientValidateForm"]) !!}
      <input type="hidden" name="_token" value="{{ csrf_token() }}">
  
 

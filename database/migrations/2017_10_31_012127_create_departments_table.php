@@ -16,6 +16,8 @@ class CreateDepartmentsTable extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
+            $table->integer('regionId')->unsigned();
+            $table->foreign('regionId')->references('id')->on('regions');
             $table->timestamps();
         });
     }

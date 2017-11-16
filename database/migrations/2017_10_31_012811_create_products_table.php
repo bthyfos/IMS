@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->integer('productTypeId')->unsigned();
             $table->integer('userId')->unsigned();
             $table->string('specification');
-            $table->bigInteger('intinialQty');
+            $table->bigInteger('initialQty');
             $table->bigInteger('availableQty');
             $table->decimal('price');
             $table->foreign('productTypeId')->references('id')->on('product_types');

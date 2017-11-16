@@ -10,6 +10,6 @@ class DatabaseSeeder extends Seeder
         $this->call(useRoleTableSeeder::class);
         $this->call(regionTableSeeder::class);
         $this->call(departmentTableSeeder::class);
-        $this->call(regionalDepartmentTableSeeder::class);
+        $this->call(PositionTableSeeder::class);
     }
 }

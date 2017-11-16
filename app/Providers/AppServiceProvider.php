@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Schema;
 use App\UserRoles;
 use App\Department;
 use App\Region;
+use App\Position;
+use App\ProductType;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -29,6 +32,22 @@ class AppServiceProvider extends ServiceProvider
             }
 
              \View::share('selectUserRoles',$selectUserRoles);
+
+
+        }
+
+         if (\Schema::hasTable('product_types'))
+        {
+            $productTypes         = ProductType::orderBy('name','ASC')
+                                                            ->get();
+            $selectProductTypes    = array();
+            $selectProductTypes[0] = "Select / All";
+
+            foreach ($productTypes as $productType) {
+               $selectProductTypes[$productType->id] = $productType->name;
+            }
+
+             \View::share('selectProductTypes',$selectProductTypes);
 
 
         }
@@ -64,6 +83,23 @@ class AppServiceProvider extends ServiceProvider
 
 
         }
+
+        if (\Schema::hasTable('positions'))
+        {
+            $positions         = Position::orderBy('name','ASC')
+                                                            ->get();
+            $selectPositions   = array();
+            $selectPositions[0] = "Select / All";
+
+            foreach ($positions as $position) {
+               $selectPositions[$position->id] = $position->name;
+            }
+
+             \View::share('selectPositions',$selectPositions);
+
+
+        }
+
         Schema::defaultStringLength(191);
     }
 

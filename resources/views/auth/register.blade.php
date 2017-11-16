@@ -113,7 +113,23 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('departmentId') ? ' has-error' : '' }}">
+                       
+
+                        <div class="form-group{{ $errors->has('regionId') ? ' has-error' : '' }}">
+                            <label for="regionId" class="col-md-4 control-label">Region</label>
+
+                            <div class="col-md-6">
+
+                                 {!! Form::select('regionId',$selectRegions,['class' => 'form-control input-sm','id' => 'regionId']) !!}
+                                @if ($errors->has('regionId'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('regionId') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                         <div class="form-group{{ $errors->has('departmentId') ? ' has-error' : '' }}">
                             <label for="departmentId" class="col-md-4 control-label">Department</label>
 
                             <div class="col-md-6">
@@ -126,15 +142,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('regionId') ? ' has-error' : '' }}">
-                            <label for="regionId" class="col-md-4 control-label">Region</label>
+                         <div class="form-group{{ $errors->has('positionId') ? ' has-error' : '' }}">
+                            <label for="positionId" class="col-md-4 control-label">Position</label>
 
                             <div class="col-md-6">
-
-                                 {!! Form::select('regionId',$selectRegions,['class' => 'form-control input-sm','id' => 'regionId']) !!}
-                                @if ($errors->has('regionId'))
+                                {!! Form::select('positionId',$selectPositions,['class' => 'form-control input-sm','id' => 'positionId']) !!}
+                                @if ($errors->has('positionId'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('regionId') }}</strong>
+                                        <strong>{{ $errors->first('positionId') }}</strong>
                                     </span>
                                 @endif
                             </div>

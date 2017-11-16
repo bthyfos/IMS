@@ -10,7 +10,7 @@ class useRoleTableSeeder extends Seeder
 
         $faker = Faker\Factory::create();
 
-       for($i = 0; $i < 1000; $i++) {
+       for($i = 0; $i < 5; $i++) {
         App\UserRoles::create(
         	[
         	'name' => $faker->name

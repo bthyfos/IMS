@@ -13,7 +13,7 @@ class regionTableSeeder extends Seeder
 
        for($i = 0; $i < 1000; $i++) {
         App\Region::create([
-                'name' => $faker->name
+                'name' => $faker->region
         ]);
          }
     }
