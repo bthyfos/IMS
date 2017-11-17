@@ -7,9 +7,11 @@
    <table class="table" id="productsTable">
   <thead>
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
+      <th>Product Name</th>
+      <th>Product Type</th>
+      <th>Specification</th>
+      <th>Created By</th>
+      <th>Available Qty</th>
     </tr>
   </thead>
   </tbody>
@@ -82,8 +84,10 @@ $(function() {
         ajax: '{!! route('productList') !!}',
         columns: [
             { data: 'name', name: 'name' },
-            { data: 'username', name: 'username' },
-            { data: 'created_at', name: 'created_at'}
+            { data: 'productTypeId', name: 'productTypeId' },
+            { data: 'specification', name: 'specification'},
+            { data: 'userId', name: 'userId' },
+            { data: 'availableQty', name: 'availableQty'}
         ]
     });
 });

@@ -3,10 +3,10 @@
 Auth::routes();
 
 
-Route::get('products',  function ()
-{
-	return view('products.index');
-});
+Route::get('products', 'ProductsController@show');
+
+	
+
 
 // Route::get('register', function()
 // {

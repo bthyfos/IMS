@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\ProductType;
 use Yajra\DataTables\DataTables;
 use Auth;
 
 class ProductsController extends Controller
 {
+	public function show()
+	{
+		$productType  = ProductType::all();
+		return view('products.index',compact('productType'));
+	}
 
 	public function index()
 	{
@@ -17,7 +23,7 @@ class ProductsController extends Controller
 
 	public function getProducts()
 	{
-			return Datatables::of(TestData::query())->make(true);
+			return Datatables::of(Product::query())->make(true);
 		
 		 // $allProducts= TestData::all();
 
@@ -39,7 +45,7 @@ class ProductsController extends Controller
 			$products->productTypeId  =$request->productTypeId;
 			$products->specification  =$request->specification;
 			$products->userId         =Auth::user()->id;
-			$products->intinialQty     =$request->initialQty;
+			$products->intinialQty    =$request->initialQty;
 			$products->availableQty   =$request->initialQty;
 			$products->price   		  =$request->price;
 			$products->save();

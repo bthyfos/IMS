@@ -42708,7 +42708,7 @@ if (false) {
 /* 42 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: Unexpected format https://fonts.googleapis.com/css?family=Open+Sans:300,400 (13:1)\n\n  11 | /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */\n  12 | \n> 13 | @import https://fonts.googleapis.com/css?family=Open+Sans:300,400;\n     | ^\n  14 | \n  15 | html {\n  16 |   font-family: sans-serif;\n\n    at runLoaders (C:\\Users\\KYEIDA\\Desktop\\project\\IMS\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at C:\\Users\\KYEIDA\\Desktop\\project\\IMS\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\Users\\KYEIDA\\Desktop\\project\\IMS\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (C:\\Users\\KYEIDA\\Desktop\\project\\IMS\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.<anonymous> (C:\\Users\\KYEIDA\\Desktop\\project\\IMS\\node_modules\\css-loader\\lib\\loader.js:50:18)\n    at C:\\Users\\KYEIDA\\Desktop\\project\\IMS\\node_modules\\css-loader\\lib\\processCss.js:234:4");
 
 /***/ })
 /******/ ]);

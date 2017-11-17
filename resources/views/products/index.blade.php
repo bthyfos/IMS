@@ -19,7 +19,11 @@
       <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongTypeId }">
           {!! Form::label('Product Type', 'Product Type', array('class' => 'col-md-3 control-label')) !!}
           <div class="col-md-6">
-            {!! Form::select('productTypeId',$selectProductTypes,['class' => 'form-control input-sm','id' => 'productTypeId']) !!}
+             <select @change="updateDroneType($event.target.value)"  name="productTypeId" v-cloak class="form-control" id="droneTypeData"  v-model="productTypeId">
+                                @foreach($productType as $type)
+                                    <option  :value="{{$type->id}}">{{$type->name}}</option>
+                                @endforeach
+                            </select>
              <!--  {!! Form::text('productTypeId',null,['class' => 'form-control input-sm','id' => 'productTypeId' ,'v-model'=>'productTypeId']) !!} -->
               <span class="help-block" v-cloak v-if="submition && wrongTypeId">@{{type_idFB }}</span>
 

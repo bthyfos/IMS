@@ -13,8 +13,10 @@
     
     <div class="form-group" v-bind:class="{ 'has-error': submition && wrongRname }">
         {!! Form::label('Recipient Name', 'Recipient Name', array('class' => 'col-md-3 control-label')) !!}
+
         <div class="col-md-6">
-            {!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name','v-model'=>'name']) !!}
+           <TypeAhead></TypeAhead>
+            <!-- {!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name','v-model'=>'name']) !!} -->
             <span class="help-block" v-cloak v-if="submition && wrongRname">@{{nameFB }}</span>
           </div>
         </div>

@@ -94,7 +94,9 @@ if (document.querySelector('#addProductsForm')) {
 }
 
 if (document.querySelector('#recipientForm')) {
-    new Vue({
+
+
+   new Vue({
     el: "#recipientForm",
     data: {
         name: '',
