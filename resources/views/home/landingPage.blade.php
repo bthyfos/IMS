@@ -14,9 +14,7 @@
     <link rel="stylesheet"  href="{{asset('/css/bootstrap.min.css')}}">
     <link rel="stylesheet"  href="{{asset('/css/bootstrap-theme.min.css')}}">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
-     <link href="{{asset('/sass/app.scss')}}" rel="stylesheet">
-
-    <style type="text/css">
+      <style type="text/css">
       .vertical_line 
       {
         height:150px; width:1px;background:#000;
@@ -82,7 +80,6 @@
     <div class ="row">
 
   <nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
@@ -93,13 +90,12 @@
     <a class="navbar-brand" href="#">Plan International Org</a>
   </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
     <ul class="nav navbar-nav">
 
       <li class="active"><a   href="{{'/home'}}">Home</a></li>
-      </li><li class="dropdown">
+      <li class="dropdown">
         <a  href="{{'products'}}" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a  href="{{'products'}}">Add To Stock</a></li>
@@ -143,23 +139,18 @@
         </ul>
       </li> -->
     </ul>
-  </div><!-- /.navbar-collapse -->
+  </div>
 </nav>
 
     </div>
    </div>
     
-      <!-- Begin page content -->
-      <div class="container">
+   <div class="container">
         <div class="page-header">
         </div>
         @yield('content')
-      </div>
-    </div>
+   </div>
 
-
-
-    
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <!-- DataTables -->
     <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
@@ -178,7 +169,9 @@
              
                 });
     </script>
-   <script src="js/main.js"></script>
    @stack('scripts')
+
+
+   <script src="js/main.js"></script>
   </body>
 </html>

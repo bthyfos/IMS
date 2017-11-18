@@ -95,10 +95,14 @@ if (document.querySelector('#addProductsForm')) {
 
 if (document.querySelector('#recipientForm')) {
 
+    var MyComponent = Vue.extend({
+        template: 'TypeAhead'
+    });
+    Vue.component('MyComponent', require('./node_modules/vue2-typeahead/src/components/TypeAhead.vue'));
 
    new Vue({
     el: "#recipientForm",
-    data: {
+       data: {
         name: '',
         nameFB: '',
         product_name: '',
