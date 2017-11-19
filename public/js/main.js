@@ -94,13 +94,7 @@ if (document.querySelector('#addProductsForm')) {
 }
 
 if (document.querySelector('#recipientForm')) {
-
-    var MyComponent = Vue.extend({
-        template: 'TypeAhead'
-    });
-    Vue.component('MyComponent', require('./node_modules/vue2-typeahead/src/components/TypeAhead.vue'));
-
-   new Vue({
+new Vue({
     el: "#recipientForm",
        data: {
         name: '',
@@ -110,6 +104,8 @@ if (document.querySelector('#recipientForm')) {
         quantity: '',
         quantityFB: '',
         submition: false,
+        queryString:'',
+        users:[],
     },
     computed: {
         wrongRname() {
@@ -130,13 +126,31 @@ if (document.querySelector('#recipientForm')) {
         }
             return false },
     },
+     // render: {
+     //    require: false,
+     //    type: Function,
+     //    default: function (users) {
+     //      return users
+     //    }
+     //  },
     methods: {
         recipientValidateForm(event) {
             this.submition = true
             if(this.wrongRname || this.wrongPname || this.wrongPquantity)
                 event.preventDefault()
+        },
+        getResults(){
+            this.users =[];
+            axios.get('/recipientList',{ params:{queryString:this.queryString}})
+                 .then(response=>{
+                    response.data.forEach((user) =>{
+                        this.users.push(user);
+                    });
+                   // console.log(response.data);
+                 });
         }
     }
+
 });
 }
 

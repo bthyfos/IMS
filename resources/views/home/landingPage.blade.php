@@ -15,6 +15,11 @@
     <link rel="stylesheet"  href="{{asset('/css/bootstrap-theme.min.css')}}">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
       <style type="text/css">
+      
+  .dropdown-menu-list {
+    display: list-item;
+    width: 100%;
+  }
       .vertical_line 
       {
         height:150px; width:1px;background:#000;
@@ -173,5 +178,6 @@
 
 
    <script src="js/main.js"></script>
+
   </body>
 </html>

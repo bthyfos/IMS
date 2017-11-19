@@ -6,7 +6,7 @@
   <div class="panel-heading">Search Form</div>
   <div class="panel-body">
 
-  	 {!! Form::open(['url' => 'storeProducts', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"recipientForm",'v-on:submit'=>"recipientValidateForm"]) !!}
+  	 {!! Form::open(['url' => '', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"recipientForm",'v-on:submit'=>"recipientValidateForm"]) !!}
      <input type="hidden" name="_token" value="{{ csrf_token() }}">
  
 
@@ -15,8 +15,7 @@
         {!! Form::label('Recipient Name', 'Recipient Name', array('class' => 'col-md-3 control-label')) !!}
 
         <div class="col-md-6">
-           <TypeAhead></TypeAhead>
-            <!-- {!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name','v-model'=>'name']) !!} -->
+            {!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name','v-model'=>'queryString' , 'v-on:keyup'=>'getResults()','  autocomplete'=>'off']) !!}
             <span class="help-block" v-cloak v-if="submition && wrongRname">@{{nameFB }}</span>
           </div>
         </div>
@@ -24,7 +23,13 @@
         <div class="form-group" v-bind:class="{ 'has-error': submition && wrongPname }">
         {!! Form::label('Product Name', 'Product Name', array('class' => 'col-md-3 control-label')) !!}
         <div class="col-md-6">
-            {!! Form::text('product_name',NULL,['class' => 'form-control input-sm','id' => 'product_name' ,'placeholder'=>'e.g 2017-31-10','v-model'=>'product_name']) !!}
+            {!! Form::text('product_name',NULL,['class' => 'form-control input-sm','id' => 'product_name' ,'placeholder'=>'e.g 2017-31-10','v-model'=>'product_name','  autocomplete'=>'off']) !!}
+              <ul v-if="users.length"  class="dropdown-menu-list dropdown-menu">
+                <li  v-for="(user,index)in users" :key="user.id" :class="{active:activeClass(index)}"
+            @mousedown="hit" @mousemove="setActive(index)">
+                   <span v-text="user.name"  v-cloak></span>
+                </li>
+              </ul>
             <span class="help-block" v-cloak v-if="submition && wrongPname">@{{product_nameFB }}</span>
           </div>
         </div>

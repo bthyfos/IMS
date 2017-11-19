@@ -12,7 +12,7 @@ window.Vue = require('vue');
 
 
 Vue.component('example', require('./components/Example.vue'));
-//Vue.component('TypeAhead', require('./node_modules/vue2-typeahead/src/components/TypeAhead.vue'));
+Vue.component('typeahead', require('./components/TypeAhead.vue'));
 const app = new Vue({
     el: '#app'
 });
