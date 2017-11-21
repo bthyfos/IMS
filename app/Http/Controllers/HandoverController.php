@@ -26,7 +26,7 @@ class HandoverController extends Controller
 	}
 	public function recipients()
 	{
-		$queryString   =Input::get('queryString');
+		$queryString   =Input::get('query');
 		$recipients         =User::where('name','like','%'.$queryString.'%')
 									->get();
 		return response()->json($recipients);
