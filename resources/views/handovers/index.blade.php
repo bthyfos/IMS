@@ -7,10 +7,7 @@
   <div class="panel-body">
 
   	 {!! Form::open(['url' => '', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"recipientForm",'v-on:submit'=>"recipientValidateForm"]) !!}
-     <input type="hidden" name="_token" value="{{ csrf_token() }}">
- 
-
-    
+     <input type="hidden" name="_token" value="{{ csrf_token()}}">
     <div class="form-group" v-bind:class="{ 'has-error': submition && wrongRname }">
         {!! Form::label('Recipient Name', 'Recipient Name', array('class' => 'col-md-3 control-label')) !!}
 
