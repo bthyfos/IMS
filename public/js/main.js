@@ -104,7 +104,7 @@ new Vue({
         quantity: '',
         quantityFB: '',
         submition: false,
-        queryString:'',
+           query:'',
         users:[],
     },
     computed: {
@@ -134,14 +134,14 @@ new Vue({
      //    }
      //  },
     methods: {
-        recipientValidateForm(event) {
-            this.submition = true
+        recipientValidateForm:function(event) {
+            this.submition = true;
             if(this.wrongRname || this.wrongPname || this.wrongPquantity)
                 event.preventDefault()
         },
         getResults(){
             this.users =[];
-            axios.get('/recipientList',{ params:{queryString:this.queryString}})
+            axios.get('/recipientList',{ params:{query:this.query}})
                  .then(response=>{
                     response.data.forEach((user) =>{
                         this.users.push(user);

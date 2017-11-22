@@ -22,7 +22,6 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="home">                
 						<div class="col-xs-8">
-							<h1>Profile</h1>
 							@include('settings.profile')
 							           
 						</div>

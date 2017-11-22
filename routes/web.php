@@ -38,12 +38,12 @@ Route::get('admin',  function ()
 {
 	return view('admin.index');
 });
+//Users
+Route::get('settings' , 'UserController@index')->name('settings');
+Route::match(['post'] , 'updateUser' , 'UserController@update');
 
-Route::get('settings', function()
-{
-	return view('settings.index');
 
-});
+
 
 //Products
 Route::get('productList','ProductsController@getProducts')->name('productList');
@@ -57,6 +57,7 @@ Route::group(['middleware'=>'auth'], function()
 {
 	Route::get('/admin','AdminController@index');
 	Route::get('/', 'HomeController@index');
+	Route::get('dashboard','AdminController@dashboard');
 });
 
 //Route::get('/admin/',['as' => 'regional.admin','uses' => 'AdminController@index']);

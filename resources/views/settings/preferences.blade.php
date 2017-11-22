@@ -1,4 +1,4 @@
-{!! Form::open(['url' => 'storeProducts', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addProductsForm" ,'v-on:submit'=>"validateForm" ]) !!}
+{!! Form::open(['url' => '', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addProductsForm" ,'v-on:submit'=>"validateForm" ]) !!}
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
       <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongName }">
