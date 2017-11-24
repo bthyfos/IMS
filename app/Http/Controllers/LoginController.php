@@ -21,7 +21,7 @@ class LoginController extends Controller
     			$user = User::where('email',$request->email)->first();
     			if($user->isAdmin())
     			{
-    				return Redirect::to('/admin');
+    				return Redirect::to('/dashboard');
     			}
 
     			return  Redirect::to('/');
