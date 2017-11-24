@@ -272,10 +272,10 @@
                             <a  href="{{'dashboard'}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>System Users<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="{{'systemUsers'}}">All Users</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">Morris.js Charts</a>
@@ -361,8 +361,10 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
+  @yield('content')
 
-        <div id="page-wrapper">
+
+       <!--  <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Forms</h1>
@@ -563,7 +565,7 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-        </div>
+        </div> -->
         <!-- /#page-wrapper -->
 
     </div>
