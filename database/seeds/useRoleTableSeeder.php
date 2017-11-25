@@ -1,22 +1,20 @@
 <?php
 
-use  App\UserRoles;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 
 class useRoleTableSeeder extends Seeder
 {
       public function run()
     {
-
-        $faker = Faker\Factory::create();
-
-       for($i = 0; $i < 5; $i++) {
-        App\UserRoles::create(
-        	[
-        	'name' => $faker->name
+        DB::table('user_roles')->insert(
+            [
+            'name' => 'admin',
+               ],
+            [
+                'name' => 'user',
             ]
-              
+
         );
-         }
     }
 }

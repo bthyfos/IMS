@@ -70,8 +70,7 @@ class AppServiceProvider extends ServiceProvider
 
          if (\Schema::hasTable('regions'))
         {
-            $regions         = Region::orderBy('name','ASC')
-                                                            ->get();
+            $regions         = Region::orderBy('name','ASC')->get();
             $selectRegions    = array();
             $selectRegions[0] = "Select / All";
 

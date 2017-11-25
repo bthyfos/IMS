@@ -30,16 +30,13 @@ Route::get('admin',  function ()
 Route::get('settings' , 'UserController@index')->name('settings');
 Route::match(['post'] , 'updateUser' , 'UserController@update');
 
-
-
-
 //Products
 Route::get('productList','ProductsController@getProducts')->name('productList');
 Route::get('productsList', 'ProductsController@index');
 Route::post('createProduct','ProductsController@create');
 
-
 //Route::get('/home', 'HomeController@index')->name('home');
+
 //Admin Routes
 Route::group(['middleware'=>'auth'], function()
 {
@@ -48,6 +45,23 @@ Route::group(['middleware'=>'auth'], function()
 	Route::get('dashboard','AdminController@index');
 	Route::get('systemUsers','AdminController@systemUsers');
 	Route::get('registration','AdminController@registration');
+   //Regions
+    Route::get('regions','RegionController@regions');
+    Route::post('addRegion','RegionController@addRegion');
+    Route::get('getRegions','RegionController@getRegions')->name('getRegions');
+    //ProductsInfo
+   // Route::get('stock','AdminController@stock');
+    Route::view('stock','AdminSide.products.list');
+    Route::view('inavailableStock','AdminSide.products.outOfStockList');
+    Route::get('productsInStock','ProductsController@getProducts')->name('productsInStock');
+    Route::get('inavailableStockList','ProductsController@inavailableStockList')->name('inavailableStockList');
+   //Departments
+    Route::view('departmentList','AdminSide.departments.departmentList');
+    Route::get('departments','DepartmentsController@departments')->name('departments');
+    Route::post('addDepartment','DepartmentsController@addDepartment');
+
+
+
 });
 
 //Route::get('/admin/',['as' => 'regional.admin','uses' => 'AdminController@index']);

@@ -162,9 +162,6 @@
 <!-- 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
     <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
-
-
-        <!-- DataTables -->
    <!--  <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script> -->
 
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
