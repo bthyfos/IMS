@@ -8,11 +8,16 @@ class AdminController extends Controller
 {
     public function index()
     {
-    	return view('master');
+    	return view('admin.dashboard');
     }
 
-    public function dashboard()
+     public function systemUsers()
     {
-    	return view('admin.dashboard');
+    	return view('admin.systemUsers');
+    }
+
+     public function registration()
+    {
+    	return view('admin.register');
     }
 }

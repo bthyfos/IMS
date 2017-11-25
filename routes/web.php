@@ -4,23 +4,11 @@ Auth::routes();
 
 
 Route::get('products', 'ProductsController@show');
-
-	
-
-
-// Route::get('register', function()
-// {
-// 	return view('register');
-
-// })->name('register');
-
-Route::get('returns',  function ()
-{
-	return view('products.returns');
+Route::get('returns',function ()
+{return view('products.returns');
 });
 
 // Handover Routes
-
 Route::get('handover','HandoverController@index');
 Route::get('handoverList','HandoverController@getHandovers')
 		->name('handoverList');
@@ -57,7 +45,9 @@ Route::group(['middleware'=>'auth'], function()
 {
 	Route::get('/admin','AdminController@index');
 	Route::get('/', 'HomeController@index');
-	Route::get('dashboard','AdminController@dashboard');
+	Route::get('dashboard','AdminController@index');
+	Route::get('systemUsers','AdminController@systemUsers');
+	Route::get('registration','AdminController@registration');
 });
 
 //Route::get('/admin/',['as' => 'regional.admin','uses' => 'AdminController@index']);

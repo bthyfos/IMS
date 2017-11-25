@@ -7,13 +7,15 @@
     {{--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">--}}
     {{--<link href="{{asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">--}}
 
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
     {{--<link href="{{asset('bower_components/bootstrap/dist/css/bootstrap-theme.min.css')}}" rel="stylesheet">--}}
 
 
     <link rel="stylesheet"  href="{{asset('/css/bootstrap.min.css')}}">
     <link rel="stylesheet"  href="{{asset('/css/bootstrap-theme.min.css')}}">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+   <!--  <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css"> -->
+     <link rel="stylesheet" href="{{asset('css/jquery.dataTables.min.css')}}">
       <style type="text/css">
       
   .dropdown-menu-list {
@@ -78,7 +80,8 @@
     </style>
  
     {{--<script src="{{asset('/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>--}}
-    <script src="https://unpkg.com/vue"></script>
+<!--   <script src="https://unpkg.com/vue"></script> -->
+      <script src="{{asset('js/vue.js')}}"></script>
   </head>
   <body>
    <div  class="container">
@@ -156,11 +159,20 @@
         @yield('content')
    </div>
 
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<!-- 
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+    <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
+
+
         <!-- DataTables -->
-    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <!--  <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script> -->
+
+    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+   <!--  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> -->
+
+  <script src="{{asset('js/bootstrap.min.js')}}"></script>
+   <!--  <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <script src="{{asset('js/axios.min.js')}}"></script>
 
 
     <script>
