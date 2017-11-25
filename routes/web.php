@@ -43,7 +43,7 @@ Route::post('createProduct','ProductsController@create');
 //Admin Routes
 Route::group(['middleware'=>'auth'], function()
 {
-	Route::get('/admin','AdminController@index');
+	//Route::get('/admin','AdminController@index');
 	Route::get('/', 'HomeController@index');
 	Route::get('dashboard','AdminController@index');
 	Route::get('systemUsers','AdminController@systemUsers');
