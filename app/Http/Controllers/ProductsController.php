@@ -15,28 +15,20 @@ class ProductsController extends Controller
 		$productType  = ProductType::all();
 		return view('products.index',compact('productType'));
 	}
-
-	public function index()
+    public function index()
 	{
 		 return view('products.list');
 	}
-
-	public function getProducts()
+    public function getProducts()
 	{
-			return Datatables::of(Product::query())->make(true);
-		
-		 // $allProducts= TestData::all();
-
-   //    return Datatables::of($allProducts)
-   //          ->make(true);
+	        $availableStock   =Product::where('availableQty','>',0)->get();
+			return Datatables::of($availableStock)->make(true);
 	}
-
-	public function outOfStock()
+    public function outOfStock()
 	{
 		return view('products.outOfStock');
 	}
-
-	public function create(Request $request)
+    public function create(Request $request)
 	{
 			// dd($request->name);
 			// die();
@@ -52,5 +44,10 @@ class ProductsController extends Controller
 			return "saved";
 
 	}
+	public  function inavailableStockList()
+    {
+        $inavailableProducts    = Product::where('availableQty',0)->get();
+        return Datatables::of($inavailableProducts)->make(true);
+    }
 	
 }

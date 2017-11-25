@@ -13,7 +13,6 @@ class UserController extends Controller
     	$userDetails  = User::find(\Auth::user()->id);
 	   return view('settings.index',compact('userDetails'));
     }
-
     public function update(Request $request)
     {
     	

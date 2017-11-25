@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Region;
 
 class AdminController extends Controller
 {
@@ -10,14 +11,13 @@ class AdminController extends Controller
     {
     	return view('admin.dashboard');
     }
-
-     public function systemUsers()
+    public function systemUsers()
     {
     	return view('admin.systemUsers');
     }
-
-     public function registration()
+    public function registration()
     {
     	return view('admin.register');
     }
+
 }
