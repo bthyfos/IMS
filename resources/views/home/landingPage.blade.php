@@ -3,18 +3,10 @@
   <head>
     <title>IMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    {{--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">--}}
-    {{--<link href="{{asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">--}}
+    
 
-    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css"> -->
     <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
-    {{--<link href="{{asset('bower_components/bootstrap/dist/css/bootstrap-theme.min.css')}}" rel="stylesheet">--}}
-
-
     <link rel="stylesheet"  href="{{asset('/css/bootstrap.min.css')}}">
-    <link rel="stylesheet"  href="{{asset('/css/bootstrap-theme.min.css')}}">
-   <!--  <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css"> -->
      <link rel="stylesheet" href="{{asset('css/jquery.dataTables.min.css')}}">
       <style type="text/css">
       
@@ -79,8 +71,6 @@
   border-color: #ddd transparent #ddd #ddd;
     </style>
  
-    {{--<script src="{{asset('/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>--}}
-<!--   <script src="https://unpkg.com/vue"></script> -->
       <script src="{{asset('js/vue.js')}}"></script>
   </head>
   <body>
@@ -151,7 +141,7 @@
 </nav>
 
     </div>
-   </div>pjp
+   </div>
     
    <div class="container">
         <div class="page-header">
@@ -159,8 +149,7 @@
         @yield('content')
    </div>
 
-<!-- 
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+   
     <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
    <!--  <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script> -->
 

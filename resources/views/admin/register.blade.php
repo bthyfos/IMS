@@ -4,39 +4,58 @@
   <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Forms</h1>
+                    <h4 class="page-header">REGISTER USER</h4>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Basic Form Elements
                         </div>
                     
 
                      <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-6">
+                            <div class="row justify-content-center" >
+                                <!-- align="center" -->
+                                <div class="col-lg-8">
 
                                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                         <div class="form-group">
+                        {!! Form::label('name', 'Name:', ['class' => 'col-lg-2 control-label']) !!}
+                        <div class="col-lg-6">
+                            {!! Form::text('name', $value = null, ['class' => 'form-control', 'placeholder' => 'name']) !!}
                         </div>
+                    </div>
 
-                         <div class="form-group{{ $errors->has('surname') ? ' has-error' : '' }}">
+
+                     <div class="form-group">
+                        {!! Form::label('surname', 'Surname:', ['class' => 'col-lg-2 control-label']) !!}
+                        <div class="col-lg-6">
+                            {!! Form::text('surname', $value = null, ['class' => 'form-control', 'placeholder' => 'surname']) !!}
+                        </div>
+                    </div>
+
+
+                     <div class="form-group">
+                        {!! Form::label('cellphone', 'Cellphone:', ['class' => 'col-lg-2 control-label']) !!}
+                        <div class="col-lg-6">
+                            {!! Form::text('cellphone', $value = null, ['class' => 'form-control', 'placeholder' => 'surname']) !!}
+                        </div>
+                    </div>
+                    
+
+                     <div class="form-group">
+                        {!! Form::label('dob', 'Date of Birth:', ['class' => 'col-lg-2 control-label']) !!}
+                        <div class="col-lg-6">
+                            {!! Form::date('dob', $value = null, ['class' => 'form-control', 'placeholder' => 'surname']) !!}
+                        </div>
+                    </div>
+
+
+                       <!--   <div class="form-group{{ $errors->has('surname') ? ' has-error' : '' }}">
                             <label for="surname" class="col-md-4 control-label">Surname</label>
 
                             <div class="col-md-6">
@@ -49,8 +68,8 @@
                                 @endif
                             </div>
                         </div>
-
-                        <div class="form-group{{ $errors->has('cellphone') ? ' has-error' : '' }}">
+ -->
+                        <!-- <div class="form-group{{ $errors->has('cellphone') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">Cellphone</label>
 
                             <div class="col-md-6">
@@ -62,12 +81,12 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
 
-                                 <div class="form-group{{ $errors->has('dob') ? ' has-error' : '' }}">
+                               <!--   <div class="form-group{{ $errors->has('dob') ? ' has-error' : '' }}">
                             <label for="dob" class="col-md-4 control-label">Date of Birth</label>
 
-                            <div class="col-md-6">
+                     <div class="col-md-6">
                                 <input id="dob" type="date" class="form-control" name="dob" value="{{ old('dob') }}" required>
 
                                 @if ($errors->has('dob'))
@@ -76,10 +95,16 @@
                                     </span>
                                 @endif
                             </div>
+                        </div> -->
+
+                        <div class="form-group">
+                        {!! Form::label('physicalAddress', 'Physical Address:', ['class' => 'col-lg-2 control-label']) !!}
+                        <div class="col-lg-6">
+                            {!! Form::text('physicalAddress', $value = null, ['class' => 'form-control', 'placeholder' => 'surname']) !!}
                         </div>
+                    </div>
 
-
-                                 <div class="form-group{{ $errors->has('physicalAddress') ? ' has-error' : '' }}">
+<!-- <div class="form-group{{ $errors->has('physicalAddress') ? ' has-error' : '' }}">
                             <label for="physicalAddress" class="col-md-4 control-label">Physical Address</label>
 
                             <div class="col-md-6">
@@ -91,9 +116,19 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group{{ $errors->has('staffId') ? ' has-error' : '' }}">
+
+               <div class="form-group">
+                        {!! Form::label('staffId', 'Staff Id:', ['class' => 'col-lg-2 control-label']) !!}
+                        <div class="col-lg-6">
+                            {!! Form::text('staffId', $value = null, ['class' => 'form-control', 'placeholder' => 'surname']) !!}
+                        </div>
+                    </div>
+
+
+
+                       <!--  <div class="form-group{{ $errors->has('staffId') ? ' has-error' : '' }}">
                             <label for="staffId" class="col-md-4 control-label">Staff Id</label>
 
                             <div class="col-md-6">
@@ -105,17 +140,13 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group{{ $errors->has('userRoleId') ? ' has-error' : '' }}">
-                            <label for="userRoleId" class="col-md-4 control-label">User Role</label>
+                             {!! Form::label('userRoleId', 'User Role:', ['class' => 'col-lg-2 control-label']) !!}
+                            <div class="col-lg-6">
 
-                            <div class="col-md-6">
-
-                                 {!! Form::select('userRoleId',$selectUserRoles,['class' => 'form-control input-sm','id' => 'userRoleId']) !!}
-                               
-                                <!-- <input id="userRoleId" type="text" name="userRoleId" value="{{ old('userRoleId') }}" required>
- -->
+                                 {!! Form::select('userRoleId',$selectUserRoles,['class' => 'form-control','id' => 'userRoleId']) !!}
                                 @if ($errors->has('userRoleId'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('userRoleId') }}</strong>
@@ -127,11 +158,11 @@
                        
 
                         <div class="form-group{{ $errors->has('regionId') ? ' has-error' : '' }}">
-                            <label for="regionId" class="col-md-4 control-label">Region</label>
+                          {!! Form::label('regionId', 'Region:', ['class' => 'col-lg-2 control-label']) !!}
 
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
 
-                                 {!! Form::select('regionId',$selectRegions,['class' => 'form-control input-sm','id' => 'regionId']) !!}
+                                 {!! Form::select('regionId',$selectRegions,['class' => 'form-control','id' => 'regionId']) !!}
                                 @if ($errors->has('regionId'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('regionId') }}</strong>
@@ -141,10 +172,10 @@
                         </div>
 
                          <div class="form-group{{ $errors->has('departmentId') ? ' has-error' : '' }}">
-                            <label for="departmentId" class="col-md-4 control-label">Department</label>
+                           {!! Form::label('departmentId', 'Department:', ['class' => 'col-lg-2 control-label']) !!}
 
-                            <div class="col-md-6">
-                                {!! Form::select('departmentId',$selectDepartments,['class' => 'form-control input-sm','id' => 'departmentId']) !!}
+                            <div class="col-lg-6">
+                                {!! Form::select('departmentId',$selectDepartments,['class' => 'form-control','id' => 'departmentId']) !!}
                                 @if ($errors->has('departmentId'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('departmentId') }}</strong>
@@ -154,10 +185,11 @@
                         </div>
 
                          <div class="form-group{{ $errors->has('positionId') ? ' has-error' : '' }}">
-                            <label for="positionId" class="col-md-4 control-label">Position</label>
 
-                            <div class="col-md-6">
-                                {!! Form::select('positionId',$selectPositions,['class' => 'form-control input-sm','id' => 'positionId']) !!}
+                             {!! Form::label('positionId', 'Position:', ['class' => 'col-lg-2 control-label']) !!}
+
+                            <div class="col-lg-6">
+                                {!! Form::select('positionId',$selectPositions,['class' => 'form-control','id' => 'positionId']) !!}
                                 @if ($errors->has('positionId'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('positionId') }}</strong>
@@ -168,10 +200,10 @@
 
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                           {!! Form::label('email', 'Email:', ['class' => 'col-lg-2 control-label']) !!}
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                            <div class="col-lg-6">
+                               {!! Form::email('email',NUll,['class' => 'form-control','id' => 'email']) !!}
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -182,9 +214,9 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            {!! Form::label('password', 'Password:', ['class' => 'col-lg-2 control-label']) !!}
 
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
@@ -196,9 +228,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                              {!! Form::label('password-confirm', 'Confirm Password:', ['class' => 'col-lg-2 control-label']) !!}
 
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>

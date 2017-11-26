@@ -10,14 +10,14 @@
 
     <title>IMS ADMIN</title>
 
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
+    <link rel="stylesheet"  href="{{asset('/css/bootstrap.min.css')}}">
+     <link rel="stylesheet" href="{{asset('css/jquery.dataTables.min.css')}}">
+
     <link href="{{asset('css/metisMenu.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/sb-admin-2.css')}}" rel="stylesheet">
     <link href="{{asset('css/morris.css')}}" rel="stylesheet">
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{asset('css/jquery.dataTables.min.css')}}">
-    {{--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>--}}
-    {{--<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>--}}
 
 </head>
 <body>
@@ -324,6 +324,15 @@
         @include('regions.add')
 
     </div>
+
+     <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
+    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/axios.min.js')}}"></script>
+
+    <!--  <script src="{{asset('js/jquery.min.js')}}"></script> -->
+    <script src="{{asset('js/metisMenu.min.js')}}"></script>
+    <script src="{{asset('js/sb-admin-2.js')}}"></script>
 
 </body>
 
