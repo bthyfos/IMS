@@ -1,12 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
 
-/*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
 html {
   font-family: sans-serif;
@@ -1402,8 +1395,8 @@ html {
 }
 
 body {
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  font-size: 10px;
   line-height: 1.6;
   color: #636b6f;
   background-color: #f5f8fa;
@@ -3300,7 +3293,7 @@ label {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
-  font-weight: bold;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
 input[type="search"] {
@@ -7116,7 +7109,7 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-default > .panel-heading {
-  color: #333333;
+  color: #fff;
   background-color: #fff;
   border-color: #d3e0e9;
 }
