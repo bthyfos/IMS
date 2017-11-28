@@ -11,7 +11,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     </div>
-                    <div>
+                    <div style="margin-top:20px; padding:0 10px  0 10px;">
                         {!! Form::open(['url' => 'update', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"passwordChangeForm" ]) !!}
                         {!! Form::hidden('email',\Auth::user()->email) !!}
                         {{ csrf_field() }}
@@ -21,14 +21,16 @@
                         <div class="form-group">
                             {!! Form::label('Password', 'Password', array('class' => 'col-md-3 control-label')) !!}
                             <div class="col-md-6">
-                                {!! Form::text('password',NULL,['class' => 'form-control input-sm','id' => 'password']) !!}
+                                {{--{!! Form::password('password',NULL,['class' => 'form-control input-lg','id' => 'password']) !!}--}}
+                                <input type="password" id="password" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('Confirm Password', 'Confirm Password', array('class' => 'col-md-3 control-label validate[required]')) !!}
                             <div class="col-md-6">
-                                {!! Form::text('confirm_password',NULL,['class' => 'form-control input-sm','id' => 'confirm_password']) !!}
+                                <input type="password" id="confirm_password" class="form-control">
+                                {{--{!! Form::password('confirm_password',NULL,['class' => 'form-control input-lg','id' => 'confirm_password']) !!}--}}
                                 @if ($errors->has('confirm_password')) <p class="help-block red">*{{ $errors->first('confirm_password') }}</p> @endif
                             </div>
                         </div>
@@ -38,17 +40,11 @@
                                 <button type="submit" type="button" class="btn btn-sm">Update Password</button>
                             </div>
                         </div>
+                        {!! Form::close() !!}
                     </div>
-                    {!! Form::close() !!}
-                    </div>
-                    <div class="panel-body">
-                        <div class="flot-chart">
-                            <div class="flot-chart-content" id="flot-line-chart">
 
-                            </div>
-
-                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
