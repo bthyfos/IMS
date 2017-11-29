@@ -12,26 +12,24 @@
                     <div class="panel-heading">
                     </div>
                     <div style="margin-top:20px; padding:0 10px  0 10px;">
-                        {!! Form::open(['url' => 'update', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"passwordChangeForm" ]) !!}
+                        {!! Form::open(['url' => 'update', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"passwordChangeForm" ,'v-on:submit'=>"changePasswordForm"]) !!}
                         {!! Form::hidden('email',\Auth::user()->email) !!}
                         {{ csrf_field() }}
 
 
-
-                        <div class="form-group">
+                        <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongPassword }">
                             {!! Form::label('Password', 'Password', array('class' => 'col-md-3 control-label')) !!}
                             <div class="col-md-6">
-                                {{--{!! Form::password('password',NULL,['class' => 'form-control input-lg','id' => 'password']) !!}--}}
-                                <input type="password" id="password" class="form-control">
+                                <input type="password" id="password" class="form-control" v-model="password">
+                                <span class="help-block"  v-cloak v-if="submition && wrongPassword">@{{pwdFB}}</span>
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" v-bind:class="{ 'has-error': submition && wrongConfirmPassword }">
                             {!! Form::label('Confirm Password', 'Confirm Password', array('class' => 'col-md-3 control-label validate[required]')) !!}
                             <div class="col-md-6">
-                                <input type="password" id="confirm_password" class="form-control">
-                                {{--{!! Form::password('confirm_password',NULL,['class' => 'form-control input-lg','id' => 'confirm_password']) !!}--}}
-                                @if ($errors->has('confirm_password')) <p class="help-block red">*{{ $errors->first('confirm_password') }}</p> @endif
+                                <input type="password" id="confirm_password" class="form-control" v-model="confirm_password">
+                                <span class="help-block"  v-cloak v-if="submition && wrongConfirmPassword">@{{confirmPwdFB}}</span>
                             </div>
                         </div>
 
@@ -48,5 +46,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @stop

@@ -19,6 +19,7 @@
     <link href="{{asset('css/morris.css')}}" rel="stylesheet">
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
+
 </head>
 <body>
 
@@ -324,15 +325,17 @@
         @include('regions.add')
 
     </div>
+    <script src="{{asset('js/vue.js')}}"></script>
 
      <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
 
-    <!--  <script src="{{asset('js/jquery.min.js')}}"></script> -->
+    <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/metisMenu.min.js')}}"></script>
     <script src="{{asset('js/sb-admin-2.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
 
 </body>
 

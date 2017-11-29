@@ -9,9 +9,11 @@ const ERRORS = {
     minLength: 'The length should be minimum 8 characters.',
     invalidEmail: 'This is not a valid email address.',
     recipeintNameField:'Fill in the Recipeint name',
+    pwdField:'Fill in the Password',
+    confirmPwdField:'Fill in the Password',
     productNameField:'Fill in the Product Name',
     quantityField:'Fill in the Product Quantity'
-}
+};
 
 if (document.querySelector('#addProductsForm')) {
    new Vue({
@@ -154,5 +156,42 @@ new Vue({
 });
 }
 
+if (document.querySelector('#passwordChangeForm')) {
+    new Vue({
+        el: "#passwordChangeForm",
+        data: {
+            password: '',
+            pwdFB: '',
+            confirm_password: '',
+            confirmPwdFB: '',
+            submition: false
+        },
+        computed: {
+            wrongPassword: function () {
+                if (this.password === '') {
+                    this.pwdFB = ERRORS.pwdField;
+                    return true
+                }
+                return false
+            },
+            wrongConfirmPassword: function () {
+                if (this.confirm_password === '') {
+                    this.confirmPwdFB = ERRORS.confirmPwdField;
+                    return true
+                }
 
+                return false
+            }
+        },
+        methods: {
+            passwordChangeForm: function (event) {
+                this.submition = true;
+                if (this.wrongPassword || this.wrongConfirmPassword)
+                    event.preventDefault()
+            }
+        }
+
+
+    });
+}
 
