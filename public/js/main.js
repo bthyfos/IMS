@@ -31,42 +31,42 @@ if (document.querySelector('#addProductsForm')) {
         priceFB: '',
         initialQty: '',
         unitFB: '',
-        submition: false,
+        submition: false
     },
     computed: {
-        wrongName() {
+        wrongName:function() {
             if(this.name === '') {
-            this.nameFB = ERRORS.nameField
+            this.nameFB = ERRORS.nameField;
             return true
             }
             return false
         },
-        wrongTypeId() {  if(this.productTypeId === '') {
-            this.type_idFB = ERRORS.typeIdField
+        wrongTypeId:function() {  if(this.productTypeId === '') {
+            this.type_idFB = ERRORS.typeIdField;
             return true
         }
             return false },
-        wrongSpecification() {  if(this.specification === '') {
-            this.specificationFB = ERRORS.specificationField
+        wrongSpecification:function() {  if(this.specification === '') {
+            this.specificationFB = ERRORS.specificationField;
             return true
         }
             return false },
-        wrongPrice() { if(this.price === '') {
-            this.priceFB = ERRORS.priceField
+        wrongPrice:function() { if(this.price === '') {
+            this.priceFB = ERRORS.priceField;
             return true
         }
             return false },
-        wrongUnit() {  if(this.initialQty === '') {
-            this.unitFB = ERRORS.unitField
+        wrongUnit:function() {  if(this.initialQty === '') {
+            this.unitFB = ERRORS.unitField;
             return true
         }
-            return false },
+            return false }
     },
     methods: {
-        validateForm(event) {
-            this.submition = true
+        validateForm:function(event) {
+            this.submition = true;
             if(this.wrongName || this.wrongTypeId || this.wrongSpecification ||  this.wrongPrice || this.wrongUnit)
-                event.preventDefault()
+                event.preventDefault();
             else {
                     axios.post('/createProduct')
                         .then(function (response) {
@@ -166,31 +166,31 @@ if (document.querySelector('#userPreferenceForm')) {
         passwordFB: '',
         passwordVerificationFB: '',
         confirm_password: '',
-        submition: false,
+        submition: false
     },
     computed: {
-        wrongPassword() {  if(this.password === '') {
-            this.passwordFB = ERRORS.pwdField
+        wrongPassword:function() {  if(this.password === '') {
+            this.passwordFB = ERRORS.pwdField;
             return true
         }
             return false },
-        wrongPwdVerification() {  if(this.confirm_password === '') {
-            this.passwordVerificationFB = ERRORS.confirmPasswordField
+        wrongPwdVerification:function() {  if(this.confirm_password === '') {
+            this.passwordVerificationFB = ERRORS.confirmPasswordField;
             return true
         }
             return false },
 
-            passwordMisMatch() {  if(this.confirm_password !== this.password) {
-            this.passwordMisMatchFB = ERRORS.passwordMisMatchField
+            passwordMisMatch:function() {  if(this.confirm_password !== this.password) {
+            this.passwordMisMatchFB = ERRORS.passwordMisMatchField;
             return true
         }
-            return false },
+            return false }
     },
     methods: {
-        preferenceForm(event) {
-            this.submition = true
+        preferenceForm:function(event) {
+            this.submition = true;
             if(this.wrongPassword || this.wrongPwdVerification || this.passwordMisMatch)
-                event.preventDefault()
+                event.preventDefault();
             else {
                     axios.post('/preference')
                         .then(function (response) {

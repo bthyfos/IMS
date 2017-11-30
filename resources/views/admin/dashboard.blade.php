@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
     <link rel="stylesheet"  href="{{asset('/css/bootstrap.min.css')}}">
      <link rel="stylesheet" href="{{asset('css/jquery.dataTables.min.css')}}">
+    <link href="{{asset('css/morris.css')}}" rel="stylesheet">
 
     <link href="{{asset('css/metisMenu.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/sb-admin-2.css')}}" rel="stylesheet">
-    <link href="{{asset('css/morris.css')}}" rel="stylesheet">
+
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
 
@@ -313,28 +314,30 @@
       
 
         @yield('content')
-        @stack('scripts')
+
         @include('adminSide.departments.add')
         @include('regions.add')
 
     </div>
-   
-
-     <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
+    <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
 
-      <script src="{{asset('js/jquery.min.js')}}"></script>
-        <script src="{{asset('js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('js/raphael.min.js')}}"></script>
-        <script src="{{asset('js/morris.min.js')}}"></script>
+
+    {{--<script src="{{asset('js/jquery.min.js')}}"></script>--}}
+    @stack('scripts')
+    <script src="{{asset('js/sb-admin-2.js')}}"></script>
+    <script src="{{asset('js/raphael.min.js')}}"></script>
+    <script src="{{asset('js/morris.min.js')}}"></script>
     <script src="{{asset('js/morris-data.js')}}"></script>
     <script src="{{asset('js/sb-admin-2.js')}}"></script>
     <script src="{{asset('js/html5shiv.js')}}"></script>
     <script src="{{asset('js/respond.min.js')}}"></script>
     <script src="{{asset('js/metisMenu.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
+
+
 
 </body>
 

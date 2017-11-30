@@ -69,5 +69,5 @@ Route::group(['middleware'=>'auth'], function()
 
 
 });
-Route::post('update','AdminController@changePassword');
+
 
