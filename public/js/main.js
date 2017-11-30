@@ -12,9 +12,10 @@ const ERRORS = {
     priceField:'Fill in the product price',
     unitField:'Fill in the product unit',
     recipeintNameField:'Fill in the Recipeint name',
+    confirmPwdField:'Fill in the Password',
     productNameField:'Fill in the Product Name',
     quantityField:'Fill in the Product Quantity'
-}
+};
 
 if (document.querySelector('#addProductsForm')) {
    new Vue({
@@ -215,5 +216,42 @@ if (document.querySelector('#userPreferenceForm')) {
 }
 
 
+if (document.querySelector('#passwordChangeForm')) {
+    new Vue({
+        el: "#passwordChangeForm",
+        data: {
+            password: '',
+            pwdFB: '',
+            confirm_password: '',
+            confirmPwdFB: '',
+            submition: false
+        },
+        computed: {
+            wrongPassword: function () {
+                if (this.password === '') {
+                    this.pwdFB = ERRORS.pwdField;
+                    return true
+                }
+                return false
+            },
+            wrongConfirmPassword: function () {
+                if (this.confirm_password === '') {
+                    this.confirmPwdFB = ERRORS.confirmPwdField;
+                    return true
+                }
 
+                return false
+            }
+        },
+        methods: {
+            passwordChangeForm: function (event) {
+                this.submition = true;
+                if (this.wrongPassword || this.wrongConfirmPassword)
+                    event.preventDefault()
+            }
+        }
+
+
+    });
+}
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Region;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -18,6 +18,19 @@ class AdminController extends Controller
     public function registration()
     {
     	return view('admin.register');
+    }
+
+    public function  adminDetails()
+    {
+
+    }
+    public function  changePassword(Request $request)
+    {
+
+        $adminDetails            =User::where('email',$request->email)->first();
+        $adminDetails->update(['password'=>bcrypt($request->password)]);
+
+        return 'okay';
     }
 
 }

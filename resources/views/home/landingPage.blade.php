@@ -74,71 +74,72 @@
       <script src="{{asset('js/vue.js')}}"></script>
   </head>
   <body>
-   <div  class="container">
-    <div class ="row">
-
   <nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">Plan International Org</a>
-  </div>
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Plan International Org</a>
+      </div>
 
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-    <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav">
 
-      <li class="active"><a   href="{{'/home'}}">Home</a></li>
-      <li class="dropdown">
-        <a  href="{{'products'}}" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a  href="{{'products'}}">Add To Stock</a></li>
+              <li class="active"><a   href="{{'/home'}}">Home</a></li>
+              <li class="dropdown">
+                  <a  href="{{'products'}}" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a  href="{{'products'}}">Add To Stock</a></li>
 
-          <li><a  href="{{'productsList'}}">Stock List</a></li>
-          <li><a href="{{'outOfStock'}}">Out Of Stock</a></li>
-          <li><a  href="{{'returns'}}">Returns</a></li>
-          <li><a   href="#">Pending Orders</a></li>
-        </ul>
-      </li>
-       <li><a  href="{{'handover'}}">Hangovers</a></li>
-    </ul>
-       
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                <span class="caret"></span>
-                                </a>
+                      <li><a  href="{{'productsList'}}">Stock List</a></li>
+                      <li><a href="{{'outOfStock'}}">Out Of Stock</a></li>
+                      <li><a  href="{{'returns'}}">Returns</a></li>
+                      <li><a   href="#">Pending Orders</a></li>
+                  </ul>
+              </li>
+              <li><a  href="{{'handover'}}">Hangovers</a></li>
+          </ul>
 
-                                <ul class="dropdown-menu" role="menu">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                      <span class="caret"></span>
+                  </a>
 
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
+                  <ul class="dropdown-menu" role="menu">
+
+                      <li>
+                          <a href="{{ route('logout') }}"
+                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
+                              Logout
+                          </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                     <li><a href="{{'settings'}}">Settings</a></li>
-                                </ul>
-                            </li>
-      <!-- <li class="dropdown">
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              {{ csrf_field() }}
+                          </form>
+                      </li>
+                      <li><a href="{{'settings'}}">Settings</a></li>
+                  </ul>
+              </li>
+          <!-- <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="">Log out</a></li>
           <li><a href="{{'settings'}}">Settings</a></li>
         </ul>
       </li> -->
-    </ul>
-  </div>
-</nav>
+          </ul>
+      </div>
+  </nav>
+   <div  class="container">
+    <div class ="row">
+
+
 
     </div>
    </div>
@@ -150,10 +151,17 @@
    </div>
 
    
+<<<<<<< HEAD
     <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
+=======
+   <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
+   <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+   <script src="{{asset('js/bootstrap.min.js')}}"></script>
+   <script src="{{asset('js/axios.min.js')}}"></script>
+>>>>>>> b9aa7c7460a4b303e4c58af1a8a20ba81396ad30
 
 
     <script>
@@ -170,7 +178,7 @@
    @stack('scripts')
 
 
-   <script src="js/main.js"></script>
+   <script src="{{asset('js/main.js')}}"></script>
 
   </body>
 </html>

@@ -44,17 +44,17 @@ Route::post('preference', 'SettingController@preference');
 //Admin Routes
 Route::group(['middleware'=>'auth'], function()
 {
-	//Route::get('/admin','AdminController@index');
-	Route::get('/', 'HomeController@index');
+    Route::get('/', 'HomeController@index');
 	Route::get('dashboard','AdminController@index');
 	Route::get('systemUsers','AdminController@systemUsers');
 	Route::get('registration','AdminController@registration');
+
+    Route::view('adminSettings','adminSide.settings.index');
    //Regions
     Route::get('regions','RegionController@regions');
     Route::post('addRegion','RegionController@addRegion');
     Route::get('getRegions','RegionController@getRegions')->name('getRegions');
     //ProductsInfo
-   // Route::get('stock','AdminController@stock');
     Route::view('stock','AdminSide.products.list');
     Route::view('inavailableStock','AdminSide.products.outOfStockList');
     Route::get('productsInStock','ProductsController@getProducts')->name('productsInStock');
@@ -66,7 +66,8 @@ Route::group(['middleware'=>'auth'], function()
 
 
 
-});
 
-//Route::get('/admin/',['as' => 'regional.admin','uses' => 'AdminController@index']);
-//Route::view('/master' ,'master')->name('master');
+
+});
+Route::post('update','AdminController@changePassword');
+
