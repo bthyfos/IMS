@@ -24,7 +24,7 @@ Route::post('/site/login',
 	
 Route::get('admin',  function ()
 {
-	return view('admin.index');
+	return view('master');
 });
 //Users
 Route::get('settings' , 'UserController@index')->name('settings');

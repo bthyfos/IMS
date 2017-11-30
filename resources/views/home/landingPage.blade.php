@@ -151,17 +151,17 @@
    </div>
 
    
-<<<<<<< HEAD
+
     <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
-=======
+
    <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
    <script src="{{asset('js/bootstrap.min.js')}}"></script>
    <script src="{{asset('js/axios.min.js')}}"></script>
->>>>>>> b9aa7c7460a4b303e4c58af1a8a20ba81396ad30
+
 
 
     <script>
@@ -178,7 +178,8 @@
    @stack('scripts')
 
 
-   <script src="{{asset('js/main.js')}}"></script>
+  <script src="{{asset('js/main.js')}}"></script>
+  <script>Vue.use(VeeValidate);</script>
 
   </body>
 </html>

@@ -20,6 +20,8 @@
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
 
+ <script src="{{asset('js/vue.js')}}"></script>
+
 </head>
 <body>
 
@@ -308,16 +310,7 @@
                 </div>
             </div>
         </nav>
-        <script src="{{asset('js/jquery.min.js')}}"></script>
-        <script src="{{asset('js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('js/metisMenu.min.js')}}"></script>
-        <script src="{{asset('js/raphael.min.js')}}"></script>
-        <script src="{{asset('js/morris.min.js')}}"></script>
-        <script src="{{asset('js/morris-data.js')}}"></script>
-        <script src="{{asset('js/sb-admin-2.js')}}"></script>
-        <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
-        <script src="{{asset('js/html5shiv.js')}}"></script>
-        <script src="{{asset('js/respond.min.js')}}"></script>
+      
 
         @yield('content')
         @stack('scripts')
@@ -325,16 +318,22 @@
         @include('regions.add')
 
     </div>
-    <script src="{{asset('js/vue.js')}}"></script>
+   
 
      <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
 
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-    <script src="{{asset('js/metisMenu.min.js')}}"></script>
+      <script src="{{asset('js/jquery.min.js')}}"></script>
+        <script src="{{asset('js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('js/raphael.min.js')}}"></script>
+        <script src="{{asset('js/morris.min.js')}}"></script>
+    <script src="{{asset('js/morris-data.js')}}"></script>
     <script src="{{asset('js/sb-admin-2.js')}}"></script>
+    <script src="{{asset('js/html5shiv.js')}}"></script>
+    <script src="{{asset('js/respond.min.js')}}"></script>
+    <script src="{{asset('js/metisMenu.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
 
 </body>

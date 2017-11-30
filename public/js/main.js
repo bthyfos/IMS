@@ -1,8 +1,8 @@
 const ERRORS = {
 
     pwdField:'Fill in the password',
-    minLength: 'The length should be minimum 8 characters.',
-    passwordMisMatch: 'This is not a valid email address.',
+    minLengthField: 'The length should be minimum 8 characters.',
+    passwordMisMatchField: 'Provided passwords do not match',
     confirmPasswordField:'Fill in the confirm password',
     nameField:'Fill in the product name',
     typeIdField:'Fill in the product type',
@@ -179,14 +179,20 @@ if (document.querySelector('#userPreferenceForm')) {
             return true
         }
             return false },
+
+            passwordMisMatch() {  if(this.confirm_password !== this.password) {
+            this.passwordMisMatchFB = ERRORS.passwordMisMatchField
+            return true
+        }
+            return false },
     },
     methods: {
         preferenceForm(event) {
             this.submition = true
-            if(this.wrongPassword || this.wrongPwdVerification)
+            if(this.wrongPassword || this.wrongPwdVerification || this.passwordMisMatch)
                 event.preventDefault()
             else {
-                    axios.post('/createProduct')
+                    axios.post('/preference')
                         .then(function (response) {
                         })
                         .catch(function (error) {
@@ -216,42 +222,5 @@ if (document.querySelector('#userPreferenceForm')) {
 }
 
 
-if (document.querySelector('#passwordChangeForm')) {
-    new Vue({
-        el: "#passwordChangeForm",
-        data: {
-            password: '',
-            pwdFB: '',
-            confirm_password: '',
-            confirmPwdFB: '',
-            submition: false
-        },
-        computed: {
-            wrongPassword: function () {
-                if (this.password === '') {
-                    this.pwdFB = ERRORS.pwdField;
-                    return true
-                }
-                return false
-            },
-            wrongConfirmPassword: function () {
-                if (this.confirm_password === '') {
-                    this.confirmPwdFB = ERRORS.confirmPwdField;
-                    return true
-                }
 
-                return false
-            }
-        },
-        methods: {
-            passwordChangeForm: function (event) {
-                this.submition = true;
-                if (this.wrongPassword || this.wrongConfirmPassword)
-                    event.preventDefault()
-            }
-        }
-
-
-    });
-}
 

@@ -22,6 +22,12 @@
           </div>
       </div>
 
+       <div class="form-group" v-bind:class="{ 'has-error': submition && passwordMisMatch }">
+                            <div class="col-md-3"></div>
+                             <div class="col-md-6"><span class="help-block"  v-cloak v-if="submition && passwordMisMatch">@{{passwordMisMatchFB}}</span>
+                             </div>
+                             </div>
+
       <div class="form-group" >
           <div class="col-md-offset-3 col-md-10">
               <button type="submit" type="button" class="btn btn-primary">
