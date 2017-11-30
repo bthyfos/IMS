@@ -1,36 +1,32 @@
-{!! Form::open(['url' => '', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addProductsForm" ,'v-on:submit'=>"validateForm" ]) !!}
+{!! Form::model($userDetails,['url' => 'preference', 'method' => 'post', 'class' => 'form-horizontal','v-on:submit'=>"preferenceForm" ,'id'=>'userPreferenceForm' ]) !!}
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+  
+      <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongPassword }">
 
-      <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongName }">
-          {!! Form::label('Name', 'Name', array('class' => 'col-xs-3 control-label')) !!}
+          {!! Form::label('New Password', 'New Password', array('class' => 'col-xs-3 control-label')) !!}
           <div class="col-xs-8" >
-              {!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name','v-model'=>'name']) !!}
-              <span class="help-block"  v-cloak v-if="submition && wrongName">@{{nameFB}}</span>
+             <input type="password" name="password"  class="form-control input-sm" id="password"  v-model='password'>
+              <!-- {!! Form::password('password',NULL,['class' => 'form-control input-sm','id' => 'name','v-model'=>'name']) !!} -->
+              <span class="help-block"  v-cloak v-if="submition && wrongPassword">@{{passwordFB}}</span>
           </div>
       </div>
 
-      <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongSpecification }">
-          {!! Form::label('Specification', 'Specification', array('class' => 'col-xs-3 control-label')) !!}
-          <div class="col-xs-8">
-              {!! Form::textarea('specification',NULL,['class' => 'form-control input-sm','id' => 'specification' , 'placeholder'=>'e.g describe the product here...' ,'v-model'=>'specification']) !!}
-              <span class="help-block"  v-cloak v-if="submition && wrongSpecification">@{{specificationFB }}</span>
 
-          </div>
-      </div>
-
-      <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongUnit }">
-          {!! Form::label('Unit', 'Unit', array('class' => 'col-xs-3 control-label')) !!}
+      <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongPwdVerification }">
+          {!! Form::label('Confirm Password', 'Confirm Password', array('class' => 'col-xs-3 control-label')) !!}
           <div class="col-xs-8">
-              {!! Form::text('unit',NULL,['class' => 'form-control input-sm','id' => 'unit','v-model'=>'unit']) !!}
-              <span class="help-block" v-cloak v-if="submition && wrongUnit">@{{unitFB }}</span>
+             <input type="password" name="confirm_password"  class="form-control input-sm" id="confirm_password" v-model='confirm_password'>
+              <!-- {!! Form::text('specification',NULL,['class' => 'form-control input-sm','id' => 'specification' , 'placeholder'=>'e.g describe the product here...' ,'v-model'=>'specification']) !!} -->
+              <span class="help-block"  v-cloak v-if="submition && wrongPwdVerification">@{{passwordVerificationFB}}</span>
+
           </div>
       </div>
 
       <div class="form-group" >
           <div class="col-md-offset-3 col-md-10">
               <button type="submit" type="button" class="btn btn-primary">
-                  Add To Stock
+                  Reset Password
               </button>
           </div>
       </div>
-      {!! Form::close() !!}
+{!! Form::close() !!}

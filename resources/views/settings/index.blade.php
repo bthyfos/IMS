@@ -14,21 +14,20 @@
 			<!-- tabs -->
 			<div class="tabbable tabs-left">
 				<ul class="nav nav-tabs">
-					<li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
-					<li><a href="#about" data-toggle="tab">Preferences</a></li>
+					<li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
+					<li><a href="#preferences" data-toggle="tab">Preferences</a></li>
 					<li><a href="#services" data-toggle="tab">Services</a></li>
 					<li><a href="#contact" data-toggle="tab">Contact</a></li>
 				</ul>
 				<div class="tab-content">
-					<div class="tab-pane active" id="home">                
+					<div class="tab-pane active" id="profile">                
 						<div class="col-xs-8">
 							@include('settings.profile')
 							           
 						</div>
 					</div> 
-					<div class="tab-pane" id="about"> 
+					<div class="tab-pane" id="preferences"> 
 						<div class="col-xs-8">
-							<h1>About Tab</h1>
 							@include('settings.preferences')                 
 						</div>
 					</div>

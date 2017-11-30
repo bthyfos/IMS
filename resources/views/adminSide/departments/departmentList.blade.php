@@ -3,7 +3,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <div>
+                <div style="margin-top: 15px;">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDepartmentModal">
                         NEW
                     </button>
@@ -17,7 +17,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     </div>
-                    <div>
+                     <div style="padding:12px 12px 12px 12px;">
                         <table class="table" id="departmentsTable">
                             <thead>
                             <tr>

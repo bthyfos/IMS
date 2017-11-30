@@ -39,22 +39,6 @@
           </div>
       </div>
 
-      <!-- <div class="form-group "  v-bind:class="{ 'has-error': submition && wrongOrderedDate }">
-          {!! Form::label('Ordered Date', 'Ordered Date', array('class' => 'col-md-3 control-label')) !!}
-          <div class="col-md-6">
-              {!! Form::text('ordered_date',NULL,['class' => 'form-control input-sm','id' => 'ordered_date' ,'placeholder'=>'e.g 2017-13-10' ,'v-model'=>'ordered_date']) !!}
-              <span class="help-block"  v-cloak v-if="submition && wrongOrderedDate">@{{ordered_dateFB }}</span>
-          </div>
-      </div> -->
-
-      <!-- <div class="form-group "  v-bind:class="{ 'has-error': submition && wrongReceivedDate }">
-          {!! Form::label('Received Date', 'Received Date', array('class' => 'col-md-3 control-label')) !!}
-          <div class="col-md-6">
-              {!! Form::text('received_date',NULL,['class' => 'form-control input-sm','id' => 'received_date' ,'placeholder'=>'e.g 2017-31-10' ,'v-model'=>'received_date']) !!}
-              <span class="help-block" v-cloak v-if="submition && wrongReceivedDate">@{{received_dateFB }}</span>
-          </div>
-      </div>
- -->
       <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongPrice }">
           {!! Form::label('Price', 'Price', array('class' => 'col-md-3 control-label')) !!}
           <div class="col-md-6">

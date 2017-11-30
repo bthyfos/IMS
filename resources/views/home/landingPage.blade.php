@@ -151,13 +151,8 @@
 
    
     <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
-   <!--  <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script> -->
-
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
-   <!--  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> -->
-
-  <script src="{{asset('js/bootstrap.min.js')}}"></script>
-   <!--  <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
 
 

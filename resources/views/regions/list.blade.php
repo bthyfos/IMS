@@ -3,7 +3,8 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <div>
+
+            <div style="margin-top:20px;">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addRegionModal">
                  NEW
                 </button>
@@ -16,8 +17,8 @@
 <div class="panel panel-default">
 <div class="panel-heading">
 </div>
-    <div>
-    <table class="table" id="regionsTable">
+    <div style="padding:12px 12px 12px 12px;">
+    <table class="table" id="regionsTable" >
         <thead>
         <tr>
             <th>Region Id</th>

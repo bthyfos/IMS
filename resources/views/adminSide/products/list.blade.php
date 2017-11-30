@@ -16,7 +16,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     </div>
-                    <div>
+                      <div style="padding:12px 12px 12px 12px;">
                         <table class="table" id="stockTable">
                             <thead>
                             <tr>

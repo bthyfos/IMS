@@ -35,7 +35,11 @@ Route::get('productList','ProductsController@getProducts')->name('productList');
 Route::get('productsList', 'ProductsController@index');
 Route::post('createProduct','ProductsController@create');
 
-//Route::get('/home', 'HomeController@index')->name('home');
+//Preferences
+//Route::post('preference', 'SettingsController@preference');
+Route::post('preference', 'SettingController@preference');
+
+
 
 //Admin Routes
 Route::group(['middleware'=>'auth'], function()
