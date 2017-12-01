@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'IMS') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -17,7 +17,23 @@
     <div id="app">
         @yield('content')
     </div>
-
-    <script src="{{ asset('js/app.js') }}"></script>
+    
+  <!--   <script src="{{ asset('js/app.js') }}"></script> -->
+    <script src="{{ asset('js/vue.js') }}"></script>
+    
+    <script> 
+      const vm = new Vue({
+        el:'#app',
+        data:{
+            name:'Logging..'
+        },
+        methods:{
+            logIn: function()
+            {
+               alert("was clicked");
+            }
+        }
+       });
+    </script>
 </body>
 </html>
