@@ -19,12 +19,6 @@ body {
 
 }
 
-#loginCard 
-{
-  margin:-50px 1000px 100px 75px;
-  min-height: 100%;
-}
-
 article,
 aside,
 details,
@@ -8402,18 +8396,21 @@ html {
 }
 
 .divider{
-  margin: 10px 0px 15px 0px; 
+  margin: 10px 0 15px 0;
   min-height: 10px;
+}
+#loginCard {
+  margin:auto;
 }
 
 .card {
-  width: 500px;
-  min-height: 100px;
+  max-width: 100%;
+  min-height: 100%;
   padding: 20px;
   border-radius: 3px;
-  background-color: white;
-  -webkit-    box-shadow: 1px 1px 30px 5px rgba(0, 0, 0, 0.2);
-              box-shadow: 1px 1px 30px 5px rgba(0, 0, 0, 0.2);
+  background-color: #F3F9F6;
+  -webkit-box-shadow: 1px 1px 30px 5px rgba(0, 0, 0, 0.2);
+      box-shadow: 1px 1px 30px 5px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
 }

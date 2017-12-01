@@ -25,12 +25,22 @@
       const vm = new Vue({
         el:'#app',
         data:{
-            name:'Logging..'
+            hidden:false
         },
         methods:{
             logIn: function()
             {
-               alert("was clicked");
+                this.hidden = true;
+            },
+            hide:function()
+            {
+                this.addClass('hidden');
+                return true;
+            },
+            show:function()
+            {
+                this.removeClass('hidden');
+                return true;
             }
         }
        });

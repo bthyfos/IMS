@@ -57,7 +57,8 @@
                         <div class="form-group" >
                             <div class="col-md-8 col-md-offset-4">
                                 <button  v-on:click="logIn" type="submit" class="btn btn-primary">
-                               Login
+                                    <span v-bind:class="{active:hidden}">Login</span>
+                                    <span v-bind:class="{active:isActive}">Logging..</span>
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
