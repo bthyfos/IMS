@@ -13,21 +13,21 @@
                     </div>
 
                     <div class="panel-body">
-                        <form>
+                        <form id="chartsForm">
                             <div>
-                                <label class="form-check-label">
+                                <label class="form-check-label" id="pie" v-on:click="onCheck">
                                     <input type="checkbox" class="form-check-input">
                                     Pie Chart
                                 </label>
                             </div>
                             <div>
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input">
+                                    <input type="checkbox"  id ="bar" v-on:click="onCheck" class="form-check-input">
                                     Bar Graph
                                 </label>
                             </div>
                             <div>
-                                <label class="form-check-label">
+                                <label class="form-check-label"  id="donut"  v-on:click="onCheck">
                                     <input type="checkbox" class="form-check-input">
                                   Donut
                                 </label>
@@ -36,6 +36,7 @@
                         </form>
                         <div class="flot-chart">
                             <div class="flot-chart-content" id="flot-line-chart">
+
                                 {!! $chart->html() !!}
                             </div>
                         </div>
@@ -62,6 +63,24 @@
 
         </div>
     </div>
+    <script>
+        const vm =new Vue({
+            el:'#chartsForm',
+            data:{
+                checkedNames:[]
+            },
+            methods:{
+                onCheck:function()
+                {
+                    alert(document.body.getAttribute('id'));
+                }
+            }
+
+        });
+    </script>
     {!! Charts::scripts() !!}
     {!! $chart->script()  !!}
 @stop
+@section('footer')
+
+    @endsection
