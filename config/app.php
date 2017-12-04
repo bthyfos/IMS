@@ -165,6 +165,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
          Collective\Html\HtmlServiceProvider::class,
          Yajra\DataTables\DataTablesServiceProvider::class,
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -180,6 +181,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
     ],
+
+
 
     /*
     |--------------------------------------------------------------------------
@@ -231,6 +234,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         'Input' => Illuminate\Support\Facades\Input::class,
+        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
 
 
     ],
