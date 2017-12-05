@@ -44,12 +44,12 @@ class ProductsController extends Controller
 			$products->save();
 
 
-			$activities     = new activities();
+			$activities               = new activities();
 			$activities->activityType =$products->id;
-			$activities->createdBy =$products->userId;
+			$activities->createdBy    =$products->userId;
 			$activities->save();
 
-			 $notification = array(
+			 $notification  = array(
             'message'=>'A new product was successfully added',
             'alert-type'=>'success'
           );
