@@ -22,6 +22,11 @@ class RegionController extends Controller
         $regionObj->name   = ucfirst($request->region);
         $regionObj->save();
 
-        return "saved";
+        $notification = array(
+            'message'=>'A new region successfully added',
+            'alert-type'=>'success'
+          );
+
+        return back()->with($notification);
     }
 }

@@ -55,5 +55,8 @@ class RegisterController extends Controller
             'dob' => $data['dob'],
             'password' => bcrypt($data['password']),
         ]);
+
+
+
     }
 }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
     <link rel="stylesheet"  href="{{asset('/css/bootstrap.min.css')}}">
      <link rel="stylesheet" href="{{asset('css/jquery.dataTables.min.css')}}">
+         <link href="{{asset('css/toastr.min.css')}}" rel="stylesheet">
       <style type="text/css">
       
   .dropdown-menu-list {
@@ -148,6 +149,7 @@
         <div class="page-header">
         </div>
         @yield('content')
+        @include('products.productType')
    </div>
 
    
@@ -175,7 +177,19 @@
 
 
   <script src="{{asset('js/main.js')}}"></script>
+   <script src ="{{asset('js/toastr.min.js')}}"></script>
   <script>Vue.use(VeeValidate);</script>
+  <script>
+        @if(Session::has('message'))
+        var type ="{{session::get('alert-type','info')}}";
+        switch(type)
+        {
+            case 'success':
+            toastr.success("{{session::get('message')}}");
+            break;
+        }
+        @endif
+    </script>
 
   </body>
 </html>

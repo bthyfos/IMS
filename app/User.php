@@ -5,7 +5,6 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
 use App\UserRoles;
 use App\Region;
 use App\Department;
@@ -13,6 +12,7 @@ use App\Handover;
 
 class User extends Authenticatable
 {
+     use Notifiable;
     protected $fillable = [
         'name', 'email','surname', 'password','cellphone','staffId','userRoleId','departmentId','regionId','physicalAddress','dob','positionId',
     ];

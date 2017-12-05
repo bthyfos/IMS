@@ -20,7 +20,14 @@ class DepartmentsController extends Controller
         $departmentObj->name      = $request->departmentName;
         $departmentObj->regionId  = $request->regionId;
         $departmentObj->save();
-         return "saved dept";
+        
+
+        $notification = array(
+            'message'=>'A new Department was successfully added',
+            'alert-type'=>'success'
+          );
+
+        return back()->with($notification);
 
     }
 }

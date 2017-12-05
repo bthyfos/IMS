@@ -1,7 +1,13 @@
 @extends('home.landingPage')
 @section('content')
+<div style="margin-top: 10px;">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductTypeModal">
+                        NEW
+                    </button>
+                </div>
 
 <div class="col-xs-6 col-md-12">
+
 <div class="panel panel-default">
   <div class="panel-heading">New Product Form</div>
   <div class="panel-body">

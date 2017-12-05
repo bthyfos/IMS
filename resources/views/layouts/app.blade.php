@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  
 </head>
 <body>
     <div id="app">
@@ -20,30 +21,23 @@
     
   <!--   <script src="{{ asset('js/app.js') }}"></script> -->
     <script src="{{ asset('js/vue.js') }}"></script>
+   
     
     <script> 
       const vm = new Vue({
         el:'#app',
-        data:{
-            hidden:false
-        },
+        data: {
+       message: "<span>Login</span>"
+     },
         methods:{
-            logIn: function()
-            {
-                this.hidden = true;
-            },
-            hide:function()
-            {
-                this.addClass('hidden');
-                return true;
-            },
-            show:function()
-            {
-                this.removeClass('hidden');
-                return true;
-            }
-        }
+            logIn :function() {
+         this.message = '<span>Logging in..</span>';
+        } }
+
        });
     </script>
-</body>
+  </body>
 </html>
+
+
+

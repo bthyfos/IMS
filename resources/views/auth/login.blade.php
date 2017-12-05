@@ -7,14 +7,14 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div id ="loginCard">
-            <div class="card">
-  <div class="card-header">
-    LOGIN
-  </div>
+                    <div class="card">
+                      <div class="card-header">
+                        LOGIN
+                      </div>
 
-  <div class="card-body">
-    <br/>
-     <form class="form-horizontal" method="POST" action="{{ route('app.login') }}">
+                              <div class="card-body">
+                                <br/>
+                                 <form class="form-horizontal" method="POST" action="{{ route('app.login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -56,10 +56,7 @@
                         </div>
                         <div class="form-group" >
                             <div class="col-md-8 col-md-offset-4">
-                                <button  v-on:click="logIn" type="submit" class="btn btn-primary">
-                                    <span v-bind:class="{active:hidden}">Login</span>
-                                    <span v-bind:class="{active:isActive}">Logging..</span>
-                                </button>
+                                <button  v-on:click="logIn"  v-html="message" type="submit" class="btn btn-primary"></button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Password?
@@ -67,12 +64,12 @@
                             </div>
                         </div>
                     </form>
-   
-  </div>
+                           
+                          </div>
 
-  <div class="card-footer text-muted">
-</div>
-</div>
+                          <div class="card-footer text-muted">
+                        </div>
+            </div>
 
 
 
