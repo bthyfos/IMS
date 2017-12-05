@@ -48,6 +48,7 @@ Route::group(['middleware'=>'auth'], function()
 	Route::get('dashboard','AdminController@index');
 	Route::get('systemUsers','AdminController@systemUsers');
 	Route::get('registration','AdminController@registration');
+    Route::view('stock','AdminSide.products.list');
 
     Route::view('adminSettings','adminSide.settings.index');
    //Regions
@@ -57,6 +58,7 @@ Route::group(['middleware'=>'auth'], function()
     //ProductsInfo
     Route::view('stock','AdminSide.products.list');
     Route::view('inavailableStock','AdminSide.products.outOfStockList');
+
     Route::get('productsInStock','ProductsController@getProducts')->name('productsInStock');
     Route::get('inavailableStockList','ProductsController@inavailableStockList')->name('inavailableStockList');
    //Departments

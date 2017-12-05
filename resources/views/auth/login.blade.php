@@ -73,12 +73,6 @@
 
 
 
-            <!-- <div class="panel panel-primary panel-transparent">
-                <div class="panel-heading">Login</div>
-
-                <div class="panel-body">
-                   
-                </div> -->
             </div>
         </div>
     </div>
