@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Activity;
 use App\ProductType;
 use Yajra\DataTables\DataTables;
 use Auth;
-
+use Redirect;
 class ProductsController extends Controller
 {
 	public function show()
@@ -30,31 +31,30 @@ class ProductsController extends Controller
 	}
     public function create(Request $request)
 	{
-			// dd($request->name);
-			// die();
+		
 			$products   		      =new Product();
 			$products->name 		  =$request->name;
 			$products->productTypeId  =$request->productTypeId;
 			$products->specification  =$request->specification;
-			// $products->userId         =Auth::user()->id;
-				$products->userId         =1;
+			$products->userId         =Auth::user()->id;
 			$products->intinialQty    =$request->initialQty;
 			$products->availableQty   =$request->initialQty;
 			$products->price   		  =$request->price;
 			$products->save();
 
 
-			$activities               = new activities();
+			$activities               = new Activity();
 			$activities->activityType =$products->id;
 			$activities->createdBy    =$products->userId;
 			$activities->save();
 
-			 $notification  = array(
+			 $notification = array(
             'message'=>'A new product was successfully added',
             'alert-type'=>'success'
           );
 
-        return back()->with($notification);
+
+        return Redirect::back()->with($notification);
 
 
 	}

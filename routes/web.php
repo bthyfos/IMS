@@ -34,6 +34,7 @@ Route::match(['post'] , 'updateUser' , 'UserController@update');
 Route::get('productList','ProductsController@getProducts')->name('productList');
 Route::get('productsList', 'ProductsController@index');
 Route::post('createProduct','ProductsController@create');
+Route::post('addProductType','ProductTypeController@create');
 
 //Preferences
 //Route::post('preference', 'SettingsController@preference');

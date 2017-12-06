@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
     <link rel="stylesheet"  href="{{asset('/css/bootstrap.min.css')}}">
      <link rel="stylesheet" href="{{asset('css/jquery.dataTables.min.css')}}">
-         <link href="{{asset('css/toastr.min.css')}}" rel="stylesheet">
+      <link href="{{asset('css/toastr.min.css')}}" rel="stylesheet">
       <style type="text/css">
       
   .dropdown-menu-list {
@@ -178,7 +178,6 @@
 
   <script src="{{asset('js/main.js')}}"></script>
    <script src ="{{asset('js/toastr.min.js')}}"></script>
-  <script>Vue.use(VeeValidate);</script>
   <script>
         @if(Session::has('message'))
         var type ="{{session::get('alert-type','info')}}";

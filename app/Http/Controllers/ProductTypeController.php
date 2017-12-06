@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ProductType;
 
 class ProductTypeController extends Controller
 {
    public function create(Request $request)
    {
-   		$productType  = new productType();
+   		$productType  = new ProductType();
    		$productType->name =$request->name;
    		$productType->save();
 

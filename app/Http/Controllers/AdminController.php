@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Charts;
 use DB;
+use App\Activity;
 
 class AdminController extends Controller
 {
@@ -28,14 +29,16 @@ class AdminController extends Controller
 //            ->responsive(false)
 //            ->groupByMonth(date('Y'), true);
 
-      $chart=  Charts::create('pie', 'highcharts')
+      $chart =  Charts::create('pie', 'highcharts')
             ->title('Pie chart of the Product')
             ->labels(['First', 'Second', 'Third'])
             ->values([5,10,20])
             ->dimensions(800,450)
             ->responsive(true);
 
-    	return view('admin.home',compact('chart'));
+    $activities =Activity::all();
+
+    	return view('admin.home',compact('chart','activities'));
     }
     public function systemUsers()
     {
