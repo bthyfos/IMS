@@ -95,16 +95,17 @@
                     <ul class="dropdown-menu dropdown-tasks">
                          <li>
                             <a href="#">
-                                @foreach($activities as $activity)
-                                <div>
-                                    <strong>{{$activity->activityType}}</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>{{$activity->createdBy}}</em>
-                                    </span>
-                                </div>
-                                <div>
-                                    </div>
-                                @endforeach
+                                
+                                {{--@foreach($activities as $activity)--}}
+                                {{--<div>--}}
+                                    {{--<strong>{{$activity->activityType}}</strong>--}}
+                                    {{--<span class="pull-right text-muted">--}}
+                                        {{--<em>{{$activity->createdBy}}</em>--}}
+                                    {{--</span>--}}
+                                {{--</div>--}}
+                                {{--<div>--}}
+                                    {{--</div>--}}
+                                {{--@endforeach--}}
                             </a>
                         </li>
                         <li class="divider"></li>
