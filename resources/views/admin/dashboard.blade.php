@@ -95,7 +95,7 @@
                     <ul class="dropdown-menu dropdown-tasks">
                          <li>
                             <a href="#">
-                                
+
                                 {{--@foreach($activities as $activity)--}}
                                 {{--<div>--}}
                                     {{--<strong>{{$activity->activityType}}</strong>--}}

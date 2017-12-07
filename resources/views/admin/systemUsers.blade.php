@@ -15,12 +15,9 @@
 
 
                 <div class="panel-body">
-                    <div class="flot-chart">
-                        <div class="flot-chart-content" id="flot-line-chart">
 
-
-                        </div>
-                    </div>
+                            @component('admin.sortBy')
+                            @endcomponent
                 </div>
             </div>
         </div>
