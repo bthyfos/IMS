@@ -97,24 +97,17 @@
                     <ul class="dropdown-menu dropdown-tasks">
                          <li>
                             <a href="#">
-<<<<<<< HEAD
 
-                                {{--@foreach($activities as $activity)--}}
-                                {{--<div>--}}
-                                    {{--<strong>{{$activity->activityType}}</strong>--}}
-                                    {{--<span class="pull-right text-muted">--}}
-                                        {{--<em>{{$activity->createdBy}}</em>--}}
-                                    {{--</span>--}}
-                                {{--</div>--}}
-                                {{--<div>--}}
-                                    {{--</div>--}}
-                                {{--@endforeach--}}
-=======
-                               
-                                <i class="fa fa-comment fa-fw"></i> {{userActivities()}}
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                                           
->>>>>>> 35cd57da7e341cb3fbcc1b3e758c9b606a498e2b
+                                @foreach($activities as $activity)
+                                <div>
+                                    <strong>{{$activity->activityType}}</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>{{$activity->createdBy}}</em>
+                                    </span>
+                                </div>
+                                <div>
+                                    </div>
+                                @endforeach
                             </a>
                         </li>
                         <li class="divider"></li>
@@ -189,15 +182,12 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
                         <li><a href="{{'adminSettings'}}"><i class="fa fa-gear fa-fw"></i>Settings</a>
                         </li>
-                        <li class="divider"></li>
                         <li>
                             <a href="{{ route('logout') }}"
                                onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-fw"></i>
+                               document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-fw"></i>
                                 Logout
                             </a>
 
@@ -212,17 +202,17 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
+                        <li class="sidebar-search" style="margin-top:50px;">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
+                                {{--<input type="text" class="form-control" placeholder="Search...">--}}
+                                {{--<span class="input-group-btn">--}}
+                                {{--<button class="btn btn-default" type="button">--}}
+                                    {{--<i class="fa fa-search"></i>--}}
+                                {{--</button>--}}
+                            {{--</span>--}}
                             </div>
                         </li>
-                        <li>
+                        <li >
                             <a href="{{'dashboard'}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>

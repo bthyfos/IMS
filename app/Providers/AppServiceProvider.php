@@ -9,6 +9,7 @@ use App\Department;
 use App\Region;
 use App\Position;
 use App\ProductType;
+use App\Activity;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -36,7 +37,25 @@ class AppServiceProvider extends ServiceProvider
 
         }
 
-         if (\Schema::hasTable('product_types'))
+        if (\Schema::hasTable('regions'))
+        {
+            $regions          = Region::orderBy('name','ASC')->get();
+
+            \View::share('regions',$regions);
+
+            }
+
+        if (\Schema::hasTable('departments'))
+        {
+            $departments          = Department::orderBy('name','ASC')->get();
+
+            \View::share('departments',$departments);
+
+        }
+
+
+
+        if (\Schema::hasTable('product_types'))
         {
             $productTypes         = ProductType::orderBy('name','ASC')
                                                             ->get();
@@ -99,14 +118,16 @@ class AppServiceProvider extends ServiceProvider
 
         }
 
-        Schema::defaultStringLength(191);
+        if (\Schema::hasTable('activities'))
+        {
+            $activities         = Activity::orderBy('activityType','ASC')->get();
+            \View::share('activities',$activities);
+            }
+
+            Schema::defaultStringLength(191);
     }
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
+
     public function register()
     {
         

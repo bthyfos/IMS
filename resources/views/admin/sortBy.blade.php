@@ -1,51 +1,40 @@
 <div class="css-treeview">
     <ul>
-        <li><input type="checkbox" id="item-0" /><label for="item-0">Entire Organisation</label>
+        <li>
+            <input type="checkbox" id="item-0" /><label for="item-0">Entire Organisation</label>
+
             <ul>
-                <li><input type="checkbox" id="item-0-0" /><label for="item-0-0">Ooops! A Nested Folder</label>
-                    <ul>
-                        <li><input type="checkbox" id="item-0-0-0" /><label for="item-0-0-0">Look Ma - No Hands!</label>
-                            <ul>
-                                <li><a href="./">First Nested Item</a></li>
-                                <li><a href="./">Second Nested Item</a></li>
-                                <li><a href="./">Third Nested Item</a></li>
-                                <li><a href="./">Fourth Nested Item</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./">Item 1</a></li>
-                        <li><a href="./">Item 2</a></li>
-                        <li><a href="./">Item 3</a></li>
-                    </ul>
+                <li>
+                    @foreach($regions as $region)
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="item-0-0" /><label for="item-0-0">{{$region->name}}</label>
+                                @foreach($departments  as $department)
+                                <ul>
+                                    <li>
+                                    @if($region->id == $department->regionId)
+                                        <ul>
+                                            <li>
+                                                <input type="checkbox" id="item-0-0-0" /><label for="item-0-0-0">{{$department->name}}</label>
+                                            </li>
+                                        </ul>
+                                        @else
+                                            <ul>
+                                                <li class="hidden">
+                                                    <input type="checkbox" class="hidden" id="item-0-0-0" /><label for="item-0-0-0">{{$department->name}}</label>
+                                                </li>
+                                            </ul>
+                                        @endif
+                                    </li>
+                                </ul>
+                                @endforeach
+                            </li>
+                        </ul>
+                    @endforeach
+
                 </li>
-                <li><input type="checkbox" id="item-0-1" /><label for="item-0-1">Yet Another One</label>
-                    <ul>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                    </ul>
-                </li>
-                <li><input type="checkbox" id="item-0-2" disabled="disabled" /><label for="item-0-2">Disabled Nested Items</label>
-                    <ul>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                        <li><a href="./">item</a></li>
-                    </ul>
-                </li>
-                <li><a href="./">item</a></li>
-                <li><a href="./">item</a></li>
-                <li><a href="./">item</a></li>
-                <li><a href="./">item</a></li>
             </ul>
+
         </li>
         <li><input type="checkbox" id="item-1" checked="checked" /><label for="item-1">This One is Open by Default...</label>
             <ul>
@@ -62,9 +51,11 @@
                 <li><a href="./">Sit Amet</a></li>
             </ul>
         </li>
-        <li><input type="checkbox" id="item-2" /><label for="item-2">Can You Believe...</label>
+        <li>
+            <input type="checkbox" id="item-2" /><label for="item-2">Can You Believe...</label>
             <ul>
-                <li><input type="checkbox" id="item-2-0" /><label for="item-2-0">That This Treeview...</label>
+                <li>
+                    <input type="checkbox" id="item-2-0" /><label for="item-2-0">That This Treeview...</label>
                     <ul>
                         <li><input type="checkbox" id="item-2-2-0" /><label for="item-2-2-0">Does Not Use Any JavaScript...</label>
                             <ul>

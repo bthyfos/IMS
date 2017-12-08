@@ -15,14 +15,13 @@
 
 
                 <div class="panel-body">
-<<<<<<< HEAD
 
                             @component('admin.sortBy')
                             @endcomponent
-=======
-                    <div id = "box" style="width:400px; height:200px;">
-                    </div>
->>>>>>> 35cd57da7e341cb3fbcc1b3e758c9b606a498e2b
+
+                    {{--<div id = "box" style="width:400px; height:200px;">--}}
+                    {{--</div>--}}
+
                 </div>
             </div>
         </div>
