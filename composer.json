@@ -25,7 +25,8 @@
             "database/factories"
         ],
         "files":[
-            "app/Helper/Helper.php"
+            "app/Helper/Helper.php",
+             "app/Helper/userActivities.php"
         ],
 
         "psr-4": {

@@ -9,6 +9,7 @@ use App\ProductType;
 use Yajra\DataTables\DataTables;
 use Auth;
 use Redirect;
+
 class ProductsController extends Controller
 {
 	public function show()
@@ -52,11 +53,7 @@ class ProductsController extends Controller
             'message'=>'A new product was successfully added',
             'alert-type'=>'success'
           );
-
-
-        return Redirect::back()->with($notification);
-
-
+		return Redirect::back()->with($notification);
 	}
 	public  function inavailableStockList()
     {
