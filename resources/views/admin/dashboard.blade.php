@@ -22,8 +22,9 @@
     <link href="{{asset('css/toastr.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/tree.css')}}" rel="stylesheet">
 
-
- <script src="{{asset('js/vue.js')}}"></script>
+    <script src="{{asset('js/webix.js')}}"></script>
+    <link href="{{asset('css/webix.css')}}" rel="stylesheet" type="text/css">
+    <script src="{{asset('js/vue.js')}}"></script>
 
 </head>
 <body>
@@ -96,6 +97,7 @@
                     <ul class="dropdown-menu dropdown-tasks">
                          <li>
                             <a href="#">
+<<<<<<< HEAD
 
                                 {{--@foreach($activities as $activity)--}}
                                 {{--<div>--}}
@@ -107,6 +109,12 @@
                                 {{--<div>--}}
                                     {{--</div>--}}
                                 {{--@endforeach--}}
+=======
+                               
+                                <i class="fa fa-comment fa-fw"></i> {{userActivities()}}
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                                           
+>>>>>>> 35cd57da7e341cb3fbcc1b3e758c9b606a498e2b
                             </a>
                         </li>
                         <li class="divider"></li>
@@ -301,6 +309,53 @@
             break;
         }
         @endif
+    </script>
+    <script>
+        webix.ui({
+            container:"box",
+            view:"tree",
+            data:[
+            {
+                id:"root", value:"cars", open:true,
+                data:[
+
+                      { 
+                        id:"1", open :true, value:"toyota",
+
+                        data:[
+                        {
+                            id:"1.1", value:"Avalon"
+                        },
+                        {
+                            id:"1.2", value:"Corolla"
+                        },
+                        {
+                            id:"1.3", value:"Camry"
+                        }
+
+                        ]},
+
+                        { 
+                        id:"2", open :true, value:"Skoda",
+
+                        data:[
+                        {
+                            id:"2.1", value:"Octavia"
+                        },
+                        {
+                            id:"2.2", value:"Superb"
+                        },
+                        {
+                            id:"2.3", value:"Camry"
+                        }
+
+                        ]}
+
+                  ]}
+            
+            ]
+        });
+
     </script>
 
 </body>

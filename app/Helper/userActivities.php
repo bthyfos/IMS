@@ -1,10 +1,11 @@
 <?php
-
 use App\Activity;
 
-
-function getUserActivities()
+ function userActivities()
 {
-    $userActivities  = Activity::all();
-    return $userActivities;
+	$userActivities = Activity::all();
+	return $userActivities;
 }
+
+
+
