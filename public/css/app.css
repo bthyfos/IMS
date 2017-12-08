@@ -3296,6 +3296,8 @@ fieldset {
   min-width: 0;
 }
 
+[v-cloak] { display:none; }
+
 legend {
   display: block;
   width: 100%;

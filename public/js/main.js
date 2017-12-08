@@ -112,19 +112,19 @@ new Vue({
         users:[],
     },
     computed: {
-        wrongRname() {
+        wrongRname:function() {
             if(this.name === '') {
             this.nameFB = ERRORS.recipeintNameField
             return true
             }
             return false
         },
-        wrongPname() {  if(this.product_name === '') {
+        wrongPname:function() {  if(this.product_name === '') {
             this.product_nameFB = ERRORS.productNameField
             return true
         }
             return false },
-        wrongPquantity() {  if(this.quantity === '') {
+        wrongPquantity:function() {  if(this.quantity === '') {
             this.quantityFB = ERRORS.quantityField
             return true
         }

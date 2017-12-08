@@ -22,7 +22,7 @@
                             <div class="col-md-6">
                                 <input type="password" id="password" class="form-control" v-model="password">
                                 <span class="help-block"  v-cloak v-if="submition && wrongPassword">@{{passwordFB}}</span>
-                            
+
                             </div>
                         </div>
 

@@ -21,10 +21,10 @@
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/toastr.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/tree.css')}}" rel="stylesheet">
-
     <script src="{{asset('js/webix.js')}}"></script>
     <link href="{{asset('css/webix.css')}}" rel="stylesheet" type="text/css">
-    <script src="{{asset('js/vue.js')}}"></script>
+    <link href="{{asset('css/vue.css')}}" rel="stylesheet" type="text/css">
+
 
 </head>
 <body>
@@ -271,6 +271,7 @@
         @include('regions.add')
 
     </div>
+    <script src="{{asset('js/vue.js')}}"></script>
     <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
