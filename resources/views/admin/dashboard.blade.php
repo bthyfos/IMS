@@ -20,6 +20,7 @@
 
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/toastr.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/tree.css')}}" rel="stylesheet">
 
 
  <script src="{{asset('js/vue.js')}}"></script>
