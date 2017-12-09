@@ -33,14 +33,14 @@ class RegisterController extends Controller
             'positionId' => 'required',
             'physicalAddress' => 'required',
             'dob' => 'required',
-            'password' => 'required|string|min:6|confirmed',
         ]);
     }
 
     protected function create(array $data)
     {
-       
-        
+
+        $generateUserPassword   = chr(rand(65,90));
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -51,9 +51,9 @@ class RegisterController extends Controller
             'regionId' => $data['regionId'],
             'staffId' => $data['staffId'],
             'positionId' => $data['positionId'],
-           'physicalAddress' => $data['physicalAddress'],
+            'physicalAddress' => $data['physicalAddress'],
             'dob' => $data['dob'],
-            'password' => bcrypt($data['password']),
+            'password' => $generateUserPassword,
         ]);
 
 

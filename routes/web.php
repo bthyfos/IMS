@@ -66,11 +66,13 @@ Route::group(['middleware'=>'auth'], function()
     Route::view('departmentList','AdminSide.departments.departmentList');
     Route::get('departments','DepartmentsController@departments')->name('departments');
     Route::post('addDepartment','DepartmentsController@addDepartment');
+    Route::get('lastLogins','LoginController@lastLogin')->name('lastLogins');
 
 
 
 
 
 });
+
 
 

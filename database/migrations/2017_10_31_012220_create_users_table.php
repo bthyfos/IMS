@@ -31,7 +31,9 @@ class CreateUsersTable extends Migration
             $table->foreign('positionId')->references('id')->on('positions');
             $table->foreign('departmentId')->references('id')->on('departments');
             $table->foreign('userRoleId')->references('id')->on('user_roles');
-             $table->rememberToken();
+            $table->date('lastLogin');
+            $table->integer('active')->default(1);
+            $table->rememberToken();
             $table->timestamps();
         });
     }

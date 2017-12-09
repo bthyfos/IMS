@@ -16,7 +16,7 @@
       <th>Available Qty</th>
     </tr>
   </thead>
-  </tbody>
+
 </table>
   </div>
 </div>

@@ -12,24 +12,8 @@ class AdminController extends Controller
 {
     public function index()
     {
-//
-//        Charts::create('pie', 'highcharts')
-//            ->title('My nice chart')
-//            ->labels(['First', 'Second', 'Third'])
-//            ->values([5,10,20])
-//            ->dimensions(1000,500)
-//            ->responsive(false);
 
-//        $users = User::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))
-//            ->get();
-//        $chart = Charts::database($users, 'pie')
-//            ->title("Monthly new Register Users")
-//            ->elementLabel("Total Users")
-//            ->dimensions(900, 250)
-//            ->responsive(false)
-//            ->groupByMonth(date('Y'), true);
-
-      $chart =  Charts::create('pie', 'highcharts')
+        $chart =  Charts::create('pie', 'highcharts')
             ->title('Pie chart of the Product')
             ->labels(['First', 'Second', 'Third'])
             ->values([5,10,20])

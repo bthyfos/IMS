@@ -61,14 +61,12 @@
 
 
 
-                            <div class="form-group">
+                               <div class="form-group">
                                 {!! Form::label('staffId', 'Staff Id:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
                                     {!! Form::text('staffId', $value = null, ['class' => 'form-control', 'placeholder' => 'surname']) !!}
                                 </div>
                             </div>
-
-
                                 <div class="form-group{{ $errors->has('userRoleId') ? ' has-error' : '' }}">
                                 {!! Form::label('userRoleId', 'User Role:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
@@ -140,27 +138,27 @@
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                {!! Form::label('password', 'Password:', ['class' => 'col-md-3 control-label']) !!}
+                            {{--<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">--}}
+                                {{--{!! Form::label('password', 'Password:', ['class' => 'col-md-3 control-label']) !!}--}}
 
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password" required>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<input id="password" type="password" class="form-control" name="password" required>--}}
 
-                                    @if ($errors->has('password'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
+                                    {{--@if ($errors->has('password'))--}}
+                                        {{--<span class="help-block">--}}
+                                        {{--<strong>{{ $errors->first('password') }}</strong>--}}
+                                    {{--</span>--}}
+                                    {{--@endif--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
-                            <div class="form-group">
-                                {!! Form::label('password-confirm', 'Confirm Password:', ['class' => 'col-md-3 control-label']) !!}
+                            {{--<div class="form-group">--}}
+                                {{--{!! Form::label('password-confirm', 'Confirm Password:', ['class' => 'col-md-3 control-label']) !!}--}}
 
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                                </div>
-                            </div>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">

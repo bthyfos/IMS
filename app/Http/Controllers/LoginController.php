@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use Redirect;
+use Yajra\DataTables\DataTables;
 
 class LoginController extends Controller
 {
@@ -30,4 +31,11 @@ class LoginController extends Controller
 
     		return Redirect()->back();
     }
+
+    public function lastLogin()
+    {
+        $lastLogin    = User::select('name','surname','lastLogin','region','department')->get();
+        return Datatables::of($lastLogin)->make(true);
+        }
+
 }

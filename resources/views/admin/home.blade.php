@@ -16,19 +16,19 @@
                         <form id="chartsForm">
                             <div>
                                 <label class="form-check-label" id="pie" v-on:click="onCheck">
-                                    <input type="checkbox" class="form-check-input">
+                                    <input type="radio" name="pie" value="pie">
                                     Pie Chart
                                 </label>
                             </div>
                             <div>
                                 <label class="form-check-label">
-                                    <input type="checkbox"  id ="bar" v-on:click="onCheck" class="form-check-input">
+                                    <input type="radio"  id ="bar" v-on:click="onCheck"  name="bar" value="bar">
                                     Bar Graph
                                 </label>
                             </div>
                             <div>
-                                <label class="form-check-label"  id="donut"  v-on:click="onCheck">
-                                    <input type="checkbox" class="form-check-input">
+                                <label class="form-check-label"  id="donut"  v-on:click="onCheck" >
+                                    <input type="radio" name="donut" value="donut">
                                   Donut
                                 </label>
                             </div>
@@ -47,13 +47,22 @@
             <div class="col-lg-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                        User Loggings
                     </div>
-
-
                     <div class="panel-body">
                         <div class="flot-chart">
                             <div class="flot-chart-content" id="flot-line-chart">
-
+                            <table id="lastLoginsTable">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Surname</th>
+                                    <th>Region</th>
+                                    <th>Department</th>
+                                    <th>Last Login</th>
+                                </tr>
+                                </thead>
+                            </table>
 
                             </div>
                         </div>
@@ -63,22 +72,25 @@
 
         </div>
     </div>
-    <script>
-        const vm =new Vue({
-            el:'#chartsForm',
-            data:{
-                checkedNames:[]
-            },
-            methods:{
-                onCheck:function()
-                {
-                    alert(document.body.getAttribute('id'));
-                }
-            }
-
-        });
-    </script>
     {!! Charts::scripts() !!}
     {!! $chart->script()  !!}
 @stop
+@push('scripts')
+    <script>
+        $(function() {
+            $('#lastLoginsTable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '{!! route('lastLogins') !!}',
+                columns: [
+                    { data: 'name', name: 'name' },
+                    { data: 'surname', name: 'surname' },
+                    { data: 'region', name: 'region'},
+                    { data: 'department', name: 'department' },
+                    { data: 'lastLogin', name: 'lastLogin'}
+                ]
+            });
+        });
+    </script>
+@endpush
 

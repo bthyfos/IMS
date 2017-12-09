@@ -19,6 +19,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    protected $date =[
+        'current_signInAt','lastLogIn'
+    ];
     public function userRole()
     {
         return $this->hasOne(UserRoles::class);
