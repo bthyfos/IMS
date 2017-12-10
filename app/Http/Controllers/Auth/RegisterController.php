@@ -39,7 +39,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        $generateUserPassword   = chr(rand(65,90));
+        $generateUserPassword   = $this->generateRandomString();
 
         return User::create([
             'name' => $data['name'],
@@ -56,7 +56,23 @@ class RegisterController extends Controller
             'password' => $generateUserPassword,
         ]);
 
+    }
 
+    public function generateRandomString()
+    {
+    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+    $pass = array(); 
+    $alphaLength = strlen($alphabet) - 1;
+    for ($i = 0; $i < 8; $i++) {
+        $n = rand(0, $alphaLength);
+        $pass[] = $alphabet[$n];
+    }
+    return implode($pass);
 
+    }
+
+    public function generateRandNumber()
+    {
+        
     }
 }
