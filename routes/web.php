@@ -56,6 +56,7 @@ Route::group(['middleware'=>'auth'], function()
     Route::get('regions','RegionController@regions');
     Route::post('addRegion','RegionController@addRegion');
     Route::get('getRegions','RegionController@getRegions')->name('getRegions');
+    Route::get('deleteRegion/{id}','RegionController@deleteRegion')->name('deleteRegion');
     //ProductsInfo
     Route::view('stock','AdminSide.products.list');
     Route::view('inavailableStock','AdminSide.products.outOfStockList');

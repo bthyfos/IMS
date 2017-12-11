@@ -10,7 +10,14 @@ class RegionController extends Controller
 {
     public function getRegions()
    {
-       return Datatables::of(Region::query())->make(true);
+    $region     =Region::query();   // return Datatables::of(Region::query())
+    return Datatables::of($region)
+       ->addColumn('action', function ($region) {
+                return '<a href="#edit-'.$region->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a> 
+                  <a href="deleteRegion/'.$region->id.'" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i> Remove</a> ';
+            })
+      
+            ->make(true);
    }
     public function regions()
     {
@@ -24,6 +31,19 @@ class RegionController extends Controller
 
         $notification = array(
             'message'=>'A new region successfully added',
+            'alert-type'=>'success'
+          );
+
+        return back()->with($notification);
+    }
+
+    public function deleteRegion($id)
+    {
+   
+      $region = Region::find($id)->delete();
+
+      $notification = array(
+            'message'=>'A region deleted successfully',
             'alert-type'=>'success'
           );
 

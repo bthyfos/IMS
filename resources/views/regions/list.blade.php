@@ -23,6 +23,7 @@
         <tr>
             <th>Region Id</th>
             <th>Region name</th>
+              <th>Action</th>
         </tr>
         </thead>
     </table>
@@ -49,7 +50,8 @@
                 ajax: '{!! route('getRegions') !!}',
                 columns: [
                     { data: 'id', name: 'id' }  ,
-                    { data: 'name', name: 'name' }
+                    { data: 'name', name: 'name' },
+                    {data: 'action', name: 'action', orderable: false, searchable: false}
                 ]
             });
         });
