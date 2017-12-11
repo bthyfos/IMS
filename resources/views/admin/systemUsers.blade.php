@@ -12,16 +12,27 @@
                 <div class="panel-heading">
                     Organisation Chart
                 </div>
-
-
                 <div class="panel-body">
-
-                            @component('admin.sortBy')
-                            @endcomponent
-
+                    {{--@component('admin.sortBy')--}}
+                    {{--@endcomponent--}}
                     {{--<div id = "box" style="width:400px; height:200px;">--}}
                     {{--</div>--}}
-
+                    <table class="table" id="regionTable">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Role</th>
+                            <th>Cellphone</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Region</th>
+                            <th>Department</th>
+                            <th>Position</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                    </table>
                 </div>
             </div>
         </div>
@@ -29,51 +40,75 @@
 </div>
 @stop
 @section('footer')
-    <script>
-        webix.ui({
-            container:"box",
-            view:"tree",
-            data:[
-            {
-                id:"root", value:"cars", open:true,
-                data:[
+    {{--<script>--}}
+        {{--webix.ui({--}}
+            {{--container:"box",--}}
+            {{--view:"tree",--}}
+            {{--data:[--}}
+            {{--{--}}
+                {{--id:"root", value:"cars", open:true,--}}
+                {{--data:[--}}
 
-                      { 
-                        id:"1", open :true, value:"toyota",
+                      {{--{ --}}
+                        {{--id:"1", open :true, value:"toyota",--}}
 
-                        data:[
-                        {
-                            id:"1.1", value:"Avalon"
-                        },
-                        {
-                            id:"1.2", value:"Corolla"
-                        },
-                        {
-                            id:"1.3", value:"Camry"
-                        }
+                        {{--data:[--}}
+                        {{--{--}}
+                            {{--id:"1.1", value:"Avalon"--}}
+                        {{--},--}}
+                        {{--{--}}
+                            {{--id:"1.2", value:"Corolla"--}}
+                        {{--},--}}
+                        {{--{--}}
+                            {{--id:"1.3", value:"Camry"--}}
+                        {{--}--}}
 
-                        ]},
+                        {{--]},--}}
 
-                        { 
-                        id:"2", open :true, value:"Skoda",
+                        {{--{ --}}
+                        {{--id:"2", open :true, value:"Skoda",--}}
 
-                        data:[
-                        {
-                            id:"2.1", value:"Octavia"
-                        },
-                        {
-                            id:"2.2", value:"Superb"
-                        },
-                        {
-                            id:"2.3", value:"Camry"
-                        }
+                        {{--data:[--}}
+                        {{--{--}}
+                            {{--id:"2.1", value:"Octavia"--}}
+                        {{--},--}}
+                        {{--{--}}
+                            {{--id:"2.2", value:"Superb"--}}
+                        {{--},--}}
+                        {{--{--}}
+                            {{--id:"2.3", value:"Camry"--}}
+                        {{--}--}}
 
-                        ]}
+                        {{--]}--}}
 
-                  ]}
-            
-            ]
-        });
+                  {{--]}--}}
+            {{----}}
+            {{--]--}}
+        {{--});--}}
 
-    </script>
+    {{--</script>--}}
 @endsection
+@push('scripts')
+    <script>
+        $(function() {
+            $('#regionTable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '{!! route('userList') !!}',
+                columns: [
+                    { data: 'name', name: 'name' }  ,
+                    { data: 'surname', name: 'surname' },
+                    { data: 'userRoleId', name: 'userRoleId' },
+                    { data: 'cellphone', name: 'cellphone' },
+                    { data: 'email', name: 'email' },
+                    { data: 'physicalAddress', name: 'physicalAddress' },
+                    { data: 'regionId', name: 'regionId' },
+                    { data: 'departmentId', name: 'departmentId' },
+                    { data: 'positionId', name: 'positionId' },
+                    {data: 'action', name: 'action', orderable: false, searchable: false}
+
+                ]
+            });
+        });
+    </script>
+@endpush

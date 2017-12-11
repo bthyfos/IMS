@@ -40,8 +40,6 @@ Route::post('addProductType','ProductTypeController@create');
 //Route::post('preference', 'SettingsController@preference');
 Route::post('preference', 'SettingController@preference');
 
-
-
 //Admin Routes
 Route::group(['middleware'=>'auth'], function()
 {
@@ -50,7 +48,6 @@ Route::group(['middleware'=>'auth'], function()
 	Route::get('systemUsers','AdminController@systemUsers');
 	Route::get('registration','AdminController@registration');
     Route::view('stock','AdminSide.products.list');
-
     Route::view('adminSettings','adminSide.settings.index');
    //Regions
     Route::get('regions','RegionController@regions');
@@ -60,7 +57,6 @@ Route::group(['middleware'=>'auth'], function()
     //ProductsInfo
     Route::view('stock','AdminSide.products.list');
     Route::view('inavailableStock','AdminSide.products.outOfStockList');
-
     Route::get('productsInStock','ProductsController@getProducts')->name('productsInStock');
     Route::get('inavailableStockList','ProductsController@inavailableStockList')->name('inavailableStockList');
    //Departments
@@ -69,8 +65,9 @@ Route::group(['middleware'=>'auth'], function()
     Route::post('addDepartment','DepartmentsController@addDepartment');
     Route::get('lastLogins','LoginController@lastLogin')->name('lastLogins');
 
-
-
+    //Users
+    Route::get('userList','UserController@userList')->name('userList');
+    Route::get('userDetail/{id}','UserController@userDetail')->name('userDetail');
 
 
 });
