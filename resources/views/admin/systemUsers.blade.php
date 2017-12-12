@@ -15,9 +15,9 @@
                 <div class="panel-body">
                     {{--@component('admin.sortBy')--}}
                     {{--@endcomponent--}}
-                    {{--<div id = "box" style="width:400px; height:200px;">--}}
-                    {{--</div>--}}
-                    <table class="table" id="regionTable">
+                
+
+                    <table class="table" id="regionTable" style="max-width:100%;">
                         <thead>
                         <tr>
                             <th>Name</th>
@@ -26,9 +26,9 @@
                             <th>Cellphone</th>
                             <th>Email</th>
                             <th>Address</th>
-                            <th>Region</th>
+                            <!-- <th>Region</th>
                             <th>Department</th>
-                            <th>Position</th>
+                            <th>Position</th> -->
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -102,9 +102,9 @@
                     { data: 'cellphone', name: 'cellphone' },
                     { data: 'email', name: 'email' },
                     { data: 'physicalAddress', name: 'physicalAddress' },
-                    { data: 'regionId', name: 'regionId' },
-                    { data: 'departmentId', name: 'departmentId' },
-                    { data: 'positionId', name: 'positionId' },
+                    // { data: 'regionId', name: 'regionId' },
+                    // { data: 'departmentId', name: 'departmentId' },
+                    // { data: 'positionId', name: 'positionId' },
                     {data: 'action', name: 'action', orderable: false, searchable: false}
 
                 ]

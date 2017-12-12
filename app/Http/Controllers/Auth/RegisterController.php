@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'positionId' => $data['positionId'],
             'physicalAddress' => $data['physicalAddress'],
             'dob' => $data['dob'],
-            'password' => $generateUserPassword,
+            'password' => bcrypt($generateUserPassword),
         ]);
 
     }
@@ -71,8 +71,4 @@ class RegisterController extends Controller
 
     }
 
-    public function generateRandNumber()
-    {
-        
-    }
 }

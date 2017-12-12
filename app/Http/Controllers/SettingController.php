@@ -11,10 +11,16 @@ class SettingController extends Controller
 	public function preference(Request $request)
    {
 
-   		$userDetails  = User::where('email',Auth::user()->email)->first();
-   		var_dump($userDetails->email);
-   		die();
-   		$preference   =$this->update($request->all());
+   	$userDetails  = User::findo($request->email);
+	var_dump($userDetails);
+      die();
+                            // ->update(['password'=>$request->password]);
+      $notification = array(
+            'message'=>'Password successfully changed',
+            'alert-type'=>'success'
+                            );
+
+      return back()->with($notification);
    }
 
 }

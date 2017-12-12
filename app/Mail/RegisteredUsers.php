@@ -7,20 +7,26 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Crypt;
 
 class RegisteredUsers extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $user;
+     protected $user;
 
     public function __construct(User $user)
     {
         $this->user = $user;
     }
 
+
     public function build()
     {
-        return $this->markdown('emails.newUsers');
+        return $this->markdown('emails.newUsers')
+                    ->with([
+                            'userName'=>$this->user->name,
+                            'userPassword'=>Crypt::decrypt($this->user->password)
+                        ]);
     }
 }

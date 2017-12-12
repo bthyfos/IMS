@@ -40,10 +40,14 @@ class AdminController extends Controller
     public function  changePassword(Request $request)
     {
 
-        $adminDetails            =User::where('email',$request->email)->first();
-        $adminDetails->update(['password'=>bcrypt($request->password)]);
+    $userDetails  = User::where('email',$request->email)
+                            ->update(['password'=>bcrypt($request->password)]);
+      $notification = array(
+            'message'=>'Password successfully changed',
+            'alert-type'=>'success'
+                            );
 
-        return 'okay';
+      return back()->with($notification);
     }
 
 }

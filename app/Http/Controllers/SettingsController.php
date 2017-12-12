@@ -17,10 +17,16 @@ class SettingsController extends Controller
 
    public function preference(Request $request)
    {
-   		var_dump($request->all());
-   		die();
-   		$userDetails  =User::findorFail(\Auth::user()->id);
-   		$preference   =$this->update($request->all());
+  
+   		$userDetails  = User::where('email',$request->email)
+                            ->update(['password'=>bcrypt($request->password)]);
+      $notification = array(
+            'message'=>'Password successfully changed',
+            'alert-type'=>'success'
+                            );
+
+      return back()->with($notification);
+                   
    }
 
 }

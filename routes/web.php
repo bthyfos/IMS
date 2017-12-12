@@ -11,8 +11,8 @@ Route::get('returns',function ()
 // Handover Routes
 Route::get('handover','HandoverController@index');
 Route::get('handoverList','HandoverController@getHandovers')
-		->name('handoverList');
-		Route::get('recipientList','HandoverController@recipients');
+		    ->name('handoverList');
+Route::get('recipientList','HandoverController@recipients');
 //Home Routes
 Route::get('/home', 'HomeController@firstFunc')->name('home');
 Route::get('outOfStock', 'ProductsController@outOfStock');
@@ -37,9 +37,7 @@ Route::post('createProduct','ProductsController@create');
 Route::post('addProductType','ProductTypeController@create');
 
 //Preferences
-//Route::post('preference', 'SettingsController@preference');
-Route::post('preference', 'SettingController@preference');
-
+Route::post('preference', 'SettingsController@preference');
 //Admin Routes
 Route::group(['middleware'=>'auth'], function()
 {
@@ -68,7 +66,6 @@ Route::group(['middleware'=>'auth'], function()
     //Users
     Route::get('userList','UserController@userList')->name('userList');
     Route::get('userDetail/{id}','UserController@userDetail')->name('userDetail');
-
 
 });
 

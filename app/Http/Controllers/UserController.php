@@ -25,7 +25,12 @@ class UserController extends Controller
     								'cellphone'=>$request->cellphone
     							]);
 
-    	return "record update";
+    	 $notification = array(
+            'message'=>'Record Successfully updated',
+            'alert-type'=>'success'
+        );
+
+        return back()->with($notification);
     }
     public function  userList()
     {

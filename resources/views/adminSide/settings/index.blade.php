@@ -20,7 +20,7 @@
                 <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongPassword}">
                             {!! Form::label('Password', 'Password', array('class' => 'col-md-3 control-label')) !!}
                             <div class="col-md-6">
-                                <input type="password" id="password" class="form-control" v-model="password">
+                                <input type="password" id="password" class="form-control" v-model="password" name="password">
                                 <span class="help-block"  v-cloak v-if="submition && wrongPassword">@{{passwordFB}}</span>
 
                             </div>
@@ -29,7 +29,7 @@
                         <div class="form-group" v-bind:class="{ 'has-error': submition && wrongPwdVerification }">
                             {!! Form::label('Confirm Password', 'Confirm Password', array('class' => 'col-md-3 control-label validate[required]')) !!}
                             <div class="col-md-6">
-                                <input type="password" id="confirm_password" class="form-control" v-model="confirm_password">
+                                <input type="password" id="confirm_password" class="form-control" v-model="confirm_password" name="confirm_password">
                                 <span class="help-block"  v-cloak v-if="submition && wrongPwdVerification">@{{passwordVerificationFB}}</span>
                             </div>
                         </div>
