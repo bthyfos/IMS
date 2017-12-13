@@ -24,8 +24,6 @@
     <script src="{{asset('js/webix.js')}}"></script>
     <link href="{{asset('css/webix.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/vue.css')}}" rel="stylesheet" type="text/css">
-
-
 </head>
 <body>
 
@@ -216,13 +214,13 @@
                             <a href="{{'dashboard'}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-users"></i> Manager Staff<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-users"></i>Manager Staff<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{'systemUsers'}}">All Users</a>
+                                    <a href="{{'systemUsers'}}">Staff List</a>
                                 </li>
                                 <li>
-                                    <a href="{{'registration'}}">Register Users</a>
+                                    <a href="{{'registration'}}">Register Staff</a>
                                 </li>
                             </ul>
 
@@ -238,10 +236,10 @@
 
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-shopping-basket fa-fw"></i>Products Info<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-shopping-basket fa-fw"></i>Stock Info<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href={{'stock'}}>Stock</a>
+                                    <a href={{'stock'}}>Stock Available</a>
                                 </li>
                                 <li>
                                     <a href={{'inavailableStock'}}>Out Of Stock List</a>
@@ -253,9 +251,6 @@
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{'departmentList'}}">Departments List</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
                                 </li>
                             </ul>
                         </li>

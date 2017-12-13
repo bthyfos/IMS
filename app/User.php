@@ -14,10 +14,10 @@ class User extends Authenticatable
 {
      use Notifiable;
     protected $fillable = [
-        'name', 'email','surname', 'password','cellphone','staffId','userRoleId','departmentId','regionId','physicalAddress','dob','positionId',
+        'name', 'email','surname', 'password','cellphone','staffId','userRoleId','departmentId','regionId','physicalAddress','dob','positionId','userName',
     ];
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token'
     ];
     protected $date =[
         'current_signInAt','lastLogIn'

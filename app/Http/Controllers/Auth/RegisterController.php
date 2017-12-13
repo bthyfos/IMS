@@ -53,6 +53,7 @@ class RegisterController extends Controller
             'positionId' => $data['positionId'],
             'physicalAddress' => $data['physicalAddress'],
             'dob' => $data['dob'],
+            'userName' => $generateUserPassword,
             'password' => bcrypt($generateUserPassword),
         ]);
 

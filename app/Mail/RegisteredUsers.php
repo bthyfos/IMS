@@ -25,8 +25,8 @@ class RegisteredUsers extends Mailable
     {
         return $this->markdown('emails.newUsers')
                     ->with([
-                            'userName'=>$this->user->name,
-                            'userPassword'=>Crypt::decrypt($this->user->password)
+                            'userName'=>$this->user->name." ".$this->user->surname,
+                            'userPassword'=>$this->user->userName
                         ]);
     }
 }
