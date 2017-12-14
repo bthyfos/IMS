@@ -50,8 +50,7 @@
                         User Loggings
                     </div>
                     <div class="panel-body">
-                        <div class="flot-chart">
-                            <div class="flot-chart-content" id="flot-line-chart">
+
                             <table id="lastLoginsTable">
                                 <thead>
                                 <tr>
@@ -63,9 +62,6 @@
                                 </tr>
                                 </thead>
                             </table>
-
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

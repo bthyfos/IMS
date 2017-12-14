@@ -47,4 +47,8 @@ class User extends Authenticatable
         }
         return false;
     }
+    public function activity()
+    {
+        return $this->hasMany(Activity::class);
+    }
 }

@@ -120,9 +120,9 @@ class AppServiceProvider extends ServiceProvider
 
         if (\Schema::hasTable('activities'))
         {
-            $activities         = Activity::orderBy('activityType','ASC')->get();
+            $activities         = Activity::with('user')->orderBy('activityType','ASC')->get();
             \View::share('activities',$activities);
-            }
+        }
 
             Schema::defaultStringLength(191);
     }

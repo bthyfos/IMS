@@ -23,7 +23,7 @@
                             <div class="form-group">
                                 {!! Form::label('name', 'Name:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::text('name', $value = null, ['class' => 'form-control', 'placeholder' => 'name']) !!}
+                                    {!! Form::text('name', $value = null, ['class' => 'form-control']) !!}
                                 </div>
                             </div>
 
@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 {!! Form::label('surname', 'Surname:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::text('surname', $value = null, ['class' => 'form-control', 'placeholder' => 'surname']) !!}
+                                    {!! Form::text('surname', $value = null, ['class' => 'form-control']) !!}
                                 </div>
                             </div>
 
@@ -39,7 +39,7 @@
                             <div class="form-group">
                                 {!! Form::label('cellphone', 'Cellphone:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::text('cellphone', $value = null, ['class' => 'form-control', 'placeholder' => 'surname']) !!}
+                                    {!! Form::text('cellphone', $value = null, ['class' => 'form-control']) !!}
                                 </div>
                             </div>
 
@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 {!! Form::label('dob', 'Date of Birth:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::date('dob', $value = null, ['class' => 'form-control', 'placeholder' => 'surname']) !!}
+                                    {!! Form::date('dob', $value = null, ['class' => 'form-control']) !!}
                                 </div>
                             </div>
 
@@ -55,7 +55,7 @@
                             <div class="form-group">
                                 {!! Form::label('physicalAddress', 'Physical Address:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::text('physicalAddress', $value = null, ['class' => 'form-control', 'placeholder' => 'surname']) !!}
+                                    {!! Form::text('physicalAddress', $value = null, ['class' => 'form-control']) !!}
                                 </div>
                             </div>
 
@@ -64,7 +64,7 @@
                                <div class="form-group">
                                 {!! Form::label('staffId', 'Staff Id:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::text('staffId', $value = null, ['class' => 'form-control', 'placeholder' => 'surname']) !!}
+                                    {!! Form::text('staffId', $value = null, ['class' => 'form-control']) !!}
                                 </div>
                             </div>
                                 <div class="form-group{{ $errors->has('userRoleId') ? ' has-error' : '' }}">
@@ -169,20 +169,6 @@
                             </div>
                         </form>
                     </div>
-
-
-                    
-
-                     <div class="panel-body">
-                            <div class="row">
-
-                                <div class="col-lg-8">
-
-
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
      </div>

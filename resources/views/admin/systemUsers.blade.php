@@ -37,8 +37,6 @@
     </div>
 </div>
 @stop
-@section('footer')
-@endsection
 @push('scripts')
     <script>
         $(function() {

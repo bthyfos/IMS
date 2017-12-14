@@ -14,15 +14,10 @@
     <link rel="stylesheet"  href="{{asset('/css/bootstrap.min.css')}}">
      <link rel="stylesheet" href="{{asset('css/jquery.dataTables.min.css')}}">
     <link href="{{asset('css/morris.css')}}" rel="stylesheet">
-
     <link href="{{asset('css/metisMenu.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/sb-admin-2.css')}}" rel="stylesheet">
-
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/toastr.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/tree.css')}}" rel="stylesheet">
-    <script src="{{asset('js/webix.js')}}"></script>
-    <link href="{{asset('css/webix.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/vue.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -39,55 +34,7 @@
                 <a class="navbar-brand" href="">IMS</a>
             </div>
             <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -95,12 +42,12 @@
                     <ul class="dropdown-menu dropdown-tasks">
                          <li>
                             <a href="#">
-
+                                <?php echo $activities; ?>
                                 @foreach($activities as $activity)
                                 <div>
                                     <strong>{{$activity->activityType}}</strong>
                                     <span class="pull-right text-muted">
-                                        <em>{{$activity->createdBy}}</em>
+                                        <em>{{$activity->user}}</em>
                                     </span>
                                 </div>
                                 <div>
@@ -117,75 +64,17 @@
                         </li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="{{'adminSettings'}}"><i class="fa fa-gear fa-fw"></i>Settings</a>
-                        </li>
+                        <li><a href="{{'adminSettings'}}">Settings</a></li>
                         <li>
                             <a href="{{ route('logout') }}"
                                onclick="event.preventDefault();
-                               document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-fw"></i>
+                               document.getElementById('logout-form').submit();">
                                 Logout
                             </a>
 
@@ -266,14 +155,13 @@
         @include('regions.add')
 
     </div>
-    <script src="{{asset('js/vue.js')}}"></script>
     <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/vue.js')}}"></script>
+
     <script src="{{asset('js/axios.min.js')}}"></script>
 
-
-    {{--<script src="{{asset('js/jquery.min.js')}}"></script>--}}
     @stack('scripts')
     <script src="{{asset('js/sb-admin-2.js')}}"></script>
     <script src="{{asset('js/raphael.min.js')}}"></script>
@@ -286,63 +174,17 @@
     <script src="{{asset('js/main.js')}}"></script>
     <script src ="{{asset('js/toastr.min.js')}}"></script>
     <script>
-        @if(Session::has('message'))
-        var type ="{{session::get('alert-type','info')}}";
-        switch(type)
-        {
-            case 'success':
-            toastr.success("{{session::get('message')}}");
-            break;
-        }
-        @endif
-    </script>
-    <script>
-        webix.ui({
-            container:"box",
-            view:"tree",
-            data:[
+     @if(Session::has('message'))
+            var type ="{{session::get('alert-type','info')}}";
+            switch(type)
             {
-                id:"root", value:"cars", open:true,
-                data:[
-
-                      { 
-                        id:"1", open :true, value:"toyota",
-
-                        data:[
-                        {
-                            id:"1.1", value:"Avalon"
-                        },
-                        {
-                            id:"1.2", value:"Corolla"
-                        },
-                        {
-                            id:"1.3", value:"Camry"
-                        }
-
-                        ]},
-
-                        { 
-                        id:"2", open :true, value:"Skoda",
-
-                        data:[
-                        {
-                            id:"2.1", value:"Octavia"
-                        },
-                        {
-                            id:"2.2", value:"Superb"
-                        },
-                        {
-                            id:"2.3", value:"Camry"
-                        }
-
-                        ]}
-
-                  ]}
-            
-            ]
-        });
-
+                case 'success':
+                    toastr.success("{{session::get('message')}}");
+                    break;
+            }
+    @endif
     </script>
+
 
 </body>
 
