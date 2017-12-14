@@ -34,10 +34,12 @@ class UserController extends Controller
     }
     public function  userList()
     {
-        $users = User::query();
+       // $users = User::query();
+        $users = User::all();
         return  Datatables::of($users)
             ->addColumn('action', function ($users) {
                 return '<a href="#edit-'.$users->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a> 
+               
                   <a href="userDetail/'.$users->id.'" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i> Remove</a> ';
             })
             ->make(true);

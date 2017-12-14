@@ -81,12 +81,13 @@
             $('#lastLoginsTable').DataTable({
                 processing: true,
                 serverSide: true,
+                method:'GET',
                 ajax: '{!! route('lastLogins') !!}',
                 columns: [
                     { data: 'name', name: 'name' },
                     { data: 'surname', name: 'surname' },
-                    { data: 'region', name: 'region'},
-                    { data: 'department', name: 'department' },
+                    { data: 'regionId', name: 'regionId'},
+                    { data: 'departmentId', name: 'departmentId' },
                     { data: 'lastLogin', name: 'lastLogin'}
                 ]
             });

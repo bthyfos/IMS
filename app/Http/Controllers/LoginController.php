@@ -34,8 +34,8 @@ class LoginController extends Controller
 
     public function lastLogin()
     {
-        $lastLogin    = User::select('name','surname','lastLogin','region','department')->get();
+        $lastLogin    = User::select('name','surname','lastLogin','regionId','departmentId')->get();
         return Datatables::of($lastLogin)->make(true);
-        }
+    }
 
 }

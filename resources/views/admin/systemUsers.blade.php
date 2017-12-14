@@ -15,17 +15,15 @@
                 <div class="panel-body">
                     {{--@component('admin.sortBy')--}}
                     {{--@endcomponent--}}
-                
-
-                    <table class="table" id="regionTable" style="max-width:100%;">
+                    <table class="table" id="userTable">
                         <thead>
                         <tr>
                             <th>Name</th>
                             <th>Surname</th>
                             <th>Role</th>
                             <th>Cellphone</th>
-                            <th>Email</th>
-                            <th>Address</th>
+                            {{--<th>Email</th>--}}
+                            {{--<th>Address</th>--}}
                             <!-- <th>Region</th>
                             <th>Department</th>
                             <th>Position</th> -->
@@ -40,60 +38,14 @@
 </div>
 @stop
 @section('footer')
-    {{--<script>--}}
-        {{--webix.ui({--}}
-            {{--container:"box",--}}
-            {{--view:"tree",--}}
-            {{--data:[--}}
-            {{--{--}}
-                {{--id:"root", value:"cars", open:true,--}}
-                {{--data:[--}}
-
-                      {{--{ --}}
-                        {{--id:"1", open :true, value:"toyota",--}}
-
-                        {{--data:[--}}
-                        {{--{--}}
-                            {{--id:"1.1", value:"Avalon"--}}
-                        {{--},--}}
-                        {{--{--}}
-                            {{--id:"1.2", value:"Corolla"--}}
-                        {{--},--}}
-                        {{--{--}}
-                            {{--id:"1.3", value:"Camry"--}}
-                        {{--}--}}
-
-                        {{--]},--}}
-
-                        {{--{ --}}
-                        {{--id:"2", open :true, value:"Skoda",--}}
-
-                        {{--data:[--}}
-                        {{--{--}}
-                            {{--id:"2.1", value:"Octavia"--}}
-                        {{--},--}}
-                        {{--{--}}
-                            {{--id:"2.2", value:"Superb"--}}
-                        {{--},--}}
-                        {{--{--}}
-                            {{--id:"2.3", value:"Camry"--}}
-                        {{--}--}}
-
-                        {{--]}--}}
-
-                  {{--]}--}}
-            {{----}}
-            {{--]--}}
-        {{--});--}}
-
-    {{--</script>--}}
 @endsection
 @push('scripts')
     <script>
         $(function() {
-            $('#regionTable').DataTable({
+            $('#userTable').DataTable({
                 processing: true,
                 serverSide: true,
+                type:'GET',
                 ajax: '{!! route('userList') !!}',
                 columns: [
                     { data: 'name', name: 'name' }  ,
