@@ -15,22 +15,25 @@
                 <div class="panel-body">
                     {{--@component('admin.sortBy')--}}
                     {{--@endcomponent--}}
-                    <table class="table" id="userTable">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Surname</th>
-                            <th>Role</th>
-                            <th>Cellphone</th>
-                            {{--<th>Email</th>--}}
-                            {{--<th>Address</th>--}}
-                            <!-- <th>Region</th>
-                            <th>Department</th>
-                            <th>Position</th> -->
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table" id="userTable">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Role</th>
+                                <th>Cellphone</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Region</th>
+                                <th>Department</th>
+                                <th>Position</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -39,11 +42,11 @@
 @stop
 @push('scripts')
     <script>
-        $(function() {
+        $(function()
+        {
             $('#userTable').DataTable({
                 processing: true,
                 serverSide: true,
-                type:'GET',
                 ajax: '{!! route('userList') !!}',
                 columns: [
                     { data: 'name', name: 'name' }  ,
@@ -52,9 +55,9 @@
                     { data: 'cellphone', name: 'cellphone' },
                     { data: 'email', name: 'email' },
                     { data: 'physicalAddress', name: 'physicalAddress' },
-                    // { data: 'regionId', name: 'regionId' },
-                    // { data: 'departmentId', name: 'departmentId' },
-                    // { data: 'positionId', name: 'positionId' },
+                    { data: 'regionId', name: 'regionId' },
+                    { data: 'departmentId', name: 'departmentId' },
+                    { data: 'positionId', name: 'positionId' },
                     {data: 'action', name: 'action', orderable: false, searchable: false}
 
                 ]

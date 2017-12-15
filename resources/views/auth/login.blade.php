@@ -14,34 +14,28 @@
 
                               <div class="card-body">
                                 <br/>
-                                 <form class="form-horizontal" method="POST" action="{{ route('app.login') }}">
+                                 <form class="form-horizontal" method="POST" action="{{ route('app.login') }}" id="Login"  v-on:submit="loginForm" >
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongEmail }">
                             <label for="email" class="col-md-4 control-label">E-mail</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"
+                                       v-model="email"
+                                       autocomplete="off"
+                                >
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                                <span class="help-block"  v-cloak v-if="submition && wrongEmail">@{{emailFB}}</span>
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongPassword}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
+                                <input id="password" type="password" class="form-control" name="password"  v-model="password">
+                                <span class="help-block"  v-cloak v-if="submition && wrongPassword">@{{passwordFB}}</span>
                             </div>
                         </div>
 
@@ -54,6 +48,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-group" >
                             <div class="col-md-8 col-md-offset-4">
                                 <button  v-on:click="logIn"  v-html="message" type="submit" class="btn btn-primary"></button>
@@ -77,4 +72,8 @@
         </div>
     </div>
 </div>
+@endsection
+@section('footer')
+
+
 @endsection

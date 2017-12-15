@@ -19,7 +19,7 @@
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/toastr.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/vue.css')}}" rel="stylesheet" type="text/css">
-</head>
+</head>0
 <body>
 
     <div id="wrapper">
@@ -42,7 +42,6 @@
                     <ul class="dropdown-menu dropdown-tasks">
                          <li>
                             <a href="#">
-                                <?php echo $activities; ?>
                                 @foreach($activities as $activity)
                                 <div>
                                     <strong>{{$activity->activityType}}</strong>
