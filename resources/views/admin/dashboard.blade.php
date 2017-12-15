@@ -42,12 +42,12 @@
                     <ul class="dropdown-menu dropdown-tasks">
                          <li>
                             <a href="#">
-                                <?php echo $activities; ?>
+                               
                                 @foreach($activities as $activity)
-                                <div>
+                                <div class="responsive">
                                     <strong>{{$activity->activityType}}</strong>
                                     <span class="pull-right text-muted">
-                                        <em>{{$activity->user}}</em>
+                                        <em>{{$activity->user->name}} {{$activity->user->surname}}</em>
                                     </span>
                                 </div>
                                 <div>

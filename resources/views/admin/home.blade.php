@@ -50,6 +50,7 @@
                         User Loggings
                     </div>
                     <div class="panel-body">
+                        <div class = "table-responsive">
 
                             <table id="lastLoginsTable">
                                 <thead>
@@ -62,6 +63,7 @@
                                 </tr>
                                 </thead>
                             </table>
+                        </div>
                     </div>
                 </div>
             </div>

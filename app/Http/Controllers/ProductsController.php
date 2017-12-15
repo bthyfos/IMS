@@ -38,7 +38,7 @@ class ProductsController extends Controller
 			$products->productTypeId  =$request->productTypeId;
 			$products->specification  =$request->specification;
 			$products->userId         =Auth::user()->id;
-			$products->initialQty    =$request->initialQty;
+			$products->initialQty     =$request->initialQty;
 			$products->availableQty   =$request->initialQty;
 			$products->price   		  =$request->price;
 			$products->save();

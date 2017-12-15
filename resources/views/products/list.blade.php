@@ -5,7 +5,7 @@
  
   <div class="panel-heading">In Stock Products</div>
   <div class="panel-body">
-
+  <div class = "table-responsive">
    <table class="table" id="productsTable">
   <thead>
     <tr>
@@ -18,65 +18,11 @@
   </thead>
 
 </table>
+</div>
   </div>
 </div>
 </div>
 @endsection
-<!-- @section('footer')
-<script>
-  jQuery(document).ready(function($){
-    var productsTable     = $('#productsTable').DataTable({
-                "autoWidth": false,
-
-                "processing": true,
-                speed: 500,
-                "dom": 'Bfrtip',
-                "buttons": [
-                    'copyHtml5',
-                    'excelHtml5',
-                    ,{
-
-                        extend : 'pdfHtml5',
-                        title  : 'Siyaleader_Report',
-                        header : 'I am text in',
-                    },
-
-                ],
-
-
-                "order" :[[0,"desc"]],
-                "ajax": "{!! url('/productList/')!!}",
-                "processing": true,
-                "serverSide": true,
-                "order" :[[0,"desc"]],
-
-                "buttons": [
-                    'excelHtml5',
-                    'csvHtml5',
-                    'pdfHtml5'
-                ],
-
-
-                "columns": [
-                    {data: 'id', name: 'id'},
-                    {data: 'name', name: 'name'},
-                    {data: 'surname', name: 'surname'},
-
-                    {data: 'created_at', name: 'created_at'},
-                ],
-
-                "aoColumnDefs": [
-                    { "bSearchable": false, "aTargets": [ 4] },
-                    { "bSortable": false, "aTargets": [ 4] }
-                ]
-
-            });
-        });
-
-
-  </script>
-@stop
- -->
 @push('scripts')
 <script>
 $(function() {

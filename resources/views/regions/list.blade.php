@@ -17,8 +17,10 @@
 <div class="panel panel-default">
 <div class="panel-heading">
 </div>
-    <div style="padding:12px 12px 12px 12px;">
-    <table class="table" id="regionsTable" >
+<div class="panel-body">
+
+<div class = "table-responsive">
+<table class="table" id="regionsTable" >
         <thead>
         <tr>
             <th>Region Id</th>
@@ -27,14 +29,9 @@
         </tr>
         </thead>
     </table>
-    </div>
-<div class="panel-body">
-<div class="flot-chart">
-<div class="flot-chart-content" id="flot-line-chart">
 
 </div>
 
-</div>
 </div>
 </div>
 </div>

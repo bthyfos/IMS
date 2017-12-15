@@ -4,6 +4,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">Out Of Stock Products</div>
   <div class="panel-body">
+    <div class = "table-responsive">
    
   	<table class="table" id="productsTable">
   <thead>
@@ -15,6 +16,7 @@
   </thead>
   </tbody>
 </table>
+</div>
 
   </div>
 </div>

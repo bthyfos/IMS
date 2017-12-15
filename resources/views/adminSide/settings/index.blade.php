@@ -17,7 +17,7 @@
                         {{ csrf_field() }}
 
 
-                <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongPassword}">
+                     <div class="form-group"  v-bind:class="{ 'has-error': submition && wrongPassword}">
                             {!! Form::label('Password', 'Password', array('class' => 'col-md-3 control-label')) !!}
                             <div class="col-md-6">
                                 <input type="password" id="password" class="form-control" v-model="password" name="password">
