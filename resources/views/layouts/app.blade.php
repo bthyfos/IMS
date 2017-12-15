@@ -12,30 +12,70 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  
+    <link href="{{ asset('css/vue.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         @yield('content')
     </div>
-    
-  <!--   <script src="{{ asset('js/app.js') }}"></script> -->
     <script src="{{ asset('js/vue.js') }}"></script>
-   
-    
-    <script> 
-      const vm = new Vue({
+    <script>
+        const ERRORS =
+            {
+
+                emailField:'Provide the email',
+                passwordField:'Fill in the product type'
+
+            };
+
+
+        const vm = new Vue({
         el:'#app',
         data: {
-       message: "<span>Login</span>"
-     },
-        methods:{
-            logIn :function() {
-         this.message = '<span>Logging in..</span>';
-        } }
+           message: "<span>Login</span>",
+            email: '',
+            emailFB: '',
+            password: '',
+            passwordFB: '',
+            submition: false
+              },
+            computed: {
+                wrongEmail:function() {
+                    if(this.email === '') {
+                        this.emailFB = ERRORS.emailField;
+                        return true
+                    }
+                    return false
+                },
+                wrongPassword:function() {  if(this.password === '') {
+                    this.passwordFB = ERRORS.passwordField;
+                    return true
+                }
+                    return false },
+                methods: {
+                    loginForm:function(event) {
+                        this.submition = true;
+                        if(this.wrongEmail ||  this.wrongPassword)
+                            event.preventDefault();
+                        else {
+                            axios.post('app.login')
+                                .then(function (response) {
+                                })
+                                .catch(function (error) {
+                                    console.log(error);
+                                });
+                        }
+                    },
+                    logIn :function() {
+                        this.message = '<span>Logging in..</span>';
+                    }
 
-       });
+                }
+            }
+
+        });
     </script>
+
   </body>
 </html>
 
