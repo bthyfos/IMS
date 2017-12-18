@@ -5,10 +5,6 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\UserRoles;
-use App\Region;
-use App\Department;
-use App\Handover;
 
 class User extends Authenticatable
 {
@@ -24,15 +20,19 @@ class User extends Authenticatable
     ];
     public function userRole()
     {
-        return $this->hasOne(UserRoles::class);
+        return $this->belongsTo(UserRoles::class,'userRoleId','id');
+    }
+    public function position()
+    {
+        return $this->belongsTo(Position::class,'positionId','id');
     }
     public function region()
     {
-        return $this->belongsTo(Region::class);
+        return $this->belongsTo(Region::class,'regionId','id');
     }
     public function department()
     {
-        return $this->belongsTo(Department::class);
+        return $this->belongsTo(Department::class,'departmentId','id');
     }
     public function handover()
     {
