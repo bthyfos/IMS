@@ -21,6 +21,9 @@
     "webpack-config": "^7.5.0"
   },
   "dependencies": {
+    "express": "^4.16.2",
+    "vue": "^2.5.11",
+    "vue-server-renderer": "^2.5.11",
     "vue2-typeahead": "^1.0.16"
   }
 }

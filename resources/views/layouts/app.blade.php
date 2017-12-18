@@ -24,7 +24,7 @@
             {
 
                 emailField:'Provide the email',
-                passwordField:'Fill in the product type'
+                passwordField:'Provide the password'
 
             };
 
@@ -39,6 +39,7 @@
             passwordFB: '',
             submition: false
               },
+              
             computed: {
                 wrongEmail:function() {
                     if(this.email === '') {
@@ -52,26 +53,27 @@
                     return true
                 }
                     return false },
-                methods: {
+               
+            },
+             methods: {
                     loginForm:function(event) {
                         this.submition = true;
                         if(this.wrongEmail ||  this.wrongPassword)
                             event.preventDefault();
                         else {
-                            axios.post('app.login')
-                                .then(function (response) {
-                                })
-                                .catch(function (error) {
-                                    console.log(error);
-                                });
+                           
+                            return true
                         }
                     },
+
                     logIn :function() {
-                        this.message = '<span>Logging in..</span>';
-                    }
+                      
+                    this.loginForm()
+                    return this.message = '<span>Logging in..</span>';
 
                 }
-            }
+
+                }
 
         });
     </script>

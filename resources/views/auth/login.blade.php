@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+
 <div class="container">
 
 
@@ -25,7 +28,6 @@
                                        v-model="email"
                                        autocomplete="off"
                                 >
-
                                 <span class="help-block"  v-cloak v-if="submition && wrongEmail">@{{emailFB}}</span>
                             </div>
                         </div>
