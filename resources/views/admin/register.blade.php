@@ -1,29 +1,6 @@
 @extends('admin.dashboard')
 @section('content')
-
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#dob").datepicker({
-                maxDate :-0
-            });
-
-        });
-        // Dealing with the date calender
-        $(function()
-        {
-            $( "#dob" ).datepicker({
-                prevText:"click for previous months",
-                nextText:"click for next months",
-                showOtherMonths:true,
-                selectOtherMonths: false
-            });
-        });
-    </script>
-
-
-  <div id="page-wrapper">
+    <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h4 class="page-header">REGISTER USER</h4>
@@ -34,8 +11,6 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                         </div>
-
-
 
                         <div style="margin-top:20px; padding:0 10px 0 10px;">
                             <form class="form-horizontal" method="POST" action="{{ route('register') }}">

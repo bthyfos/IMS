@@ -136,6 +136,9 @@
                                 <li>
                                     <a href="{{'registration'}}">Register Staff</a>
                                 </li>
+                                <li>
+                                    <a href="{{'positionList'}}">Add Position</a>
+                                </li>
                             </ul>
 
                         </li>
@@ -177,6 +180,7 @@
         @yield('content')
 
         @include('adminSide.departments.add')
+        @include('adminSide.positions.add')
         @include('regions.add')
 
     </div>

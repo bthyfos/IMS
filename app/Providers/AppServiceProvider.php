@@ -76,7 +76,7 @@ class AppServiceProvider extends ServiceProvider
             $departments         = Department::orderBy('name','ASC')
                                                             ->get();
             $selectDepartments    = array();
-            $selectDepartments[0] = "Select / All";
+            $selectDepartments[0] = "Select Department";
 
             foreach ($departments as $department) {
                $selectDepartments[$department->id] = $department->name;
@@ -91,7 +91,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $regions         = Region::orderBy('name','ASC')->get();
             $selectRegions    = array();
-            $selectRegions[0] = "Select / All";
+            $selectRegions[0] = "Select Region";
 
             foreach ($regions as $region) {
                $selectRegions[$region->id] = $region->name;

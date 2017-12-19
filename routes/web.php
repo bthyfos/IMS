@@ -47,25 +47,35 @@ Route::group(['middleware'=>'auth'], function()
 	Route::get('registration','AdminController@registration');
     Route::view('stock','AdminSide.products.list');
     Route::view('adminSettings','adminSide.settings.index');
+
    //Regions
     Route::get('regions','RegionController@regions');
     Route::post('addRegion','RegionController@addRegion');
     Route::get('getRegions','RegionController@getRegions')->name('getRegions');
     Route::get('deleteRegion/{id}','RegionController@deleteRegion')->name('deleteRegion');
+
     //ProductsInfo
     Route::view('stock','AdminSide.products.list');
     Route::view('inavailableStock','AdminSide.products.outOfStockList');
     Route::get('productsInStock','ProductsController@getProducts')->name('productsInStock');
     Route::get('inavailableStockList','ProductsController@inavailableStockList')->name('inavailableStockList');
+
    //Departments
     Route::view('departmentList','AdminSide.departments.departmentList');
     Route::get('departments','DepartmentsController@departments')->name('departments');
     Route::post('addDepartment','DepartmentsController@addDepartment');
     Route::get('lastLogins','LoginController@lastLogin')->name('lastLogins');
+    Route::get('deleteDepartment/{id}','DepartmentsController@delete')->name('deleteDepartment');
 
     //Users
     Route::get('userList','UserController@userList')->name('userList');
     Route::get('userDetail/{id}','UserController@userDetail')->name('userDetail');
+
+    //Position
+    Route::view('positionList','AdminSide.positions.list');
+    Route::get('positions','PositionsController@positions')->name('positions');
+    Route::post('addPosition','PositionsController@addPosition');
+
 
 });
 
