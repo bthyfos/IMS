@@ -23,14 +23,14 @@ class AppServiceProvider extends ServiceProvider
 
         if (\Schema::hasTable('user_roles'))
         {
-            $selectUserRoles          = UserRoles::orderBy('name','ASC')
+            $userRoles          = UserRoles::orderBy('name','ASC')
                                                             ->get();
-//            $selectUserRoles    = array();
-//            $selectUserRoles[0] = "Select / All";
+            $selectUserRoles    = array();
+            $selectUserRoles[0] = "Select Role";
 
-//            foreach ($userRoles as $userRole) {
-//               $selectUserRoles[$userRole->id] = $userRole->name;
-//            }
+            foreach ($userRoles as $userRole) {
+               $selectUserRoles[$userRole->id] = $userRole->name;
+            }
 
              \View::share('selectUserRoles',$selectUserRoles);
 
@@ -107,7 +107,7 @@ class AppServiceProvider extends ServiceProvider
             $positions         = Position::orderBy('name','ASC')
                                                             ->get();
             $selectPositions   = array();
-            $selectPositions[0] = "Select / All";
+            $selectPositions[0] = "Select Position";
 
             foreach ($positions as $position) {
                $selectPositions[$position->id] = $position->name;
