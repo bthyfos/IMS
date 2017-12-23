@@ -85,7 +85,7 @@
                     { data: 'name', name: 'name' },
                     { data: 'surname', name: 'surname' },
                     { data: 'regionId', name: 'regionId'},
-                    { data: 'departmentId', name: 'departmentId' },
+                    { data: 'departmentId', name: 'departmentId'},
                     { data: 'lastLogin', name: 'lastLogin'}
                 ]
             });

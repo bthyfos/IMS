@@ -9,6 +9,6 @@ class UserRoles extends Model
 {
     public function users()
     {
-      return $this->belongsToMany(User::class);	
+      return $this->hasOne(User::class);
     }
 }

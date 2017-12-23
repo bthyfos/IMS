@@ -1,7 +1,6 @@
 @extends('admin.dashboard')
 @section('content')
-
-  <div id="page-wrapper">
+    <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h4 class="page-header">REGISTER USER</h4>
@@ -13,8 +12,6 @@
                         <div class="panel-heading">
                         </div>
 
-
-
                         <div style="margin-top:20px; padding:0 10px 0 10px;">
                             <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
@@ -23,7 +20,7 @@
                             <div class="form-group">
                                 {!! Form::label('name', 'Name:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::text('name', $value = null, ['class' => 'form-control']) !!}
+                                    {!! Form::text('name', $value = null, ['class' => 'form-control' ,'autocomplete'=>'off']) !!}
                                 </div>
                             </div>
 
@@ -31,7 +28,7 @@
                             <div class="form-group">
                                 {!! Form::label('surname', 'Surname:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::text('surname', $value = null, ['class' => 'form-control']) !!}
+                                    {!! Form::text('surname', $value = null, ['class' => 'form-control' ,'autocomplete'=>'off']) !!}
                                 </div>
                             </div>
 
@@ -39,7 +36,7 @@
                             <div class="form-group">
                                 {!! Form::label('cellphone', 'Cellphone:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::text('cellphone', $value = null, ['class' => 'form-control']) !!}
+                                    {!! Form::text('cellphone', $value = null, ['class' => 'form-control' ,'autocomplete'=>'off']) !!}
                                 </div>
                             </div>
 
@@ -47,7 +44,7 @@
                             <div class="form-group">
                                 {!! Form::label('dob', 'Date of Birth:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::date('dob', $value = null, ['class' => 'form-control']) !!}
+                                    {!! Form::date('dob', $value = null, ['class' => 'form-control','id'=>'dob']) !!}
                                 </div>
                             </div>
 
@@ -55,7 +52,7 @@
                             <div class="form-group">
                                 {!! Form::label('physicalAddress', 'Physical Address:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::text('physicalAddress', $value = null, ['class' => 'form-control']) !!}
+                                    {!! Form::text('physicalAddress', $value = null, ['class' => 'form-control' ,'autocomplete'=>'off']) !!}
                                 </div>
                             </div>
 
@@ -64,12 +61,21 @@
                                <div class="form-group">
                                 {!! Form::label('staffId', 'Staff Id:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
-                                    {!! Form::text('staffId', $value = null, ['class' => 'form-control']) !!}
+                                    {!! Form::text('staffId', $value = null, ['class' => 'form-control','autocomplete'=>'off']) !!}
                                 </div>
                             </div>
                                 <div class="form-group{{ $errors->has('userRoleId') ? ' has-error' : '' }}">
                                 {!! Form::label('userRoleId', 'User Role:', ['class' => 'col-md-3 control-label']) !!}
                                 <div class="col-md-6">
+
+                                    {{--<select class ="form-control">--}}
+                                        {{--<option selection disabled> Select Role</option>--}}
+                                        {{--@foreach($selectUserRoles as $selectUserRole)--}}
+                                            {{--<option  userRoleId ="{{$selectUserRole->id}}">{{$selectUserRole->name}}</option>--}}
+                                        {{--@endforeach--}}
+                                    {{--</select>--}}
+
+
 
                                     {!! Form::select('userRoleId',$selectUserRoles,['class' => 'form-control','id' => 'userRoleId']) !!}
                                     @if ($errors->has('userRoleId'))
@@ -88,6 +94,14 @@
                                 <div class="col-md-6">
 
                                     {!! Form::select('regionId',$selectRegions,['class' => 'form-control','id' => 'regionId']) !!}
+
+                                    {{--<select class ="form-control">--}}
+
+                                        {{--@foreach($regions as $selectRegion)--}}
+                                            {{--<option  regionId="{{$selectRegion->id}}">{{$selectRegion->name}}</option>--}}
+                                        {{--@endforeach--}}
+                                    {{--</select>--}}
+
                                     @if ($errors->has('regionId'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('regionId') }}</strong>
@@ -101,6 +115,14 @@
 
                                 <div class="col-md-6">
                                     {!! Form::select('departmentId',$selectDepartments,['class' => 'form-control','id' => 'departmentId']) !!}
+
+                                    {{--<select class ="form-control">--}}
+
+                                        {{--@foreach($departments as $selectDepartment)--}}
+                                            {{--<option  departmentId="{{$selectDepartment->id}}">{{$selectDepartment->name}}</option>--}}
+                                        {{--@endforeach--}}
+                                    {{--</select>--}}
+
                                     @if ($errors->has('departmentId'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('departmentId') }}</strong>
@@ -115,7 +137,15 @@
 
                                 <div class="col-md-6">
                                     {!! Form::select('positionId',$selectPositions,['class' => 'form-control','id' => 'positionId']) !!}
-                                    @if ($errors->has('positionId'))
+
+                                    {{--<select class ="form-control">--}}
+
+                                        {{--@foreach($positions as $position)--}}
+                                            {{--<option  positionId="{{$position->id}}">{{$position->name}}</option>--}}
+                                        {{--@endforeach--}}
+                                    {{--</select>--}}
+
+                                @if ($errors->has('positionId'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('positionId') }}</strong>
                                     </span>
@@ -128,7 +158,7 @@
                                 {!! Form::label('email', 'Email:', ['class' => 'col-md-3 control-label']) !!}
 
                                 <div class="col-md-6">
-                                    {!! Form::email('email',NUll,['class' => 'form-control','id' => 'email']) !!}
+                                    {!! Form::email('email',NUll,['class' => 'form-control','id' => 'email' ,'autocomplete'=>'off']) !!}
 
                                     @if ($errors->has('email'))
                                         <span class="help-block">
@@ -161,7 +191,7 @@
                             {{--</div>--}}
 
                             <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
+                                <div class="col-md-6 col-md-offset-3">
                                     <button type="submit" class="btn btn-primary">
                                         Register
                                     </button>

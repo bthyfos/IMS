@@ -26,11 +26,11 @@ class RegionController extends Controller
     public function addRegion(Request $request)
     {
         $regionObj         = new Region();
-        $regionObj->name   = ucfirst($request->region);
+        $regionObj->name   = strtoupper($request->region);
         $regionObj->save();
 
         $notification = array(
-            'message'=>'A new region successfully added',
+            'message'=>'A new region added successfully ',
             'alert-type'=>'success'
           );
 

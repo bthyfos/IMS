@@ -20,7 +20,8 @@ class RegisterController extends Controller
 
     protected function validator(array $data)
     {
-        return Validator::make($data, 
+
+        return Validator::make($data,
             [
             'name' => 'required|string|max:255',
             'surname' => 'required|string|max:255',
@@ -42,16 +43,16 @@ class RegisterController extends Controller
         $generateUserPassword   = $this->generateRandomString();
 
         return User::create([
-            'name' => $data['name'],
+            'name' => strtoupper($data['name']),
             'email' => $data['email'],
-            'surname' => $data['surname'],
+            'surname' => strtoupper($data['surname']),
             'cellphone' => $data['cellphone'],
             'userRoleId' => $data['userRoleId'],
             'departmentId' => $data['departmentId'],
             'regionId' => $data['regionId'],
             'staffId' => $data['staffId'],
             'positionId' => $data['positionId'],
-            'physicalAddress' => $data['physicalAddress'],
+            'physicalAddress' => strtoupper($data['physicalAddress']),
             'dob' => $data['dob'],
             'userName' => $generateUserPassword,
             'password' => bcrypt($generateUserPassword),

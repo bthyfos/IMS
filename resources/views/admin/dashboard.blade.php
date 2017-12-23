@@ -37,6 +37,14 @@
             alert('oak');
      } 
      </style>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#dob" ).datepicker();
+        } );
+    </script>
 </head>
 <body>
 
@@ -128,6 +136,9 @@
                                 <li>
                                     <a href="{{'registration'}}">Register Staff</a>
                                 </li>
+                                <li>
+                                    <a href="{{'positionList'}}">Add Position</a>
+                                </li>
                             </ul>
 
                         </li>
@@ -169,6 +180,7 @@
         @yield('content')
 
         @include('adminSide.departments.add')
+        @include('adminSide.positions.add')
         @include('regions.add')
 
     </div>
