@@ -24,7 +24,8 @@
             {
 
                 emailField:'Provide the email',
-                passwordField:'Provide the password'
+                passwordField:'Provide the password',
+                wrongEmailFormatField:'Wrong email format provided'
 
             };
 
@@ -55,6 +56,7 @@
                     return false },
                
             },
+
              methods: {
                     loginForm:function(event) {
                         this.submition = true;
@@ -71,6 +73,10 @@
                     this.loginForm()
                     return this.message = '<span>Logging in..</span>';
 
+                },
+                emailFomat:function()
+                {
+                    
                 }
 
                 }

@@ -19,7 +19,25 @@
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/toastr.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/vue.css')}}" rel="stylesheet" type="text/css">
-</head>0
+    <style type="text/css">
+        body{
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    min-height: 100%;
+    background: #E3E8E7;
+    font-size: 14px;
+    line-height: 1.6;
+        }
+    .sidebar ul li :hover 
+    {
+    background-color: white;
+    }
+     .sidebar ul li :click
+     {
+
+            alert('oak');
+     } 
+     </style>
+</head>
 <body>
 
     <div id="wrapper">

@@ -13,28 +13,6 @@
                     Organisation Chart
                 </div>
                 <div class="panel-body">
-<<<<<<< HEAD
-                   
-                    <div class = "table-responsive">
-                    <table class="table" id="userTable">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Surname</th>
-                            <th>Role</th>
-                            <th>Cellphone</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>Region</th>
-                            <th>Department</th>
-                            <th>Position</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                    </table>
-=======
-                    {{--@component('admin.sortBy')--}}
-                    {{--@endcomponent--}}
                     <div class="table-responsive">
                         <table class="table" id="userTable">
                             <thead>
@@ -53,8 +31,6 @@
                             </thead>
                         </table>
                     </div>
-
->>>>>>> 02fdfa1120b3247065822c83875911adf6d1ed1d
                 </div>
                 </div>
             </div>
@@ -69,10 +45,8 @@
             $('#userTable').DataTable({
                 processing: true,
                 serverSide: true,
-<<<<<<< HEAD
                 method:'GET',
-=======
->>>>>>> 02fdfa1120b3247065822c83875911adf6d1ed1d
+
                 ajax: '{!! route('userList') !!}',
                 columns: [
                     { data: 'name', name: 'name' }  ,

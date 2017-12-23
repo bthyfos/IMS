@@ -70,6 +70,12 @@
 .tabs-left > .nav-tabs .active > a:hover,
 .tabs-left > .nav-tabs .active > a:focus {
   border-color: #ddd transparent #ddd #ddd;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #71F3C3;
+    border-color: #71F3DA;
+}
     </style>
  
       <script src="{{asset('js/vue.js')}}"></script>
@@ -83,7 +89,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Plan International Org</a>
+          <a class="navbar-brand" href="#">IMS</a>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -98,8 +104,8 @@
 
                       <li><a  href="{{'productsList'}}">Stock List</a></li>
                       <li><a href="{{'outOfStock'}}">Out Of Stock</a></li>
-                      <li><a  href="{{'returns'}}">Returns</a></li>
-                      <li><a   href="#">Pending Orders</a></li>
+                     <!--  <li><a  href="{{'returns'}}">Returns</a></li>
+                      <li><a   href="#">Pending Orders</a></li> -->
                   </ul>
               </li>
               <li><a  href="{{'handover'}}">Hangovers</a></li>
@@ -146,8 +152,6 @@
    </div>
     
    <div class="container">
-        <div class="page-header">
-        </div>
         @yield('content')
         @include('products.productType')
    </div>
