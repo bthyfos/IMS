@@ -7,14 +7,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="addProductTypeForm">
 
-                {!! Form::open(['url' => '/addProductType', 'class' => 'form-horizontal' ,'id'=>'addProductTypeForm']) !!}
+                {!! Form::open(['url' => '/addProductType', 'class' => 'form-horizontal' ,'id'=>'addProductTypeForm' ,'v-on:submit'=>"productTypeForm"]) !!}
 
-                <div class="form-group" style="margin-top: 5px;">
+                <div class="form-group" style="margin-top: 5px;" v-bind:class="{ 'has-error': submition && wrongName }">
                     {!! Form::label('name', 'Name:', ['class' => 'col-lg-2 control-label']) !!}
                     <div class="col-lg-6">
-                        {!! Form::text('name', $value = null, ['class' => 'form-control', 'placeholder' => 'Product Type Name']) !!}
+                        {!! Form::text('name', $value = null, ['class' => 'form-control', 'placeholder' => 'Product Type Name','v-model'=>'name']) !!}
+                         <span class="help-block"  v-cloak v-if="submition && wrongName">@{{nameFB}}</span>
                     </div>
                 </div>
 

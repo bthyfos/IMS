@@ -113,8 +113,9 @@
 
           <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
+                  <i class="fa fa-user fa-fw"></i> 
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                      <span class="caret"></span>
+                        <i class="fa fa-user fa-fw"></i> <span class="caret"></span>
                   </a>
 
                   <ul class="dropdown-menu" role="menu">
@@ -155,17 +156,10 @@
         @yield('content')
         @include('products.productType')
    </div>
-
-   
-
     <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
-
-
-
-
     <script>
         $('.menu li a').click(function(e) 
         {
@@ -178,10 +172,9 @@
                 });
     </script>
    @stack('scripts')
-
-
   <script src="{{asset('js/main.js')}}"></script>
    <script src ="{{asset('js/toastr.min.js')}}"></script>
+
   <script>
         @if(Session::has('message'))
         var type ="{{session::get('alert-type','info')}}";
@@ -193,6 +186,5 @@
         }
         @endif
     </script>
-
   </body>
 </html>

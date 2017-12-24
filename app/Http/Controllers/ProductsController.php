@@ -43,17 +43,15 @@ class ProductsController extends Controller
 			$products->price   		  =$request->price;
 			$products->save();
 
+			// $activities  = create(this->activity());
 
-			$activities               = new Activity();
-			$activities->activityType =$products->id;
-			$activities->createdBy    =$products->userId;
-			$activities->save();
-
-			 $notification = array(
-            'message'=>'A new product was successfully added',
+			$notification = array(
+            'message'=>' New Product  added successfully',
             'alert-type'=>'success'
-          );
-		return Redirect::back()->with($notification);
+          			);
+
+        return back()->with($notification);
+		// return Redirect::back()->with($notification);
 	}
 	public  function inavailableStockList()
     {
@@ -61,6 +59,15 @@ class ProductsController extends Controller
         return Datatables::of($inavailableProducts)->make(true);
     }
 
+
+     protected function activity()
+     {
+     	$activities               =new Activity();
+		$activities->activityType =1;
+		$activities->createdBy    =Auth::user()->id;
+		$activities->save();
+
+     }
 
 	
 }

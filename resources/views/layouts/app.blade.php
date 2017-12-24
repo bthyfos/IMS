@@ -83,7 +83,18 @@
 
         });
     </script>
+    <script>
 
+    @if(Session::has('message'))
+            var type ="{{session::get('alert-type','info')}}";
+            switch(type)
+            {
+                case 'success':
+                    toastr.success("{{session::get('message')}}");
+                    break;
+            }
+    @endif
+    </script>
   </body>
 </html>
 

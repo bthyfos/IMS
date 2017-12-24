@@ -6,7 +6,7 @@
                     </button>
                 </div>
 
-<div class="col-xs-6 col-md-12">
+<div class="col-md-12">
 <hr>
 
 <div class="panel panel-default">
@@ -74,5 +74,3 @@
 </div>
 </div>
 @endsection
-@section('footer')
-@stop

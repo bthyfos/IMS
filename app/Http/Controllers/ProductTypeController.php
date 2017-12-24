@@ -10,11 +10,11 @@ class ProductTypeController extends Controller
    public function create(Request $request)
    {
    		$productType  = new ProductType();
-   		$productType->name =$request->name;
+   		$productType->name =strtoupper($request->name);
    		$productType->save();
 
    		 $notification = array(
-            'message'=>'A new product type was successfully added',
+            'message'=>'Product Type added successfully',
             'alert-type'=>'success'
           );
 

@@ -5,6 +5,7 @@ const ERRORS = {
     passwordMisMatchField: 'Provided passwords do not match',
     confirmPasswordField:'Fill in the confirm password',
     nameField:'Fill in the product name',
+    productTypeNameField:'Fill in the product type name',
     typeIdField:'Fill in the product type',
     specificationField:'Fill in the product specification',
     orderedDateField:'Fill in the product ordered date',
@@ -216,6 +217,34 @@ if (document.querySelector('#userPreferenceForm')) {
                         });
                 }
             }
+
+    }
+})
+}
+
+if (document.querySelector('#addProductTypeForm')) {
+   new Vue({
+    el: "#addProductTypeForm",
+    data: {
+        name: '',
+        submition: false
+    },
+    computed: {
+        wrongName:function() {  if(this.name === '') {
+            this.nameFB = ERRORS.productTypeNameField;
+            return true
+        }
+            return false }
+    },
+    methods: {
+        productTypeForm:function(event) {
+            this.submition = true;
+            if(this.wrongName)
+                event.preventDefault();
+            else {
+                return  true;
+                }
+        }
 
     }
 })
