@@ -23,6 +23,6 @@ class HomeController extends Controller
     public function firstFunc()
     {
         //return view('auth.register');
-        return view('home.landingPage');
+        return view('home.home');
     }
 }

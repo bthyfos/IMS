@@ -25,7 +25,7 @@ class LoginController extends Controller
     				return Redirect::to('/dashboard');
     			}
 
-    			return  Redirect::to('/');
+    			return  Redirect::to('/home');
 
     		}
 

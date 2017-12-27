@@ -165,8 +165,6 @@
    <div  class="container">
     <div class ="row">
 
-
-
     </div>
    </div>
     
@@ -177,15 +175,10 @@
         @include('products.productType')
    </div>
 
-   
-
     <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
-
-
-
 
     <script>
         $('.menu li a').click(function(e) 
