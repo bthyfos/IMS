@@ -109,12 +109,13 @@ new Vue({
         quantity: '',
         quantityFB: '',
         submition: false,
-           query:'',
+        isSearching:false,
+        query:'',
         users:[],
     },
     computed: {
         wrongRname:function() {
-            if(this.name === '') {
+            if(this.query === '') {
             this.nameFB = ERRORS.recipeintNameField
             return true
             }
@@ -154,6 +155,31 @@ new Vue({
                    // console.log(response.data);
                  });
         }
+    },
+    watch:
+    {
+        query: function(query)
+        {
+           this.isSearching = true;
+           var vm = this;
+           setTimeout(function()
+            {
+
+            vm.users =[];
+            axios.get('/recipientList/'+query)
+                 .then(response=>{
+                    console.log(response.data);
+
+                    // vm.users  = response.data;
+                    response.data.forEach((user) =>{
+                        vm.users.push(user);
+                    });
+                 });
+              vm.isSearching =false;
+            } ,1000);
+
+        }
+
     }
 
 });

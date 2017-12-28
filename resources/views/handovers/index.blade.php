@@ -11,40 +11,21 @@
     <div class="form-group" v-bind:class="{ 'has-error': submition && wrongRname }">
         {!! Form::label('Recipient Name', 'Recipient Name', array('class' => 'col-md-3 control-label')) !!}
 
+       
         <div class="col-md-6">
-            {{--{!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name','v-model'=>'' , 'v-on:keyup'=>'getResults()','  autocomplete'=>'off']) !!}--}}
             <input type="text" class="form-control"
-                   :placeholder="placeholder"
                    autocomplete="off"
                    v-model="query"
-                   @keydown.down="down"
-                   @keydown.up="up"
-                   @keydown.enter.prevent="hit"
-                   @keydown.esc="reset"
-                   @input="update($event)"
             />
-
-            <ul v-show="hasItems" class="dropdown-menu-list dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                <li v-for="(item , index) in items" :class="{active:activeClass(index)}"
-                    @mousedown="hit" @mousemove="setActive(index)">
-                    <a v-html="highlighting(item, vue)"></a>
-                </li>
+            <p v-if="isSearching" v-cloak>Searching... 
+            </p>
+            <span v-else>
+            <ul class="dropdown-menu-list dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+              <li v-for="user in users "  v-cloak> @{{user.name}}</li>
             </ul>
-            <ul v-if="showSearchingFlag" v-show="!hasItems&&!isEmpty" class="dropdown-menu" role="menu"
-                aria-labelledby="dropdownMenu">
-                <li class="active" @mousemove="setActive(index)" v-if="!loading">
-                    <a>
-                        <span v-html="NoResultText"></span>
-                    </a>
-                </li>
-                <li class="active" @mousemove="setActive(index)" v-else>
-                    <a>
-                        <span v-html="SearchingText"></span>
-                    </a>
-                </li>
-            </ul>
+          </span>
             <span class="help-block" v-cloak v-if="submition && wrongRname">@{{nameFB }}</span>
-          </div>
+             </div>
         </div>
 
         <div class="form-group" v-bind:class="{ 'has-error': submition && wrongPname }">

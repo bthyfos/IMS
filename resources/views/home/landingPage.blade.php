@@ -80,6 +80,10 @@
 /*    border-color: #ddd transparent #ddd #ddd;
 }*/
 
+.dropdown-menu-list{
+  max-width:100%;
+}
+
   ul li{
       display: inline-block;
       position: relative;
