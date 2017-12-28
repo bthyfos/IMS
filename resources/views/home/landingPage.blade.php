@@ -76,8 +76,41 @@
     background-color: #71F3C3;
     border-color: #71F3DA;
 }
-    </style>
- 
+  
+/*    border-color: #ddd transparent #ddd #ddd;
+}*/
+
+  ul li{
+      display: inline-block;
+      position: relative;
+      line-height: 21px;
+      text-align: left;
+  }
+  ul li a{
+      display: block;
+      padding: 8px 25px;
+      color: #333;
+      text-decoration: none;
+  }
+  ul li a:hover{
+      color: #fff;
+      background: #939393;
+  }
+  ul li ul.dropdown-menu{
+      min-width: 100%; /* Set width of the dropdown */
+      background: #f2f2f2;
+      display: none;
+      position: absolute;
+      z-index: 999;
+      left: 0;
+  }
+  ul li:hover ul.dropdown-menu{
+      display: block;	/* Display the dropdown */
+  }
+  ul li ul.dropdown-menu li{
+      display: block;
+  }
+      </style> 
       <script src="{{asset('js/vue.js')}}"></script>
   </head>
   <body>
@@ -96,19 +129,20 @@
 
           <ul class="nav navbar-nav">
 
-              <li class="active"><a   href="{{'/home'}}">Home</a></li>
-              <li class="dropdown">
-                  <a  href="{{'products'}}" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                      <li><a  href="{{'products'}}">Add To Stock</a></li>
 
-                      <li><a  href="{{'productsList'}}">Stock List</a></li>
-                      <li><a href="{{'outOfStock'}}">Out Of Stock</a></li>
-                     <!--  <li><a  href="{{'returns'}}">Returns</a></li>
-                      <li><a   href="#">Pending Orders</a></li> -->
-                  </ul>
-              </li>
-              <li><a  href="{{'handover'}}">Hangovers</a></li>
+
+              <li><a   href="{{'/home'}}">Home</a></li>
+
+                  <li>
+                      <a href="#">Products &#9662;</a>
+                      <ul class="dropdown-menu" >
+                          <li><a  href="{{'products'}}">Add </a></li>
+                          <li><a  href="{{'productsList'}}">Stock List</a></li>
+                          <li><a  href="{{'outOfStock'}}">Out Of Stock</a></li>
+                      </ul>
+                  </li>
+              <li><a href="{{'handover'}}">Hangovers</a></li>
+
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -119,7 +153,7 @@
                   </a>
 
                   <ul class="dropdown-menu" role="menu">
-
+                      <li><a href="{{'settings'}}">Settings</a></li>
                       <li>
                           <a href="{{ route('logout') }}"
                              onclick="event.preventDefault();
@@ -131,23 +165,14 @@
                               {{ csrf_field() }}
                           </form>
                       </li>
-                      <li><a href="{{'settings'}}">Settings</a></li>
+
                   </ul>
               </li>
-          <!-- <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="">Log out</a></li>
-          <li><a href="{{'settings'}}">Settings</a></li>
-        </ul>
-      </li> -->
           </ul>
       </div>
   </nav>
    <div  class="container">
     <div class ="row">
-
-
 
     </div>
    </div>
@@ -160,6 +185,7 @@
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
+
     <script>
         $('.menu li a').click(function(e) 
         {
