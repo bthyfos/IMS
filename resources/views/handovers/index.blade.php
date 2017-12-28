@@ -17,11 +17,11 @@
                    autocomplete="off"
                    v-model="query"
             />
-            <p v-if="isSearching" v-cloak>Searching... 
+            <p  class="dropdown-menu-list dropdown-menu" role="menu" aria-labelledby="dropdownMenu" v-if="isSearching" v-cloak>Searching... 
             </p>
             <span v-else>
             <ul class="dropdown-menu-list dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-              <li v-for="user in users "  v-cloak> @{{user.name}}</li>
+              <li v-for="user in users" v-cloak> @{{user.name}} @{{user.surname}}</li>
             </ul>
           </span>
             <span class="help-block" v-cloak v-if="submition && wrongRname">@{{nameFB }}</span>

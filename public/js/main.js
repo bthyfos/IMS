@@ -144,16 +144,6 @@ new Vue({
             this.submition = true;
             if(this.wrongRname || this.wrongPname || this.wrongPquantity)
                 event.preventDefault()
-        },
-        getResults(){
-            this.users =[];
-            axios.get('/recipientList',{ params:{query:this.query}})
-                 .then(response=>{
-                    response.data.forEach((user) =>{
-                        this.users.push(user);
-                    });
-                   // console.log(response.data);
-                 });
         }
     },
     watch:
@@ -165,17 +155,15 @@ new Vue({
            setTimeout(function()
             {
 
-            vm.users =[];
             axios.get('/recipientList/'+query)
                  .then(response=>{
-                    console.log(response.data);
-
-                    // vm.users  = response.data;
+                      vm.users = [];
                     response.data.forEach((user) =>{
                         vm.users.push(user);
                     });
                  });
-              vm.isSearching =false;
+
+              vm.isSearching = false;
             } ,1000);
 
         }
