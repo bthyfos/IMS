@@ -111,26 +111,28 @@ new Vue({
         submition: false,
         isSearching:false,
         query:'',
-        users:[],
+        users:[]
     },
     computed: {
         wrongRname:function() {
             if(this.query === '') {
-            this.nameFB = ERRORS.recipeintNameField
+            this.nameFB = ERRORS.recipeintNameField;
             return true
             }
             return false
         },
         wrongPname:function() {  if(this.product_name === '') {
-            this.product_nameFB = ERRORS.productNameField
+            this.product_nameFB = ERRORS.productNameField;
             return true
         }
             return false },
         wrongPquantity:function() {  if(this.quantity === '') {
-            this.quantityFB = ERRORS.quantityField
+            this.quantityFB = ERRORS.quantityField;
             return true
         }
-            return false },
+            return false }
+
+
     },
      // render: {
      //    require: false,
@@ -145,6 +147,7 @@ new Vue({
             if(this.wrongRname || this.wrongPname || this.wrongPquantity)
                 event.preventDefault()
         }
+
     },
     watch:
     {
@@ -152,21 +155,31 @@ new Vue({
         {
            this.isSearching = true;
            var vm = this;
-           setTimeout(function()
-            {
 
-            axios.get('/recipientList/'+query)
-                 .then(response=>{
-                      vm.users = [];
-                    response.data.forEach((user) =>{
-                        vm.users.push(user);
-                    });
-                 });
+           if(this.query ==='')
+           {
+               vm.isSearching = false;
+               console.log(vm.users=[]);
+               return vm.users = [];
 
-              vm.isSearching = false;
-            } ,1000);
+               }
+           else{
+               setTimeout(function()
+               {
+                   axios.get('/recipientList/'+query)
+                       .then(response=>{
+                       vm.users = [];
+                   response.data.forEach((user) =>{
+                       vm.users.push(user);
+                     vm.isSearching = false;
 
-        }
+               });
+               });
+
+
+               } ,1000);
+               }
+           }
 
     }
 
