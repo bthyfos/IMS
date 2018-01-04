@@ -18,7 +18,8 @@
       <div class="form-group">
           {!! Form::label('Name', 'Name', array('class' => 'col-md-3 control-label')) !!}
           <div class="col-md-6" >
-              {!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name','v-model'=>'name','autocomplete'=>'off']) !!}
+              {!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name','v-model'=>'name', 'v-validate' =>"'alpha_spaces'", 'autocomplete'=>'off']) !!}
+               <span style="color: red;"  v-cloak v-show="errors.has('name')" class="help is-danger">@{{ errors.first('name') }}</span>
               <span class="help-block"  v-cloak v-if="submition && wrongName">@{{nameFB}}</span>
           </div>
       </div>

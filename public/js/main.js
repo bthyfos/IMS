@@ -15,7 +15,11 @@ const ERRORS = {
     recipeintNameField:'Fill in the Recipeint name',
     confirmPwdField:'Fill in the Password',
     productNameField:'Fill in the Product Name',
-    quantityField:'Fill in the Product Quantity'
+    quantityField:'Fill in the Product Quantity',
+    regionField: 'Fill in the region',
+    positionField:'Fill in the position',
+    physicalAddressField:'Fill in the Physical Address',
+    cellphoneField:'Fill in the cellphone'
 };
 
 if (document.querySelector('#addProductsForm')) {
@@ -66,8 +70,11 @@ if (document.querySelector('#addProductsForm')) {
     methods: {
         validateForm:function(event) {
             this.submition = true;
-            if(this.wrongName || this.wrongTypeId || this.wrongSpecification ||  this.wrongPrice || this.wrongUnit)
-                event.preventDefault();
+            this.$validator.validateAll();
+            if(this.wrongName || this.wrongTypeId || this.wrongSpecification ||  this.wrongPrice || this.wrongUnit  || this.errors.any())
+                {
+                    event.preventDefault();
+                } 
             else {
                     axios.post('/createProduct')
                         .then(function (response) {
@@ -276,6 +283,56 @@ if (document.querySelector('#addProductTypeForm')) {
     }
 })
 }
+
+if (document.querySelector('#updateForm')) {
+   new Vue({
+    el: "#updateForm",
+    data: {
+        regionId:'',
+        positionId:'',
+        physicalAddress:'',
+        cellphone:'',
+        submition: false
+    },
+    computed: {
+        wrongRegion:function() {  if(this.regionId === '') {
+            this.regionFB = ERRORS.regionField;
+            return true
+        }
+            return false },
+
+            wrongPosition:function() {  if(this.positionId === '') {
+            this.positionFB = ERRORS.positionField;
+            return true
+        }
+            return false },
+            wrongphysicalAddress:function() {  if(this.physicalAddress === '') {
+            this.physicalAddressFB = ERRORS.physicalAddressField;
+            return true
+        }
+            return false },
+            wrongCellphone:function() {  if(this.cellphone === '') {
+            this.cellphoneFB = ERRORS.cellphoneField;
+            return true
+        }
+            return false }
+    },
+    methods: {
+        updateProfileForm:function(event) {
+            this.submition = true;
+            if(this.wrongRegion || this.wrongPosition || this.wrongphysicalAddress || this.wrongCellphone)
+            {
+             event.preventDefault();
+            }
+            else {
+                return  true;
+                }
+        }
+
+    }
+})
+}
+
 
 
 

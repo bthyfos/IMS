@@ -7,7 +7,7 @@
           <div class="col-xs-8" >
 
 
-            <input name="password" v-validate="{ is: confirm_password }"  confirmed:{confirm_password} class="form-control"  :class="{'input': true, 'is-danger': errors.has('password') }" type="password"  v-model='password'>
+            <input name="password" v-validate="{ is: confirm_password }" class="form-control"  :class="{'input': true, 'is-danger': errors.has('password') }" type="password"  v-model='password'>
             <span  v-cloak v-show="errors.has('password')" class="help-block">@{{ errors.first('password') }}</span>
               <span class="help-block"  v-cloak v-if="submition && wrongPassword">@{{passwordFB}}</span>
           </div>
