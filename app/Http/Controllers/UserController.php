@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function index()
     {
-    	$userDetails  = User::find(\Auth::user()->id);
+       $userDetails  = User::find(\Auth::user()->id);
 	   return view('settings.index',compact('userDetails'));
     }
     public function update(Request $request)

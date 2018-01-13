@@ -36,35 +36,35 @@
 
             <div class="form-group" style="margin-top: 5px;">
                 {!! Form::label('name', 'Name', ['class' => 'col-lg-3 control-label']) !!}
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     {!! Form::text('name', $value = null, ['class' => 'form-control', 'placeholder' => 'Product Type Name','v-model'=>'name']) !!}
                     <span class="help-block"  v-cloak v-if="submition && wrongName" style="color:red;">@{{nameFB}}</span>
                 </div>
             </div>
             <div class="form-group" style="margin-top: 5px;">
                 {!! Form::label('name', 'Product Type Name', ['class' => 'col-lg-3 control-label']) !!}
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     {!! Form::text('name', $value = null, ['class' => 'form-control', 'placeholder' => 'Product Type Name','v-model'=>'name']) !!}
                     <span class="help-block"  v-cloak v-if="submition && wrongName" style="color:red;">@{{nameFB}}</span>
                 </div>
             </div>
             <div class="form-group" style="margin-top: 5px;">
                 {!! Form::label('name', 'Created By', ['class' => 'col-lg-3 control-label']) !!}
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     {!! Form::text('name', $value = null, ['class' => 'form-control', 'placeholder' => 'Product Type Name','v-model'=>'name']) !!}
                     <span class="help-block"  v-cloak v-if="submition && wrongName" style="color:red;">@{{nameFB}}</span>
                 </div>
             </div>
             <div class="form-group" style="margin-top: 5px;">
                 {!! Form::label('name', 'Specification', ['class' => 'col-lg-3 control-label']) !!}
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     {!! Form::text('name', $value = null, ['class' => 'form-control', 'placeholder' => 'Product Type Name','v-model'=>'name']) !!}
                     <span class="help-block"  v-cloak v-if="submition && wrongName" style="color:red;">@{{nameFB}}</span>
                 </div>
             </div>
             <div class="form-group" style="margin-top: 5px;">
                 {!! Form::label('name', 'Available Quantity', ['class' => 'col-lg-3 control-label']) !!}
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     {!! Form::text('name', $value = null, ['class' => 'form-control', 'placeholder' => 'Product Type Name','v-model'=>'name']) !!}
                     <span class="help-block"  v-cloak v-if="submition && wrongName" style="color:red;">@{{nameFB}}</span>
                 </div>
@@ -72,7 +72,7 @@
 
             <div class="form-group" style="margin-top: 5px;">
                 {!! Form::label('name', 'Price', ['class' => 'col-lg-3 control-label']) !!}
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     {!! Form::text('name', $value = null, ['class' => 'form-control', 'placeholder' => 'Product Type Name','v-model'=>'name']) !!}
                     <span class="help-block"  v-cloak v-if="submition && wrongName" style="color:red;">@{{nameFB}}</span>
                 </div>
@@ -80,7 +80,7 @@
 
             <div class="form-group" style="margin-top: 5px;">
                 {!! Form::label('name', 'Added Date', ['class' => 'col-lg-3 control-label']) !!}
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     {!! Form::text('name', $value = null, ['class' => 'form-control', 'placeholder' => 'Product Type Name','v-model'=>'name']) !!}
                     <span class="help-block"  v-cloak v-if="submition && wrongName" style="color:red;">@{{nameFB}}</span>
                 </div>
