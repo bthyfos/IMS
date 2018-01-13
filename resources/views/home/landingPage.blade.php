@@ -116,8 +116,8 @@
   }
       </style> 
       <script src="{{asset('js/vue.js')}}"></script>
-      <script src="https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate.js"></script>
-      <script src="https://unpkg.com/vee-validate@2.0.0-rc.7/dist/vee-validate.js"></script>
+      <script src="{{asset('js/vee-validate.js')}}"></script>
+      <script src="{{asset('js/vee-validate2.js')}}"></script>
   </head>
   <body>
   <nav class="navbar navbar-default" role="navigation">

@@ -4110,6 +4110,9 @@ fieldset[disabled] .btn-default.focus {
   background-color:#71F3C3;
   border-color: #71F3DA;
 }
+.col-xs-8 {
+  width: 100%;
+}
 
 /*.btn-primary:hover {
   color: #fff;
