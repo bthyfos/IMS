@@ -222,16 +222,18 @@ if (document.querySelector('#userPreferenceForm')) {
             return false }
 
 
+
     },
        watch:
            {
                confirm_password: function()
                {
-                  return wrongPwdVerificationDv()
+                   this.getConfirmation()
                }
                },
     methods: {
-        preferenceForm:function(event) {
+        preferenceForm:function(event)
+        {
             this.submition = true;
             if(this.wrongPassword || this.wrongPwdVerification || this.wrongPwdVerificationDv)
                 event.preventDefault();
@@ -244,7 +246,6 @@ if (document.querySelector('#userPreferenceForm')) {
                         });
                 }
         },
-
         updateDroneType: function (value) {
                 if (value !== '') {
                     this.serviceTypeData = [];
@@ -259,7 +260,15 @@ if (document.querySelector('#userPreferenceForm')) {
                             console.log(error);
                         });
                 }
-            }
+            },
+        getConfirmation : function()
+        {
+            this.wrongPwdVerificationDv()
+
+        }
+
+
+
 
     }
 })
