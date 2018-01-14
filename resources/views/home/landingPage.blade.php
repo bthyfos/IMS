@@ -49,13 +49,16 @@
               <li><a href="{{'handover'}}">Hangovers</a></li>
 
           </ul>
+         
 
           <ul class="nav navbar-nav navbar-right">
+
+           
               <li class="dropdown">
-                  <i class="fa fa-user fa-fw"></i> 
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <i class="fa fa-user fa-fw"></i> <span class="caret"></span>
-                  </a>
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                     {{ Auth::user()->name }} {{Auth::user()->surname}}<span class="caret"></span>
+                                </a>
+
 
                   <ul class="dropdown-menu" role="menu">
                       <li><a href="{{'settings'}}">Settings</a></li>

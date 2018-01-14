@@ -1,6 +1,7 @@
 @extends('home.landingPage')
 @section('content')
 <div class="col-xs-8 col-md-12">
+	<hr/>
 <div class="panel panel-default">
   <div class="panel-heading">Settings</div>
   <div class="panel-body">

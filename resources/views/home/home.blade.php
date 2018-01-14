@@ -7,6 +7,7 @@
     </style>
 	<div class="card">
         <div class=".col-md-12">
+          <hr/>
 
            <div>
                <img src="{{asset('images/bg-img.jpg')}}">

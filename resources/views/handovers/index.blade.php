@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="col-xs-4 col-md-4">
+  <hr/>
 <div class="panel panel-default">
   <div class="panel-heading">Search Form</div>
   <div class="panel-body">
@@ -57,6 +58,7 @@
 </div>     
 </div>
 <div class="col-xs-8 col-md-8">
+  <hr/>
 <div class="panel panel-default">
   <div class="panel-heading">HandOvers</div>
   <div class="panel-body">

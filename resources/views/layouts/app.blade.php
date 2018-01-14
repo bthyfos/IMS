@@ -99,6 +99,10 @@
                 case 'success':
                     toastr.success("{{session::get('message')}}");
                     break;
+
+                case 'danger':
+                    toastr.success("{{session::get('message')}}");
+                    break;
             }
     @endif
     </script>
