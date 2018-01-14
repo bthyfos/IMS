@@ -162,4 +162,5 @@ $( '#detailsModal' ).on( 'show.bs.modal', function (e) {
 });
 
 </script>
+
 @endpush

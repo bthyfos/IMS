@@ -215,16 +215,25 @@ if (document.querySelector('#userPreferenceForm')) {
         }
             return false },
 
-            passwordMisMatch:function() {  if(this.confirm_password !== this.password) {
+        wrongPwdVerificationDv:function() {  if(this.password !== this.confirm_password) {
             this.passwordMisMatchFB = ERRORS.passwordMisMatchField;
             return true
         }
             return false }
+
+
     },
+       watch:
+           {
+               confirm_password: function()
+               {
+                  return wrongPwdVerificationDv()
+               }
+               },
     methods: {
         preferenceForm:function(event) {
             this.submition = true;
-            if(this.wrongPassword || this.wrongPwdVerification || this.passwordMisMatch)
+            if(this.wrongPassword || this.wrongPwdVerification || this.wrongPwdVerificationDv)
                 event.preventDefault();
             else {
                     axios.post('/preference')
