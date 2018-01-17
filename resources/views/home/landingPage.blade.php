@@ -3,7 +3,6 @@
   <head>
     <title>IMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
 
     <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
     <link rel="stylesheet"  href="{{asset('/css/bootstrap.min.css')}}">
@@ -16,6 +15,9 @@
      <script>
         Vue.use(VeeValidate);
     </script>
+      <script src="{{asset('js/vue.js')}}"></script>
+      <script src="{{asset('js/vee-validate.js')}}"></script>
+      <script src="{{asset('js/vee-validate2.js')}}"></script>
 
   </head>
   <body>

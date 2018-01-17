@@ -215,16 +215,27 @@ if (document.querySelector('#userPreferenceForm')) {
         }
             return false },
 
-            passwordMisMatch:function() {  if(this.confirm_password !== this.password) {
+        wrongPwdVerificationDv:function() {  if(this.password !== this.confirm_password) {
             this.passwordMisMatchFB = ERRORS.passwordMisMatchField;
             return true
         }
             return false }
+
+
+
     },
+       watch:
+           {
+               confirm_password: function()
+               {
+                   this.getConfirmation()
+               }
+               },
     methods: {
-        preferenceForm:function(event) {
+        preferenceForm:function(event)
+        {
             this.submition = true;
-            if(this.wrongPassword || this.wrongPwdVerification || this.passwordMisMatch)
+            if(this.wrongPassword || this.wrongPwdVerification || this.wrongPwdVerificationDv)
                 event.preventDefault();
             else {
                     axios.post('/preference')
@@ -235,7 +246,6 @@ if (document.querySelector('#userPreferenceForm')) {
                         });
                 }
         },
-
         updateDroneType: function (value) {
                 if (value !== '') {
                     this.serviceTypeData = [];
@@ -250,7 +260,15 @@ if (document.querySelector('#userPreferenceForm')) {
                             console.log(error);
                         });
                 }
-            }
+            },
+        getConfirmation : function()
+        {
+            this.wrongPwdVerificationDv()
+
+        }
+
+
+
 
     }
 })
