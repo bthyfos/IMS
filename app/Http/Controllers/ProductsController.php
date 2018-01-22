@@ -23,10 +23,6 @@ class ProductsController extends Controller
 	}
     public function getProducts()
 	{
-//	        $availableStock   = Product::with('productType','user')->where('availableQty','>',0)->get();
-//	        return Datatables::of($availableStock)->make(true);
-
-
         $Products = Product::with('productType','user')->where('availableQty','>',0)->get();
 
         return Datatables::of($Products)
@@ -37,6 +33,7 @@ class ProductsController extends Controller
             ->removeColumn('password')
             ->make(true);
 	}
+
     public function outOfStock()
 	{
 		return view('products.outOfStock');

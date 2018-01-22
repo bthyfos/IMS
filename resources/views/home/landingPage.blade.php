@@ -15,10 +15,6 @@
      <script>
         Vue.use(VeeValidate);
     </script>
-      <script src="{{asset('js/vue.js')}}"></script>
-      <script src="{{asset('js/vee-validate.js')}}"></script>
-      <script src="{{asset('js/vee-validate2.js')}}"></script>
-
   </head>
   <body>
   <nav class="navbar navbar-default" role="navigation">
@@ -112,15 +108,26 @@
    <script src ="{{asset('js/toastr.min.js')}}"></script>
 
   <script>
-        @if(Session::has('message'))
-        var type ="{{session::get('alert-type','info')}}";
-        switch(type)
-        {
-            case 'success':
-            toastr.success("{{session::get('message')}}");
-            break;
-        }
-        @endif
+              @if(Session::has('message'))
+                  var type = "{{ Session::get('alert-type', 'info') }}";
+                  switch(type){
+                      case 'info':
+                          toastr.info("{{ Session::get('message') }}");
+                          break;
+
+                      case 'warning':
+                          toastr.warning("{{ Session::get('message') }}");
+                          break;
+
+                      case 'success':
+                          toastr.success("{{ Session::get('message') }}");
+                          break;
+
+                      case 'error':
+                          toastr.error("{{ Session::get('message') }}");
+                          break;
+                  }
+      @endif
     </script>
   </body>
 </html>

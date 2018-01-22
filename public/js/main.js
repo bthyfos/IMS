@@ -273,7 +273,6 @@ if (document.querySelector('#userPreferenceForm')) {
     }
 })
 }
-
 if (document.querySelector('#addProductTypeForm')) {
    new Vue({
     el: "#addProductTypeForm",

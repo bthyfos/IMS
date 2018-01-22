@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use Redirect;
 
 class SettingsController extends Controller
 {
@@ -17,15 +18,20 @@ class SettingsController extends Controller
 
    public function preference(Request $request)
    {
-  
-   		$userDetails  = User::where('email',$request->email)
-                            ->update(['password'=>bcrypt($request->password)]);
-      $notification = array(
-            'message'=>'Password successfully changed',
-            'alert-type'=>'success'
-                            );
+       $userDetails            = User::find(\Auth::user()->id);
+       $userDetails->password  = bcrypt($request->password);
+       $userDetails->save();
+//
+//       $newPassword    = User::find(\Auth::user()->id);
+//       $newPassword->userName  = $request->password;
+//       $newPassword->save();
 
-      return back()->with($notification);
+
+       $notification = array(
+           'message'=>'Password successfully changed',
+           'alert-type'=>'success');
+
+      return Redirect::back()->with($notification);
                    
    }
 
