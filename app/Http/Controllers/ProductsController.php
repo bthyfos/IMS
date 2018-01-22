@@ -33,8 +33,7 @@ class ProductsController extends Controller
             ->removeColumn('password')
             ->make(true);
 	}
-
-    public function outOfStock()
+	public function outOfStock()
 	{
 		return view('products.outOfStock');
 	}
@@ -45,34 +44,31 @@ class ProductsController extends Controller
 			$products->name 		  =$request->name;
 			$products->productTypeId  =$request->productTypeId;
 			$products->specification  =$request->specification;
-			$products->userId         =Auth::user()->id;
+			$products->userId         =\Auth::user()->id;
 			$products->initialQty     =$request->initialQty;
 			$products->availableQty   =$request->initialQty;
 			$products->price   		  =$request->price;
 			$products->save();
 
-			// $activities  = create(this->activity());
 
 			$notification = array(
             'message'=>' New Product  added successfully',
             'alert-type'=>'success'
           			);
 
-        return back()->with($notification);
-		// return Redirect::back()->with($notification);
+        $this->activity();
+        return Redirect::back()->with($notification);
 	}
 	public  function inavailableStockList()
     {
         $inavailableProducts    = Product::where('availableQty',0)->get();
         return Datatables::of($inavailableProducts)->make(true);
     }
-
-
-     protected function activity()
+    protected function activity()
      {
-     	$activities               =new Activity();
-		$activities->activityType =1;
-		$activities->createdBy    =Auth::user()->id;
+     	$activities               = new Activity();
+		$activities->activityType = 1;
+		$activities->createdBy    =\Auth::user()->id;
 		$activities->save();
 
      }

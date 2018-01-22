@@ -12,19 +12,16 @@ use Illuminate\Support\Facades\Crypt;
 class RegisteredUsers extends Mailable
 {
     use Queueable, SerializesModels;
-
-     protected $user;
-
+    protected $user;
     public function __construct(User $user)
     {
         $this->user = $user;
     }
-
-
     public function build()
     {
         return $this->markdown('emails.newUsers')
                     ->with([
+                            'userEmail'=>$this->user->email,
                             'userName'=>$this->user->name." ".$this->user->surname,
                             'userPassword'=>$this->user->userName
                         ]);

@@ -12,8 +12,9 @@ Route::get('returns',function ()
 Route::get('handover','HandoverController@index');
 Route::get('handoverList','HandoverController@getHandovers')
 		    ->name('handoverList');
-            
+
 Route::get('recipientList/{query}','HandoverController@recipients');
+
 //Home Routes
 Route::get('/home', 'HomeController@firstFunc')->name('home');
 Route::get('outOfStock', 'ProductsController@outOfStock');
@@ -22,14 +23,13 @@ Route::post('/site/login',
 	'uses'=>'loginController@login',
 	'as'  =>'app.login'
 ]);
-	
+
 Route::get('admin',  function ()
 {
 	return view('master');
 });
 //Users
 Route::get('settings' , 'UserController@index')->name('settings');
-
 Route::match(['post'] , 'updateUser' , 'UserController@update');
 
 //Products

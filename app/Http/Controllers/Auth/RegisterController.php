@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Redirect;
 
 class RegisterController extends Controller
 {
@@ -23,17 +24,7 @@ class RegisterController extends Controller
 
         return Validator::make($data,
             [
-            'name' => 'required|string|max:255',
-            'surname' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'userRoleId' => 'required',
-            'cellphone' => 'required',
-            'departmentId' => 'required',
-            'regionId' => 'required',
-            'staffId' => 'required',
-            'positionId' => 'required',
-            'physicalAddress' => 'required',
-            'dob' => 'required',
+                'email' => 'required|string|email|max:255|unique:users'
         ]);
     }
 
@@ -41,7 +32,6 @@ class RegisterController extends Controller
     {
 
         $generateUserPassword   = $this->generateRandomString();
-
         return User::create([
             'name' => strtoupper($data['name']),
             'email' => $data['email'],
@@ -70,6 +60,16 @@ class RegisterController extends Controller
                 $pass[] = $alphabet[$n];
             }
             return implode($pass);
+
+    }
+    public function goBack()
+    {
+        $notification = array(
+            'message'=>'A new is added.',
+            'alert-type'=>'success'
+        );
+
+        return Redirect::back()->with($notification);
 
     }
 

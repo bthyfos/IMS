@@ -1,10 +1,12 @@
 @component('mail::message')
 Registration Notification
 
-Hello {{$userName}} here is your password  {{$userPassword}}
+Hello {{$userName}} here are  your credentials;
+                                  - Username / Email <br>{{$userEmail}}
+                                  - Password        <br>{{$userPassword}}
 
-@component('mail::button', ['url' =>env('url')])
-Button Text
+@component('mail::button', ['url' =>'/'])
+Log in
 @endcomponent
 
 Thanks,<br>
