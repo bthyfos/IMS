@@ -45,6 +45,7 @@
             emailFB: '',
             password: '',
             passwordFB: '',
+            isHidden: false,
             submition: false
               },
               
@@ -52,6 +53,7 @@
                 wrongEmail:function() {
                     if(this.email === '') {
                         this.emailFB = ERRORS.emailField;
+                        this.isHidden = true;
                         return true
                     }
                     return false
@@ -78,15 +80,23 @@
                     logIn :function() {
                       
                     this.loginForm()
-                    return this.message = '<span>Logging in..</span>';
+                    return this.message = '<span disabled>Logging in..</span>';
 
-                },
-                emailFomat:function()
+                }
+
+            },
+            watch:
+            {
+                email:function()
                 {
+                    let str = this.email;
                     
+                    if(str.length > 0)
+                        return    this.isHidden = true;
+                  
                 }
 
-                }
+            }
 
         });
     </script>

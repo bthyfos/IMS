@@ -23,16 +23,21 @@ class ProductsController extends Controller
 	}
     public function getProducts()
 	{
-        $Products = Product::with('productType','user')->where('availableQty','>',0)->get();
+        $Products = Product::with('productType','user')
+        					->where('availableQty','>',0)
+        					->get();
+
 
         return Datatables::of($Products)
             ->addColumn('action', function ($Products) {
-                return '<a href="#edit-'.$Products->id.'"   class="btn btn-xs btn-primary"  onclick="getDetails()" data-target="#detailsModal" data-toggle="modal">Details</a>';
+                return '<a href="#edit-'.$Products->id.'" class="btn btn-xs btn-primary"  onclick="getDetails()" data-target="#detailsModal" data-toggle="modal">Details</a>';
             })
             ->editColumn('id', 'ID: {{$id}}')
-            ->removeColumn('password')
             ->make(true);
+
+
 	}
+
 	public function outOfStock()
 	{
 		return view('products.outOfStock');

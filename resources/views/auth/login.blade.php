@@ -20,14 +20,14 @@
 
                                          <div class="col-md-6">
 
-                                                <input name="email" v-validate="'email'" class="form-control" :class="{'input': true, 'is-danger': errors.has('email') }" type="text" autocomplete="off" v-model="email">
+                                                <input name="email" v-validate="'email'"  class="form-control" :class="{'input': true, 'is-danger': errors.has('email') }" type="text" autocomplete="off" v-model="email"  >
                                                  <i v-show="errors.has('email')" class="fa fa-warning" style="color:red;"></i>
                                                  <span v-show="errors.has('email')" v-cloak class="help is-danger" style="color:red;">@{{errors.first('email') }}</span>
                                                  <span class="help-block"  v-cloak v-if="submition && wrongEmail" style="color:red;">@{{emailFB}}</span>
 
                                         <div class="bar"></div>
                                         @if ($errors->has('email'))
-                                                                    <span class="help-block" style="color:red;">
+                                                                    <span  v-bind:class="{hidden :isHidden}"  class="help-block" style="color:red;">
                                                                         {{ $errors->first('email') }}
                                                                     </span>
                                         @endif

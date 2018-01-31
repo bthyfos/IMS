@@ -140,28 +140,14 @@ $(function() {
     });
 });
 
+
+
 function  getDetails(id)
 {
 
     console.log(id);
-
-
-
-
 }
 
-$( '#detailsModal' ).on( 'show.bs.modal', function (e) {
-    var target = e.relatedTarget;
-    // get values for particular rows
-    var tr = $( target ).closest( 'tr' );
-    var tds = tr.find( 'td' );
-
-    // put values into editor's form elements
-    // tds.eq(0).val() -- 1st column
-    $( '#id_cartao' ).val( tds.eq(0).val() );
-    // tds.eq(1).val() -- 2nd column and so on.
-    // same goes to others element
-});
 
 </script>
 
